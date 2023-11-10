@@ -1,0 +1,136 @@
+#root {
+  max-width: 100%;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.NavBackground {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 50px;
+  align-items: center;
+  background-color: #063970;
+}
+
+.box {
+  height: 200px;
+  width: 200px;
+  background-color: rgb(0, 191, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.Text {
+  padding: 5px;
+  font-size: 15px;
+}
+
+.Div-Style {
+  flex: 1;
+  background-color: white;
+  color: black;
+}
+
+.NavLink {
+  color: #808080;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
+  &.active {
+    color: #000000;
+  }
+}
+
+.Bars {
+  display: none;
+  color: #808080;
+  @media screen and (max-width: 768px) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 75%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+}
+
+.NavMenu {
+  display: flex;
+  align-items: center;
+  margin-right: -24px;
+  white-space: nowrap;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.NavBtn {
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.NavBtnLink {
+  border-radius: 4px;
+  background: #808080;
+  padding: 10px 22px;
+  color: #000000;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  margin-left: 24px;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #fff;
+    color: #808080;
+  }
+}
