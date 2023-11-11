@@ -12,7 +12,7 @@ export const Navbar = () => {
         <header>
           <NavBackground>
             <Text text="Beranda" />
-            <Text text="Katalog ProdukS" />
+            <Text text="Katalog Produk" />
           </NavBackground>
         </header>
       </div>
