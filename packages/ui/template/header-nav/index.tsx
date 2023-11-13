@@ -1,4 +1,3 @@
-import {NavBackground, Text} from '../../atoms';
 import {Header} from '../../organisms';
 
 // type Props = {
