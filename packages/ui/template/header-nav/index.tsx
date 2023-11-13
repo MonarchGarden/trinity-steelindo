@@ -1,5 +1,5 @@
 import {NavBackground, Text} from '../../atoms';
-import {Header} from '../../organisms'
+import {Header} from '../../organisms';
 
 // type Props = {
 //   logo?: React.ReactNode;
@@ -9,10 +9,8 @@ import {Header} from '../../organisms'
 export const Navbar = () => {
   return (
     <>
-      <div className='NavbarItem'>
-          <NavBackground>
-            <Header   />
-          </NavBackground>
+      <div className="NavbarItem">
+        <Header />
       </div>
     </>
   );

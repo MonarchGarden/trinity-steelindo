@@ -1,4 +1,4 @@
-import {Button, Text} from '../../atoms';
+import {Text} from '../../atoms';
 
 type Props = {
   text?: string;

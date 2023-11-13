@@ -41,15 +41,16 @@
 
 .NavBackground {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100vw;
-  align-items: center;
-  background-color: #063970;
+  align-items: flex-end;
 }
 
-.NavbarItem {
+.NavbarItemContainer {
   display: flex;
-  flex-direction: column;
+  background-color: #063970;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 .box {
@@ -65,9 +66,9 @@
 }
 
 .Text {
-  padding: 5px;
+  padding: 10px;
   font-size: 15px;
-  color: #000000;
+  color: white;
   font-weight: bold;
 }
 
