@@ -3,5 +3,5 @@
 
 export {Button} from './buttons';
 export {NavBackground} from './nav-background';
-export {NavButtonLink} from '../molecules/nav-link';
+export {NavButtonLink} from './nav-link';
 export {Text} from '../atoms/text';

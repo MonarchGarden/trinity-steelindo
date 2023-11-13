@@ -1,13 +1,7 @@
 import {PropsWithChildren} from 'react';
 
-type Props = PropsWithChildren;
-// & {
-//   type?: string;
-//   size?: number;
-//   color?: string;
-// };
+type Props = PropsWithChildren & { text?: string; };
 
-// export const Button = ({type, size, color, children}: Props) => {
-export const Button = ({children}: Props) => {
-  return <button className="Button-Style">{children}</button>;
+export const Button = ({text, children}: Props) => {
+  return <button className="Button-Style" title={text}>{children}</button>;
 };
