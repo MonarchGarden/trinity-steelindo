@@ -1,9 +1,14 @@
-import {PropsWithChildren} from 'react';
 import classnames from 'classnames';
-import styles from './style.module.css';
+import styles from '../style.module.css';
 
-type Props = PropsWithChildren;
+type Props = {
+  imgSrc: string;
+};
 
-export const CompanyDesign = ({children}: Props) => {
-  return <div className={classnames(styles.companyDesign)}>{children}</div>;
+export const CompanyLogo = ({imgSrc}: Props) => {
+  return (
+    <div className={classnames(styles.companyDesign)}>
+      <img src={imgSrc} className={classnames(styles.logo)} />
+    </div>
+  );
 };

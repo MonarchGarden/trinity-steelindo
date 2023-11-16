@@ -5,4 +5,4 @@ export {Button} from './buttons';
 export {NavBackground} from './nav-background';
 export {NavButtonLink} from './nav-link';
 export {Text} from './text';
-export {CompanyDesign} from './company-logo';
+export {CompanyLogo} from './company-logo';
