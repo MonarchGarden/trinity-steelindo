@@ -1,3 +1,2 @@
-export const ImgLogoSpa = require('./icon-logo-spa.png');
-export const ImgLogoTrinsWhite = require('./icon-logo-trins-white.jpg');
-export const ImgLogoTrins = require('./icon-logo-trins.png');
+export {default as SvgIconClose} from './icon-close.svg';
+export {default as SvgIconMenu} from './icon-menu.svg';

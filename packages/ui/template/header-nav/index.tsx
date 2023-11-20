@@ -8,9 +8,7 @@ import React from 'react';
 export const Navbar = () => {
   return (
     <>
-      <div className="NavbarItem">
-        <Header />
-      </div>
+      <div>{/* <Header /> */}</div>
     </>
   );
 };

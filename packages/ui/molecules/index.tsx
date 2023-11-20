@@ -1,1 +1,1 @@
-export {NavbarItem} from './header-items';
+export {NavbarBackground} from './nav-background';

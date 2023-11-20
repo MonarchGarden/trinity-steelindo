@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './style.css';
 type Props = {
   imgSrc?: string;
 };
@@ -7,7 +7,7 @@ type Props = {
 export const CompanyLogo = ({imgSrc}: Props) => {
   return (
     <div>
-      <img src={imgSrc} />
+      <h1 className="text-black">Logo</h1>
     </div>
   );
 };
