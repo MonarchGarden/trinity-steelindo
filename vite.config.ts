@@ -11,9 +11,4 @@ export default defineConfig({
       '@trinity-steelindo/ui': path.resolve(__dirname, 'packages/ui'),
     },
   },
-  css: {
-    modules: {
-      localsConvention: 'camelCaseOnly',
-    },
-  },
 });

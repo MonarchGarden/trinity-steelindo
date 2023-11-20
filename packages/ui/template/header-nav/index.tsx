@@ -1,5 +1,5 @@
 import {Header} from '../../organisms';
-
+import React from 'react';
 // type Props = {
 //   logo?: React.ReactNode;
 // };

@@ -1,14 +1,13 @@
-import classnames from 'classnames';
-import styles from '../style.module.css';
+import React from 'react';
 
 type Props = {
-  imgSrc: string;
+  imgSrc?: string;
 };
 
 export const CompanyLogo = ({imgSrc}: Props) => {
   return (
-    <div className={classnames(styles.companyDesign)}>
-      <img src={imgSrc} className={classnames(styles.logo)} />
+    <div>
+      <img src={imgSrc} />
     </div>
   );
 };
