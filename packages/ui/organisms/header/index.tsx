@@ -34,6 +34,7 @@ export const Header = ({iconMenuClose, iconMenuOpen, children}: Props) => {
   return (
     <NavbarBackground>
       {toggle ? iconMenuOpen : iconMenuClose}
+      Test
       {children}
     </NavbarBackground>
   );
