@@ -5,8 +5,6 @@ type Props = PropsWithChildren;
 
 export const BackgroundContainer = ({children}: Props) => {
   return (
-    <div className="h-full w-full overflow-hidden bg-orange-600">
-      {children}
-    </div>
+    <div className="h-full w-full overflow-hidden bg-zinc-400">{children}</div>
   );
 };
