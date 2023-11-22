@@ -1,8 +1,40 @@
-import React from 'react';
+import React, {useState, PropsWithChildren} from 'react';
 import {NavbarBackground} from '@trinity-steelindo/ui/molecules';
-import '../../index.css';
+import './style.css';
+import {CompanyLogo} from '@trinity-steelindo/ui/atoms';
 
-// @ts-ignore: TS6133
-export const Header = () => {
-  return <NavbarBackground>Test</NavbarBackground>;
+type Props = PropsWithChildren & {
+  iconMenuOpen: React.ReactNode;
+  iconMenuClose: React.ReactNode;
+};
+
+export const navLinks = [
+  {
+    id: 'home',
+    title: 'Home',
+  },
+  {
+    id: 'features',
+    title: 'Features',
+  },
+  {
+    id: 'product',
+    title: 'Product',
+  },
+  {
+    id: 'clients',
+    title: 'Clients',
+  },
+];
+
+export const Header = ({iconMenuClose, iconMenuOpen, children}: Props) => {
+  const [active, setActive] = useState('Home');
+  const [toggle] = useState(false);
+
+  return (
+    <NavbarBackground>
+      {toggle ? iconMenuOpen : iconMenuClose}
+      {children}
+    </NavbarBackground>
+  );
 };
