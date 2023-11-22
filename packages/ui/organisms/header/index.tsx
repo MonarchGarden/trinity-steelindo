@@ -29,7 +29,7 @@ export const navLinks = [
 
 export const Header = ({iconMenuClose, iconMenuOpen}: Props) => {
   const [active, setActive] = useState('Home');
-  const [toggle, setToggle] = useState(false);
+  const [toggle] = useState(false);
 
   return (
     <NavbarBackground>
