@@ -4,7 +4,7 @@ This project is using React + TypeScript + Vite + TailWind
 
 https://roadmap.sh/react
 
-Everything in that roadmap will be covered in this project, except the create react app as the author chose Vite to create it
+Everything in that roadmap will be covered in this project, except the create react app as the author chose Vite to execute the program.
 
 # React Js
 
