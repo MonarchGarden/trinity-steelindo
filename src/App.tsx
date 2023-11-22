@@ -3,5 +3,9 @@ import './index.css';
 import {Header} from '@trinity-steelindo/ui/organisms';
 
 export default function App() {
-  return <Header />;
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 }
