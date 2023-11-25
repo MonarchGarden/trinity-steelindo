@@ -20,3 +20,6 @@ With the current project is running on using Vite, certain command need to run i
 1 npm install
 
 2 npm run dev
+
+
+as Of now, next js is the supposed framework. But for beginner, this will be the stepping stone.
