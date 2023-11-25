@@ -9,10 +9,8 @@ type Props = PropsWithChildren & {
 export const NavbarBackground = ({children, backgroundLogoImg}: Props) => (
   <div>
     <BackgroundContainer>
-      <ContainerWidth>
-        <CompanyLogo imgSrc={backgroundLogoImg} />
-        {children}
-      </ContainerWidth>
+      <CompanyLogo imgSrc={backgroundLogoImg} />
+      {children}
     </BackgroundContainer>
   </div>
 );
