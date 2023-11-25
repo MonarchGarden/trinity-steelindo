@@ -1,10 +1,16 @@
 import React, {PropsWithChildren} from 'react';
-import {BackgroundContainer} from '../../atoms';
+import {BackgroundContainer, CompanyLogo} from '../../atoms';
 import './style.css';
-type Props = PropsWithChildren;
 
-export const NavbarBackground = ({children}: Props) => (
+type Props = PropsWithChildren & {
+  backgroundLogoImg: string;
+};
+
+export const NavbarBackground = ({children, backgroundLogoImg}: Props) => (
   <div>
-    <BackgroundContainer>{children}</BackgroundContainer>
+    <BackgroundContainer>
+      <CompanyLogo imgSrc={backgroundLogoImg} />
+      {children}
+    </BackgroundContainer>
   </div>
 );

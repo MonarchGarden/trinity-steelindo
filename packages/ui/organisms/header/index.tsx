@@ -1,7 +1,15 @@
-import React from 'react';
+import React, {PropsWithChildren} from 'react';
 import {NavbarBackground} from '@trinity-steelindo/ui/molecules';
 import './style.css';
 
-export const Header = () => {
-  return <NavbarBackground>Test</NavbarBackground>;
+type Props = PropsWithChildren & {
+  companyLogoImg: string;
+};
+
+export const Header = ({children, companyLogoImg}: Props) => {
+  return (
+    <NavbarBackground backgroundLogoImg={companyLogoImg}>
+      {children}
+    </NavbarBackground>
+  );
 };
