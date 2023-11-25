@@ -6,6 +6,10 @@ module.exports = {
     './packages/**/*.{html,js,ts,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundColor: {
+        colorPrimary: '#081923',
+      },
+    },
   },
 };

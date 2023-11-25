@@ -1,5 +1,5 @@
 import React, {PropsWithChildren} from 'react';
-import {BackgroundContainer, CompanyLogo} from '../../atoms';
+import {BackgroundContainer, CompanyLogo, ContainerWidth} from '../../atoms';
 import './style.css';
 
 type Props = PropsWithChildren & {
@@ -9,8 +9,10 @@ type Props = PropsWithChildren & {
 export const NavbarBackground = ({children, backgroundLogoImg}: Props) => (
   <div>
     <BackgroundContainer>
-      <CompanyLogo imgSrc={backgroundLogoImg} />
-      {children}
+      <ContainerWidth>
+        <CompanyLogo imgSrc={backgroundLogoImg} />
+        {children}
+      </ContainerWidth>
     </BackgroundContainer>
   </div>
 );
