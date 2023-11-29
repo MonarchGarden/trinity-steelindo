@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media (max-width: 640px) {
+  .header-logo {
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+/* @media (min-width: 1024px) {
+  .header-logo {
+    width: 50px;
+    height: 50px;
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+@media (min-width: 1280px) {
+  .header-logo {
+    width: 75px;
+    height: 75px;
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+  }
+} */
+.fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.bg-colorPrimary {
+  background-color: #081923;
+}

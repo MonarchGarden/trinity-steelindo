@@ -5,8 +5,10 @@ type Props = PropsWithChildren<{}>;
 
 export const BackgroundContainer = ({children}: Props) => {
   return (
-    <div className="bg-colorPrimary w-full overflow-hidden p-2">
-      <header>{children}</header>
+    <div>
+      <header className="fixed left-0 right-0 top-0 flex bg-colorPrimary p-2">
+        {children}
+      </header>
     </div>
   );
 };

@@ -7,13 +7,12 @@ type Props = {
 
 export const CompanyLogo = ({imgSrc}: Props) => {
   return (
-    <div className="flex items-center">
+    <div className="flex flex-col items-center border border-white p-2 sm:flex-row xl:items-center">
       <img
         src={imgSrc}
-        alt="company Logo"
-        className="tap:scale-110 mr-2 h-20 w-auto transform-gpu rounded-full transition-all"
+        className="h-25 w-10 transform-gpu rounded-full border border-white transition-transform duration-300 ease-in-out"
       />
-      <div className="hidden font-serif font-bold text-white sm:block">
+      <div className="hidden w-24 border border-white p-5 font-serif font-bold text-white transition-transform duration-300 ease-in-out sm:block">
         <h1>Trinity SteelIndo</h1>
       </div>
     </div>
