@@ -6,13 +6,21 @@ type Props = PropsWithChildren & {
   backgroundLogoImg: string;
 };
 
-export const NavbarBackground = ({children, backgroundLogoImg}: Props) => (
-  <div>
-    <BackgroundContainer>
-      <div className="w-500 border border-white">
-        <CompanyLogo imgSrc={backgroundLogoImg} />
-        {children}
-      </div>
-    </BackgroundContainer>
-  </div>
-);
+export const Navbar = () => {
+  return (
+    <nav className="flex space-x-4">
+      <a href="#" className="text-white">
+        Home
+      </a>
+      <a href="#" className="text-white">
+        About
+      </a>
+      <a href="#" className="text-white">
+        Services
+      </a>
+      <a href="#" className="text-white">
+        Contact
+      </a>
+    </nav>
+  );
+};
