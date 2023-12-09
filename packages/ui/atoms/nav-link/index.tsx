@@ -7,7 +7,9 @@ type Props = PropsWithChildren & {
 
 export const NavButtonLink = ({to, text}: Props) => {
   return (
-    <a href={to} className="NavLink-Style">
+    <a
+      href="/"
+      className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:text-white">
       {text}
     </a>
   );
