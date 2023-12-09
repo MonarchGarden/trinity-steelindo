@@ -1,11 +1,10 @@
 import React, {PropsWithChildren} from 'react';
 
 type Props = PropsWithChildren & {
-  to?: string;
   text?: string;
 };
 
-export const NavButtonLink = ({to, text}: Props) => {
+export const NavButtonLink = ({text}: Props) => {
   return (
     <a
       href="/"
