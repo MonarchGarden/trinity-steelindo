@@ -1,11 +1,27 @@
 import React from 'react';
 import './index.css';
 import {Body, Header} from '@trinity-steelindo/ui/organisms';
+import {TruckTrinityPng} from './assets';
 
 export default function App() {
   return (
-    <Header>
+    <div className="bg-colorBackground max-w-screen relative flex h-screen flex-col">
+      <div className="absolute inset-0 bg-black opacity-50"></div>
+      <img
+        src={TruckTrinityPng}
+        className="h-full w-full bg-fixed object-cover"
+        alt="Truck"
+      />
+      <Header />
       <Body>
+        <div className="rounded-md bg-gray-200 p-6 px-10 shadow-md">
+          <h1 className="mb-4 text-3xl font-bold">
+            Hello, React with Tailwind CSS!
+          </h1>
+          <p className="text-gray-700">
+            This is a basic React component styled with Tailwind CSS.
+          </p>
+        </div>
         <div className="rounded-md bg-gray-200 p-6 shadow-md">
           <h1 className="mb-4 text-3xl font-bold">
             Hello, React with Tailwind CSS!
@@ -15,6 +31,6 @@ export default function App() {
           </p>
         </div>
       </Body>
-    </Header>
+    </div>
   );
 }

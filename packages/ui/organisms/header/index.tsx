@@ -1,31 +1,22 @@
-import React, {PropsWithChildren} from 'react';
+import React from 'react';
 import './style.css';
 import {NavButtonLink} from '@trinity-steelindo/ui/atoms';
 
-type Props = PropsWithChildren;
-
 //TODO as of now everything is hardcoded
-export const Header = ({children}: Props) => {
+export const Header = () => {
   return (
-    <div>
-      <header className="fixed left-0 right-0 top-0 flex bg-colorPrimary object-right-top p-2">
-        <nav className="mx-auto">
-          <div className="px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center">
-                <div className="hidden md:block">
-                  <div className="flex content-center items-center">
-                    <NavButtonLink text="Beranda" />
-                    <NavButtonLink text="Katalog Produk" />
-                    <NavButtonLink text="Tentang Kami" />
-                  </div>
-                </div>
-              </div>
+    <header className="group fixed top-0 flex w-full overflow-hidden p-3 transition-all hover:bg-white">
+      <nav className="mx-auto ml-auto flex h-full max-w-screen-xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center">
+          <div className="header-logo hidden md:block">
+            <div className="flex items-center">
+              <NavButtonLink navBarTitle="Beranda" />
+              <NavButtonLink navBarTitle="Katalog Produk" />
+              <NavButtonLink navBarTitle="Tentang Kami" />
             </div>
           </div>
-        </nav>
-      </header>
-      {children}
-    </div>
+        </div>
+      </nav>
+    </header>
   );
 };
