@@ -5,13 +5,14 @@ import {TruckTrinityPng} from './assets';
 
 export default function App() {
   return (
-    <div className="bg-colorBackground max-w-screen relative flex h-screen flex-col">
-      <div className="absolute inset-0 bg-black opacity-50"></div>
-      <img
-        src={TruckTrinityPng}
-        className="h-full w-full bg-fixed object-cover"
-        alt="Truck"
-      />
+    <div className="max-w-screen relative flex h-screen flex-col bg-colorBackground">
+      <div className="relative">
+        <img
+          src={TruckTrinityPng}
+          className="h-full w-full bg-fixed object-cover"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-50" />
+      </div>
       <Header />
       <Body>
         <div className="rounded-md bg-gray-200 p-6 px-10 shadow-md">
