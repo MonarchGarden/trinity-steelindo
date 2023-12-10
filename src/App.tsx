@@ -11,6 +11,7 @@ export default function App() {
           src={TruckTrinityPng}
           className="h-full w-full bg-fixed object-cover"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-transparent to-colorPrimary" />
         <div className="absolute inset-0 bg-black bg-opacity-50" />
       </div>
       <Header />
