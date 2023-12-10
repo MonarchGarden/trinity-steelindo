@@ -5,13 +5,17 @@ import {TruckTrinityPng} from './assets';
 
 export default function App() {
   return (
+    // Cover Background with color image and max width screen
     <div className="max-w-screen relative flex h-screen flex-col bg-colorBackground">
       <div className="relative">
+        {/* ImageShadows */}
         <img
           src={TruckTrinityPng}
           className="h-full w-full bg-fixed object-cover"
         />
+        {/* Gradient Top */}
         <div className="absolute inset-0 bg-gradient-to-t from-transparent to-colorPrimary" />
+        {/* Curtain Shadows */}
         <div className="absolute inset-0 bg-black bg-opacity-50" />
       </div>
       <Header />
