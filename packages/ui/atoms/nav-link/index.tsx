@@ -13,14 +13,14 @@ export const NavButtonLink = ({navBarTitle, isHeaderHovered}: Props) => {
       href="/"
       className={`relative border-b-2 border-transparent px-3 py-2 text-sm font-bold ${
         isHeaderHovered ? 'text-colorPrimary' : 'text-white'
-      } hover:text-colorPrimaryh hover:border-colorPrimary`}
+      } hover:text-colorPrimary`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}>
-      <span
-        className={`absolute bottom-0 left-0 h-0 w-0 transition-all ${
-          isHeaderHovered ? '' : 'group-hover:w-full'
-        }`}></span>
       {navBarTitle}
+      <span
+        className={`absolute bottom-0 left-0 h-0.5 border-b-2 border-colorPrimary transition-all ${
+          isHovered ? 'w-full' : 'w-0'
+        }`}></span>{' '}
     </a>
   );
 };
