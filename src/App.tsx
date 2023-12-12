@@ -1,7 +1,13 @@
 import React from 'react';
 import './index.css';
 import {Body, Header} from '@trinity-steelindo/ui/organisms';
-import {TruckTrinityPng} from './assets';
+import {
+  IconLogoTrinityBlack,
+  IconLogoTrinityTrans,
+  IconLogoTrinityWhite,
+  IconLogoTrinityWhiteTrans,
+  TruckTrinityPng,
+} from './assets';
 
 export default function App() {
   return (
@@ -18,7 +24,10 @@ export default function App() {
         {/* Curtain Shadows */}
         <div className="absolute inset-0 bg-black bg-opacity-50" />
       </div>
-      <Header />
+      <Header
+        logoBlack={IconLogoTrinityTrans}
+        logoWhite={IconLogoTrinityWhiteTrans}
+      />
       <Body>
         <div className="rounded-md bg-gray-200 p-6 px-10 shadow-md">
           <h1 className="mb-4 text-3xl font-bold">
