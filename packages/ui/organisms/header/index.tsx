@@ -17,7 +17,7 @@ export const Header = ({logoWhite, logoBlack}: Props) => {
       className="group fixed top-0 w-full overflow-hidden p-3 transition-all hover:bg-white group-hover:text-black md:flex"
       onMouseEnter={() => setHeaderHovered(true)}
       onMouseLeave={() => setHeaderHovered(false)}>
-      <div className="container mx-auto flex items-center justify-between">
+      <div className="container mx-auto hidden items-center justify-between md:flex">
         <a
           href="https://flowbite.com/"
           className="flex items-center space-x-3 rtl:space-x-reverse">
@@ -41,10 +41,6 @@ export const Header = ({logoWhite, logoBlack}: Props) => {
             />
             <NavButtonLink
               navBarTitle="Katalog Produk"
-              isHeaderHovered={isHeaderHovered}
-            />
-            <NavButtonLink
-              navBarTitle="Tentang Kami"
               isHeaderHovered={isHeaderHovered}
             />
           </div>
