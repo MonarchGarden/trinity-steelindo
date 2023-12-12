@@ -2,9 +2,7 @@ import React from 'react';
 import './index.css';
 import {Body, Header} from '@trinity-steelindo/ui/organisms';
 import {
-  IconLogoTrinityBlack,
   IconLogoTrinityTrans,
-  IconLogoTrinityWhite,
   IconLogoTrinityWhiteTrans,
   TruckTrinityPng,
 } from './assets';

@@ -1,7 +1,6 @@
 import React, {PropsWithChildren, useState} from 'react';
 import './style.css';
 import {NavButtonLink} from '@trinity-steelindo/ui/atoms';
-import {IconLogoTrinityBlack} from '../../../../src/assets';
 
 type Props = PropsWithChildren & {
   logoWhite: string;
