@@ -14,27 +14,26 @@ export const Header = ({logoWhite, logoBlack}: Props) => {
 
   return (
     <header
-      className="group fixed top-0 w-full overflow-hidden p-3 transition-all hover:bg-white group-hover:text-black md:flex"
+      className="group fixed top-0 w-full overflow-hidden bg-colorPrimary bg-opacity-60 p-3 transition-all hover:bg-white group-hover:text-black md:flex"
       onMouseEnter={() => setHeaderHovered(true)}
       onMouseLeave={() => setHeaderHovered(false)}>
-      <div className="container mx-auto hidden items-center justify-between md:flex">
-        <a
-          href="https://flowbite.com/"
-          className="flex items-center space-x-3 rtl:space-x-reverse">
+      <div className="container mx-auto flex items-center justify-between">
+        <div className="flex items-center space-x-3 rtl:space-x-reverse">
           <img
             src={isHeaderHovered ? logoWhite : logoBlack}
             className="h-20 w-20"
           />
           <span
-            className={`self-center whitespace-nowrap text-2xl font-bold ${
+            className={`hidden self-center whitespace-nowrap text-2xl font-bold md:flex ${
               isHeaderHovered ? 'text-colorPrimary' : 'text-white'
-            }`}
-            style={{whiteSpace: 'pre-line'}}>
-            Trinity{'\n'}SteelIndo
+            } whitespace-pre-line`}>
+            TRINITY{'\n'}STEELINDO
           </span>
-        </a>
-        <nav className="hidden md:flex">
-          <div className="flex items-center">
+        </div>
+        <div className="ml-auto flex items-center">
+          {' '}
+          {/* Use ml-auto to push the content to the right */}
+          <nav className="hidden items-center space-x-4 md:flex">
             <NavButtonLink
               navBarTitle="Beranda"
               isHeaderHovered={isHeaderHovered}
@@ -43,8 +42,31 @@ export const Header = ({logoWhite, logoBlack}: Props) => {
               navBarTitle="Katalog Produk"
               isHeaderHovered={isHeaderHovered}
             />
-          </div>
-        </nav>
+          </nav>
+          {/* Button for mobile view */}
+          <button
+            data-collapse-toggle="navbar-default"
+            type="button"
+            className="h-10 w-10 items-center justify-center rounded-lg p-2 text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
+            aria-controls="navbar-default"
+            aria-expanded="false">
+            <span className="sr-only">Open main menu</span>
+            <svg
+              className="h-5 w-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14">
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </header>
   );
