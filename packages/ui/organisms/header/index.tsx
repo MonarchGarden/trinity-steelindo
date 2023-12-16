@@ -5,16 +5,20 @@ import {NavButtonLink} from '@trinity-steelindo/ui/atoms';
 type Props = PropsWithChildren & {
   logoWhite: string;
   logoBlack: string;
+  headerOpacity: number;
 };
 
 //TODO as of now everything is hardcoded
-export const Header = ({logoWhite, logoBlack}: Props) => {
+export const Header = ({logoWhite, logoBlack, headerOpacity}: Props) => {
   //Forced to use useState to change the navbuttonLink Text
   const [isHeaderHovered, setHeaderHovered] = useState(false);
-
   return (
     <header
-      className="group fixed top-0 w-full overflow-hidden bg-colorPrimary bg-opacity-60 p-3 transition-all hover:bg-white group-hover:text-black md:flex"
+      className={`${
+        headerOpacity! > 0.4 ? 'opacity-0' : 'opacity-100'
+      } group fixed top-0 w-full
+        overflow-hidden bg-colorPrimary bg-opacity-70 p-3 transition-all hover:bg-white group-hover:text-black
+      md:flex`}
       onMouseEnter={() => setHeaderHovered(true)}
       onMouseLeave={() => setHeaderHovered(false)}>
       <div className="container mx-auto flex items-center justify-between">
