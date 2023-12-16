@@ -15,7 +15,7 @@ export const Header = ({logoWhite, logoBlack, headerOpacity}: Props) => {
   return (
     <header
       className={`${
-        headerOpacity! > 0.4 ? 'opacity-0' : 'opacity-100'
+        headerOpacity! > 0.5 ? 'opacity-0' : 'opacity-100'
       } group fixed top-0 w-full
         overflow-hidden bg-colorPrimary bg-opacity-70 p-3 transition-all hover:bg-white group-hover:text-black
       md:flex`}
@@ -28,7 +28,7 @@ export const Header = ({logoWhite, logoBlack, headerOpacity}: Props) => {
             className="h-20 w-20"
           />
           <span
-            className={`hidden self-center whitespace-nowrap text-2xl font-bold md:flex ${
+            className={`self-center whitespace-nowrap text-2xl font-bold sm:whitespace-nowrap ${
               isHeaderHovered ? 'text-colorPrimary' : 'text-white'
             } whitespace-pre-line`}>
             TRINITY{'\n'}STEELINDO
