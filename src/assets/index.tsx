@@ -7,3 +7,4 @@ export {default as IconLogoTrinityWhite} from './icon-logo-trins-white.jpg';
 export {default as IconLogoTrinityTrans} from './icon-logo-trins-removebg-preview.png';
 export {default as IconLogoTrinityWhiteTrans} from './icon-logo-trins-white-removebg-preview.png';
 export {default as IconTrinityFactory} from './ic_steel_factory.png';
+export {default as IconLogoCheck} from './ic-logo-check.png';

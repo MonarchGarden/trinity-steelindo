@@ -15,7 +15,7 @@ export const Header = ({logoWhite, logoBlack, headerOpacity}: Props) => {
   return (
     <header
       className={`${
-        headerOpacity! > 0.5 ? 'opacity-0' : 'opacity-100'
+        headerOpacity! > 0.2 ? 'opacity-0' : 'opacity-100'
       } group fixed top-0 w-full
         overflow-hidden bg-colorPrimary bg-opacity-70 p-3 transition-all hover:bg-white group-hover:text-black
       md:flex`}

@@ -23,6 +23,34 @@
   }
 }
 
+@media (min-width: 550px) {
+  .group-textbox {
+    transform: scale(0.5);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+@media (min-width: 640px) {
+  .group-textbox {
+    transform: scale(0.8);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+@media (min-width: 1024px) {
+  .group-textbox {
+    transform: scale(0.8);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+@media (min-width: 1280px) {
+  .group-textbox {
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
 .header:hover a {
   color: #081923;
 }
