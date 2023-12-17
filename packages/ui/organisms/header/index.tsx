@@ -16,21 +16,20 @@ export const Header = ({logoWhite, logoBlack, headerOpacity}: Props) => {
     <header
       className={`${
         headerOpacity! > 0.2 ? 'opacity-0' : 'opacity-100'
-      } group fixed top-0 w-full
-        overflow-hidden bg-colorPrimary bg-opacity-70 p-3 transition-all hover:bg-white group-hover:text-black
+      } group fixed top-0 w-full overflow-hidden bg-colorPrimary bg-opacity-75 p-3 transition-all hover:bg-white group-hover:text-black
       md:flex`}
       onMouseEnter={() => setHeaderHovered(true)}
       onMouseLeave={() => setHeaderHovered(false)}>
       <div className="container mx-auto flex items-center justify-between">
-        <div className="flex items-center space-x-3 rtl:space-x-reverse">
+        <div className="flex items-center">
           <img
             src={isHeaderHovered ? logoWhite : logoBlack}
             className="h-20 w-20"
           />
           <span
-            className={`self-center whitespace-nowrap text-2xl font-bold sm:whitespace-nowrap ${
+            className={`self-center whitespace-nowrap text-2xl font-bold sm:text-lg md:whitespace-nowrap md:text-xl ${
               isHeaderHovered ? 'text-colorPrimary' : 'text-white'
-            } whitespace-pre-line`}>
+            } trinity-title-text whitespace-pre-line`}>
             TRINITY{'\n'}STEELINDO
           </span>
         </div>
