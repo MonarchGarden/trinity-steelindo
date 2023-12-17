@@ -6,7 +6,7 @@ import {
   IconLogoTrinityWhiteTrans,
   IconTrinityFactory,
   TruckTrinityPng,
-} from '../assets';
+} from './assets';
 
 export default function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
