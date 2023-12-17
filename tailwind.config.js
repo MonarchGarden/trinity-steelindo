@@ -18,14 +18,14 @@ module.exports = {
     //   '2xl': {min: '1536px'},
     // },
     extend: {
-      backgroundImage: {
+      backgroundImage: (theme) => ({
         IconTrinityTruckSecondFull:
           "url('/src/assets/icon-trinity-truck-2-full-size.jpeg')",
         IconTrinityTruckSecondCropped:
           "url('/src/assets/icon-trinity-truck-2.jpeg')",
         TruckTrinityPng:
           "url('/src/assets/trinity-steelindo-truck-crop-1.jpg')",
-      },
+      }),
       backgroundColor: {
         colorPrimary: '#081923',
         colorBackground: '#0c2b3f',
