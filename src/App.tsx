@@ -32,7 +32,7 @@ export default function App() {
     // Cover Background with color image and max width screen
     <div className="relative flex h-screen w-screen flex-col overflow-x-hidden bg-colorPrimary">
       {/* Mobile Version */}
-      <div className="relative h-1/3 w-full overflow-hidden bg-IconTrinityTruckSecondFull bg-cover bg-center sm:hidden">
+      <div className="relative h-screen w-full overflow-hidden bg-IconTrinityTruckSecondFull bg-cover bg-center sm:hidden">
         {/* Gradient Top */}
         <div className="bg-gradient-to-t absolute inset-0 from-transparent to-colorPrimary" />
         {/* Curtain Shadows */}
