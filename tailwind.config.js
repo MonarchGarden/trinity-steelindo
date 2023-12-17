@@ -19,11 +19,10 @@ module.exports = {
     // },
     backgroundImage: (theme) => ({
       IconTrinityTruckSecondFull:
-        "url('../src/assets/icon-trinity-truck-2-full-size.jpeg')",
+        "url('./src/assets/icon-trinity-truck-2-full-size.jpeg')",
       IconTrinityTruckSecondCropped:
-        "url('../src/assets/icon-trinity-truck-2.jpeg')",
-      TruckTrinityPng:
-        "url('../src/assets/trinity-steelindo-truck-crop-1.jpg')",
+        "url('./src/assets/icon-trinity-truck-2.jpeg')",
+      TruckTrinityPng: "url('./src/assets/trinity-steelindo-truck-crop-1.jpg')",
     }),
     extend: {
       backgroundColor: {
