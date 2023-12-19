@@ -44,7 +44,7 @@ export default function App() {
       {loading ? (
         <SplashScreen />
       ) : (
-        <div className="relative flex h-full w-screen flex-col overflow-x-hidden bg-colorPrimary">
+        <div className="relative flex h-full w-full flex-col overflow-x-hidden bg-colorPrimary">
           {/* Mobile Version */}
           <div className="relative h-screen w-full overflow-hidden bg-IconTrinityTruckSecondFull bg-cover bg-center sm:hidden">
             {/* Gradient Top */}
