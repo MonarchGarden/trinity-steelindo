@@ -47,7 +47,7 @@ export default function App() {
       ) : (
         <div className="relative flex h-screen w-screen flex-col overflow-x-hidden bg-colorPrimary">
           {/* Mobile Version */}
-          <div className="relative h-screen w-full overflow-hidden bg-IconTrinityTruckSecondFull bg-cover bg-center sm:hidden">
+          <div className="relative h-1/2 w-full overflow-hidden bg-IconTrinityTruckSecondFull bg-cover bg-center sm:hidden">
             {/* Gradient Top */}
             <div className="absolute inset-0 bg-gradient-to-t from-transparent to-colorPrimary" />
             {/* Curtain Shadows */}
