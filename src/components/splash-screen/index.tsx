@@ -3,17 +3,14 @@ import {IconLogoTrinityTrans} from '../../assets';
 
 const SplashScreen = () => {
   return (
-    <div className="flex h-screen items-center justify-center bg-colorPrimary">
-      <div className="relative h-20 w-20">
-        <div className="animate-ease-in h-full w-full animate-spin rounded-full border-b-2 border-blue-500">
-          <div className="absolute inset-0 flex animate-none items-center justify-center">
-            <img
-              src={IconLogoTrinityTrans}
-              className="h-full w-full animate-none object-cover"
-              alt="Logo"
-            />
-          </div>
-        </div>
+    <div className="flex h-screen items-center justify-center  bg-colorPrimary">
+      <div className="relative h-32 w-32 ">
+        <div className="animate-ease-in h-full w-full animate-spin rounded-full border-b-2 border-blue-500" />
+        <img
+          src={IconLogoTrinityTrans}
+          className="absolute inset-0 h-32 w-32 items-center justify-center bg-center object-cover"
+          alt="Logo"
+        />
       </div>
     </div>
   );
