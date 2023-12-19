@@ -11,6 +11,7 @@ import SplashScreen from './components/splash-screen';
 export default function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [bodyAnimationVisible, setBodyAnimationVisible] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,17 +35,25 @@ export default function App() {
     };
   }, []);
 
+  console.log(`Test : ${scrollPosition} +  ${window.innerWidth}`);
+
   const headerOpacity = Math.min(
     scrollPosition / (0.25 * window.innerWidth),
     1,
   );
+
+  useEffect(() => {
+    if (headerOpacity > 0.6) {
+      setBodyAnimationVisible(true);
+    }
+  }, [scrollPosition, loading]);
 
   return (
     <>
       {loading ? (
         <SplashScreen />
       ) : (
-        <div className="relative flex h-full w-full flex-col overflow-x-hidden bg-colorPrimary">
+        <div className="relative flex h-full w-full flex-col overflow-hidden bg-colorPrimary">
           {/* Mobile Version */}
           <div className="relative h-screen w-full overflow-hidden bg-IconTrinityTruckSecondFull bg-cover bg-center sm:hidden">
             {/* Gradient Top */}
@@ -89,30 +98,42 @@ export default function App() {
             logoWhite={IconLogoTrinityWhiteTrans}
           />
           <Body>
-            <div className="flex flex-col items-center">
+            <div className={`flex flex-col items-center`}>
               <div className="overflow-hidden whitespace-nowrap">
-                <h1 className="fill-text-title text-colorTitle title-animation overflow-hidden font-serif text-4xl">
-                  WHO WE ARE
+                <h1
+                  className={`${
+                    headerOpacity > 0.6 || window.innerWidth > 750
+                      ? 'fill-text-title'
+                      : ''
+                  } text-colorTitle overflow-hidden font-serif text-4xl`}>
+                  {headerOpacity > 0.6 || window.innerWidth > 750
+                    ? 'WHO WE ARE'
+                    : ''}
                 </h1>
               </div>
-              <div className="text-colorDescription description-animation text-center text-xl sm:block">
+              <div
+                className={`${
+                  headerOpacity > 0.6 || window.innerWidth > 750
+                    ? 'text-colorDescription'
+                    : ''
+                } description-animation text-center text-xl sm:block`}>
                 <div className="flex flex-col py-10 sm:flex-row">
                   <h6 className="mb-8 w-full scale-100 transform text-start transition-transform sm:mb-0 sm:w-1/2">
-                    Upgrade your roofing needs with UPVC roofing products from
-                    us. These products provide durability and aesthetic appeal,
-                    ensuring that your projects are built to last. Join us as we
-                    offer innovation, reliability, and top-notch customer
-                    satisfaction in every product we provide.
+                    {headerOpacity > 0.6 || window.innerWidth > 750
+                      ? 'Upgrade your roofing needs with UPVC roofing products from us. These products provide durability and aesthetic appeal, ensuring that your projects are built to last. Join us as we offer innovation, reliability, and top-notch customer satisfaction in every product we provide.'
+                      : ''}
                   </h6>
                   <div className="w-full sm:w-10"></div>
                   <h6 className="w-full scale-100 transform text-start transition-transform sm:w-1/2">
-                    Feel free to get in touch with us if you have any further
-                    questions. We look forward to assisting you in choosing the
-                    right UPVC roofing products for your project.
+                    {headerOpacity > 0.6 || window.innerWidth > 750
+                      ? 'Feel free to get in touch with us if you have any further questions. We look forward to assisting you in choosing the right UPVC roofing products for your project.'
+                      : ''}
                   </h6>
                 </div>
                 <div className="text-sm font-extralight">
-                  Brian, Dio, Wandi. Founders. Trinity SteelIndo
+                  {headerOpacity > 0.6 || window.innerWidth > 750
+                    ? 'Brian, Dio, Wandi. Founders. Trinity SteelIndo'
+                    : ''}
                 </div>
               </div>
             </div>

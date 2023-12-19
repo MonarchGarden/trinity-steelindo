@@ -46,10 +46,6 @@
   animation: spin 2s linear infinite;
 }
 
-.animate-none {
-  animation: none !important;
-}
-
 .fill-text-title {
   display: inline-block;
   animation: fillTextTitle 3s linear forwards;
@@ -58,7 +54,7 @@
 .description-animation {
   opacity: 0;
   transform: translateY(5px);
-  animation: descriptionAppear 1s forwards 5s;
+  animation: descriptionAppear 1s forwards 10s;
 }
 
 @keyframes fillTextTitle {
