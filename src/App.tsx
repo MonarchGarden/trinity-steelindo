@@ -11,7 +11,6 @@ import SplashScreen from './components/splash-screen';
 export default function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [loading, setLoading] = useState(true);
-  const [bodyAnimationVisible, setBodyAnimationVisible] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,12 +40,6 @@ export default function App() {
     scrollPosition / (0.25 * window.innerWidth),
     1,
   );
-
-  useEffect(() => {
-    if (headerOpacity > 0.6) {
-      setBodyAnimationVisible(true);
-    }
-  }, [scrollPosition, loading]);
 
   return (
     <>
