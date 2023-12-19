@@ -35,3 +35,17 @@
     background-image: url('./assets/trinity-steelindo-truck.jpg');
   }
 }
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-container {
+  animation: spin 2s linear infinite;
+}
+
+.animate-none {
+  animation: none !important;
+}
