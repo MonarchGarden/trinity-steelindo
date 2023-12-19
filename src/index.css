@@ -49,3 +49,32 @@
 .animate-none {
   animation: none !important;
 }
+
+.fill-text-title {
+  display: inline-block;
+  animation: fillTextTitle 3s linear forwards;
+}
+
+.description-animation {
+  opacity: 0;
+  transform: translateY(5px);
+  animation: descriptionAppear 1s forwards 5s;
+}
+
+@keyframes fillTextTitle {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes descriptionAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}

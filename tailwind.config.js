@@ -30,6 +30,7 @@ module.exports = {
         colorPrimary: '#081923',
         colorBackground: '#0c2b3f',
       },
+
       borderColor: {
         colorPrimary: '#081923',
         colorBackground: '#0c2b3f',
@@ -37,6 +38,8 @@ module.exports = {
       colors: {
         colorPrimary: '#081923',
         colorSecondary: '#0c2b3f',
+        colorTitle: '#318DE9',
+        colorDescription: '#BCBDBD',
       },
     },
   },

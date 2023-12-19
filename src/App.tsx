@@ -4,7 +4,6 @@ import {Body, Header} from '@trinity-steelindo/ui/organisms';
 import {
   IconLogoTrinityTrans,
   IconLogoTrinityWhiteTrans,
-  IconTrinityFactory,
   TruckTrinityPng,
 } from './assets';
 import SplashScreen from './components/splash-screen';
@@ -45,9 +44,9 @@ export default function App() {
       {loading ? (
         <SplashScreen />
       ) : (
-        <div className="relative flex h-screen w-screen flex-col overflow-x-hidden bg-colorPrimary">
+        <div className="relative flex h-full w-screen flex-col overflow-x-hidden bg-colorPrimary">
           {/* Mobile Version */}
-          <div className="relative h-1/2 w-full overflow-hidden bg-IconTrinityTruckSecondFull bg-cover bg-center sm:hidden">
+          <div className="relative h-screen w-full overflow-hidden bg-IconTrinityTruckSecondFull bg-cover bg-center sm:hidden">
             {/* Gradient Top */}
             <div className="absolute inset-0 bg-gradient-to-t from-transparent to-colorPrimary" />
             {/* Curtain Shadows */}
@@ -90,11 +89,32 @@ export default function App() {
             logoWhite={IconLogoTrinityWhiteTrans}
           />
           <Body>
-            <div className="rounded-md bg-gray-200 p-6 px-10 shadow-md">
-              <img
-                src={IconTrinityFactory}
-                className="h-full w-full rounded-md bg-fixed object-cover"
-              />
+            <div className="flex flex-col items-center">
+              <div className="overflow-hidden whitespace-nowrap">
+                <h1 className="fill-text-title text-colorTitle title-animation overflow-hidden font-serif text-4xl">
+                  WHO WE ARE
+                </h1>
+              </div>
+              <div className="text-colorDescription description-animation text-center text-xl sm:block">
+                <div className="flex flex-col py-10 sm:flex-row">
+                  <h6 className="mb-8 w-full scale-100 transform text-start transition-transform sm:mb-0 sm:w-1/2">
+                    Upgrade your roofing needs with UPVC roofing products from
+                    us. These products provide durability and aesthetic appeal,
+                    ensuring that your projects are built to last. Join us as we
+                    offer innovation, reliability, and top-notch customer
+                    satisfaction in every product we provide.
+                  </h6>
+                  <div className="w-full sm:w-10"></div>
+                  <h6 className="w-full scale-100 transform text-start transition-transform sm:w-1/2">
+                    Feel free to get in touch with us if you have any further
+                    questions. We look forward to assisting you in choosing the
+                    right UPVC roofing products for your project.
+                  </h6>
+                </div>
+                <div className="text-sm font-extralight">
+                  Brian, Dio, Wandi. Founders. Trinity SteelIndo
+                </div>
+              </div>
             </div>
           </Body>
         </div>
