@@ -36,16 +36,6 @@
   }
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin-container {
-  animation: spin 2s linear infinite;
-}
-
 .fill-text-title {
   display: inline-block;
   animation: fillTextTitle 3s linear forwards;

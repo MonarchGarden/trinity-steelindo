@@ -94,11 +94,7 @@ export default function App() {
             <div className={`flex flex-col items-center`}>
               <div className="overflow-hidden whitespace-nowrap">
                 <h1
-                  className={`${
-                    headerOpacity > 0.6 || window.innerWidth > 750
-                      ? 'fill-text-title'
-                      : ''
-                  } text-colorTitle overflow-hidden font-serif text-4xl`}>
+                  className={`fill-text-title text-colorTitle overflow-hidden font-serif text-4xl`}>
                   {headerOpacity > 0.6 || window.innerWidth > 750
                     ? 'WHO WE ARE'
                     : ''}
