@@ -26,7 +26,6 @@ export default function App() {
     const handleScroll = () => {
       setScrollPosition(window.scrollY);
     };
-
     window.addEventListener('scroll', handleScroll);
 
     return () => {
@@ -34,10 +33,8 @@ export default function App() {
     };
   }, []);
 
-  console.log(`Test : ${scrollPosition} +  ${window.innerWidth}`);
-
-  const headerOpacity = Math.min(
-    scrollPosition / (0.25 * window.innerWidth),
+  const innerHeightScrollPosition = Math.min(
+    scrollPosition / (0.25 * window.innerHeight),
     1,
   );
 
@@ -64,7 +61,10 @@ export default function App() {
           {/*TestAgain */}
           {/* Desktop and Tablet Version */}
           <div className="relative hidden sm:block">
-            <img src={TruckTrinityPng} className="h-full w-full object-cover" />
+            <img
+              src={TruckTrinityPng}
+              className="h-screen w-full object-cover"
+            />
             {/* Gradient Top */}
             <div className="absolute inset-0 bg-gradient-to-t from-transparent to-colorPrimary" />
             {/* Curtain Shadows */}
@@ -86,7 +86,7 @@ export default function App() {
           </div>
           {/* Header and Body components */}
           <Header
-            headerOpacity={headerOpacity}
+            headerOpacity={innerHeightScrollPosition}
             logoBlack={IconLogoTrinityTrans}
             logoWhite={IconLogoTrinityWhiteTrans}
           />
@@ -94,35 +94,35 @@ export default function App() {
             <div className={`flex flex-col items-center`}>
               <div className="overflow-hidden whitespace-nowrap">
                 <h1
-                  className={`fill-text-title text-colorTitle overflow-hidden font-serif text-4xl`}>
-                  {headerOpacity > 0.6 || window.innerWidth > 750
-                    ? 'WHO WE ARE'
-                    : ''}
+                  className={`${
+                    innerHeightScrollPosition > 0 ? 'fill-text-title' : 'hidden'
+                  } overflow-hidden font-serif text-4xl text-colorTitle`}>
+                  WHO WE ARE
                 </h1>
               </div>
               <div
                 className={`${
-                  headerOpacity > 0.6 || window.innerWidth > 750
-                    ? 'text-colorDescription'
-                    : ''
-                } description-animation text-center text-xl sm:block`}>
+                  innerHeightScrollPosition > 0
+                    ? 'description-animation'
+                    : 'hidden'
+                } text-center text-xl text-colorDescription sm:block`}>
                 <div className="flex flex-col py-10 sm:flex-row">
                   <h6 className="mb-8 w-full scale-100 transform text-start transition-transform sm:mb-0 sm:w-1/2">
-                    {headerOpacity > 0.6 || window.innerWidth > 750
-                      ? 'Upgrade your roofing needs with UPVC roofing products from us. These products provide durability and aesthetic appeal, ensuring that your projects are built to last. Join us as we offer innovation, reliability, and top-notch customer satisfaction in every product we provide.'
-                      : ''}
+                    Upgrade your roofing needs with UPVC roofing products from
+                    us. These products provide durability and aesthetic appeal,
+                    ensuring that your projects are built to last. Join us as we
+                    offer innovation, reliability, and top-notch customer
+                    satisfaction in every product we provide.
                   </h6>
                   <div className="w-full sm:w-10"></div>
                   <h6 className="w-full scale-100 transform text-start transition-transform sm:w-1/2">
-                    {headerOpacity > 0.6 || window.innerWidth > 750
-                      ? 'Feel free to get in touch with us if you have any further questions. We look forward to assisting you in choosing the right UPVC roofing products for your project.'
-                      : ''}
+                    Feel free to get in touch with us if you have any further
+                    questions. We look forward to assisting you in choosing the
+                    right UPVC roofing products for your project.
                   </h6>
                 </div>
-                <div className="text-sm font-extralight">
-                  {headerOpacity > 0.6 || window.innerWidth > 750
-                    ? 'Brian, Dio, Wandi. Founders. Trinity SteelIndo'
-                    : ''}
+                <div className="pb-5 text-sm font-extralight">
+                  Brian, Dio, Wandi. Founders. Trinity SteelIndo
                 </div>
               </div>
             </div>

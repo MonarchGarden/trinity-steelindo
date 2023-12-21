@@ -44,7 +44,7 @@
 .description-animation {
   opacity: 0;
   transform: translateY(5px);
-  animation: descriptionAppear 1s forwards 6s;
+  animation: descriptionAppear 1s forwards 5.5s;
 }
 
 @keyframes fillTextTitle {
