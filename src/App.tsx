@@ -11,6 +11,7 @@ import SplashScreen from './components/splash-screen';
 export default function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [showsOnce, setShownOnce] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,6 +38,12 @@ export default function App() {
     scrollPosition / (0.25 * window.innerHeight),
     1,
   );
+
+  useEffect(() => {
+    if (innerHeightScrollPosition > 0) {
+      setShownOnce(true);
+    }
+  }, [showsOnce, innerHeightScrollPosition]);
 
   return (
     <>
@@ -95,16 +102,14 @@ export default function App() {
               <div className="overflow-hidden whitespace-nowrap">
                 <h1
                   className={`${
-                    innerHeightScrollPosition > 0 ? 'fill-text-title' : 'hidden'
+                    showsOnce ? 'fill-text-title' : 'hidden'
                   } overflow-hidden font-serif text-4xl text-colorTitle`}>
                   WHO WE ARE
                 </h1>
               </div>
               <div
                 className={`${
-                  innerHeightScrollPosition > 0
-                    ? 'description-animation'
-                    : 'hidden'
+                  showsOnce ? 'description-animation' : 'hidden'
                 } text-center text-xl text-colorDescription sm:block`}>
                 <div className="flex flex-col py-10 sm:flex-row">
                   <h6 className="mb-8 w-full scale-100 transform text-start transition-transform sm:mb-0 sm:w-1/2">
