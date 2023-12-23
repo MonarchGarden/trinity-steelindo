@@ -5,7 +5,7 @@ type Props = PropsWithChildren;
 
 export const Body = ({children}: Props) => {
   return (
-    <body className="flex h-screen w-full justify-center self-center bg-colorBackground px-10 py-10 md:flex">
+    <body className="flex h-full w-full bg-colorBackground px-10 py-10 md:flex">
       {children}
     </body>
   );

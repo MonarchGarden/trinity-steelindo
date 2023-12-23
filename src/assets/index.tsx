@@ -10,3 +10,4 @@ export {default as IconTrinityFactory} from './ic_steel_factory.png';
 export {default as IconLogoCheck} from './ic-logo-check.png';
 export {default as IconTrinityTruck} from './trinity-steelindo-truck.jpg';
 export {default as IconTrinityTruckSecond} from './icon-trinity-truck-2.jpeg';
+export {default as IconTrinityTruckHorizontal} from './ic-trinity-truck-3.jpeg';

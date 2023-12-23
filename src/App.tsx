@@ -66,12 +66,8 @@ export default function App() {
             </div>
           </div>
           {/*TestAgain */}
-          {/* Desktop and Tablet Version */}
-          <div className="relative hidden sm:block">
-            <img
-              src={TruckTrinityPng}
-              className="h-screen w-full object-cover"
-            />
+          {/* Desktop and Tablet Version bg-IconTrinityTruckSecond*/}
+          <div className="bg-IconTrinityTruckSecond relative hidden h-screen w-full bg-cover bg-center bg-no-repeat sm:block">
             {/* Gradient Top */}
             <div className="absolute inset-0 bg-gradient-to-t from-transparent to-colorPrimary" />
             {/* Curtain Shadows */}
@@ -98,21 +94,21 @@ export default function App() {
             logoWhite={IconLogoTrinityWhiteTrans}
           />
           <Body>
-            <div className={`flex flex-col items-center`}>
-              <div className="overflow-hidden whitespace-nowrap">
+            <div className={`block flex-col`}>
+              <div className="w-full overflow-hidden whitespace-nowrap  text-center">
                 <h1
                   className={`${
                     showsOnce ? 'fill-text-title' : 'hidden'
-                  } overflow-hidden font-serif text-4xl text-colorTitle`}>
+                  } overflow-hidden pb-5 font-serif text-4xl text-colorTitle`}>
                   WHO WE ARE
                 </h1>
               </div>
               <div
                 className={`${
                   showsOnce ? 'description-animation' : 'hidden'
-                } text-center text-xl text-colorDescription sm:block`}>
-                <div className="flex flex-col py-10 sm:flex-row">
-                  <h6 className="mb-8 w-full scale-100 transform text-start transition-transform sm:mb-0 sm:w-1/2">
+                } block text-xl text-colorDescription sm:block`}>
+                <div className="flex flex-col pb-5 sm:flex-row ">
+                  <h6 className="mb-8 w-full scale-100 transform text-justify transition-transform sm:mb-0 sm:w-1/2">
                     Upgrade your roofing needs with UPVC roofing products from
                     us. These products provide durability and aesthetic appeal,
                     ensuring that your projects are built to last. Join us as we
@@ -120,13 +116,27 @@ export default function App() {
                     satisfaction in every product we provide.
                   </h6>
                   <div className="w-full sm:w-10"></div>
-                  <h6 className="w-full scale-100 transform text-start transition-transform sm:w-1/2">
+                  <h6 className="w-full scale-100 transform text-justify transition-transform sm:w-1/2">
                     Feel free to get in touch with us if you have any further
                     questions. We look forward to assisting you in choosing the
                     right UPVC roofing products for your project.
                   </h6>
                 </div>
-                <div className="pb-5 text-sm font-extralight">
+                <div className="rounded pb-5 text-center">
+                  <h2 className=" pb-5 text-2xl font-semibold">
+                    Our Activites
+                  </h2>
+                  <div
+                    className={`bg-fit mx-auto h-fit w-full rounded border-r-4 border-transparent bg-TruckTrinityPng object-cover`}>
+                    <h1>Test</h1>
+                  </div>
+                  {/* <img
+                    src={TruckTrinityPng}
+                    className="lock mx-auto h-1/2 w-full rounded border-r-4  border-transparent object-fill"
+                    alt="Truck Image"
+                  /> */}
+                </div>
+                <div className="flex items-center justify-center pb-5 text-center text-sm font-extralight">
                   Brian, Dio, Wandi. Founders. Trinity SteelIndo
                 </div>
               </div>

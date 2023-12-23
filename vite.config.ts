@@ -9,6 +9,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@trinity-steelindo/ui': path.resolve(__dirname, 'packages/ui'),
+      '@trinity-steelindo/assets': path.resolve(__dirname, 'src/assets'),
     },
   },
 });

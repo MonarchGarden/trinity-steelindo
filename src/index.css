@@ -30,9 +30,21 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
   .bg-IconTrinityTruckSecondFull {
     background-image: url('./assets/trinity-steelindo-truck.jpg');
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .bg-IconTrinityTruckSecond {
+    background-image: url('./assets/trinity-steelindo-truck.jpg');
+  }
+}
+
+@media only screen and (min-height: 1500px) {
+  .bg-IconTrinityTruckSecond {
+    background-image: url('./assets/ic-trinity-truck-3.jpeg');
   }
 }
 
@@ -43,7 +55,6 @@
 
 .description-animation {
   opacity: 0;
-  transform: translateY(5px);
   animation: descriptionAppear 1s forwards 5.5s;
 }
 

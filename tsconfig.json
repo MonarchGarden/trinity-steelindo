@@ -7,7 +7,8 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "paths": {
-      "@trinity-steelindo/ui/*": ["./packages/ui/*"]
+      "@trinity-steelindo/ui/*": ["./packages/ui/*"],
+      "@trinity-steelindo/assets/*": ["./src/assets/*"]
     },
     /* Bundler mode */
     "moduleResolution": "node",
