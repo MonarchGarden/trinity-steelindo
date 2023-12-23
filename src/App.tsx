@@ -1,12 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './index.css';
 import {Body, Header} from '@trinity-steelindo/ui/organisms';
-import {
-  IconLogoTrinityTrans,
-  IconLogoTrinityWhiteTrans,
-  IconTrinityFactory,
-  TruckTrinityPng,
-} from './assets';
+import {IconLogoTrinityTrans, IconLogoTrinityWhiteTrans} from './assets';
 import SplashScreen from './components/splash-screen';
 import {Carousel} from '@material-tailwind/react';
 
