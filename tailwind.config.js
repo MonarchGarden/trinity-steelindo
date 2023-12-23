@@ -4,6 +4,7 @@ module.exports = {
     './index.html',
     './src/**/*.{html,js,ts,tsx,css}',
     './packages/**/*.{html,js,ts,tsx,css}',
+    './**/@material-tailwind/**/*.{html,js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     // screens: {
@@ -25,6 +26,7 @@ module.exports = {
           "url('/src/assets/icon-trinity-truck-2.jpeg')",
         TruckTrinityPng:
           "url('/src/assets/trinity-steelindo-truck-crop-1.jpg')",
+        IconSteelFactory: "url('/src/assets/ic_steel_factory.png')",
       }),
       backgroundColor: {
         colorPrimary: '#081923',

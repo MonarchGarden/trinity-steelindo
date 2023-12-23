@@ -4,9 +4,11 @@ import {Body, Header} from '@trinity-steelindo/ui/organisms';
 import {
   IconLogoTrinityTrans,
   IconLogoTrinityWhiteTrans,
+  IconTrinityFactory,
   TruckTrinityPng,
 } from './assets';
 import SplashScreen from './components/splash-screen';
+import {Carousel} from '@material-tailwind/react';
 
 export default function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -126,15 +128,25 @@ export default function App() {
                   <h2 className=" pb-5 text-2xl font-semibold">
                     Our Activites
                   </h2>
-                  <div
-                    className={`bg-fit mx-auto h-fit w-full rounded border-r-4 border-transparent bg-TruckTrinityPng object-cover`}>
-                    <h1>Test</h1>
-                  </div>
-                  {/* <img
-                    src={TruckTrinityPng}
-                    className="lock mx-auto h-1/2 w-full rounded border-r-4  border-transparent object-fill"
-                    alt="Truck Image"
-                  /> */}
+                  <Carousel
+                    transition={{duration: 2}}
+                    className="flex h-full items-center rounded-xl">
+                    <img
+                      src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+                      alt="image 1"
+                      className="h-full w-full object-cover"
+                    />
+                    <img
+                      src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+                      alt="image 2"
+                      className="h-full w-full object-cover"
+                    />
+                    <img
+                      src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+                      alt="image 3"
+                      className="h-full w-full object-cover"
+                    />
+                  </Carousel>
                 </div>
                 <div className="flex items-center justify-center pb-5 text-center text-sm font-extralight">
                   Brian, Dio, Wandi. Founders. Trinity SteelIndo
