@@ -1,7 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import './index.css';
 import {Body, Header} from '@trinity-steelindo/ui/organisms';
-import {IconLogoTrinityTrans, IconLogoTrinityWhiteTrans} from './assets';
+import {
+  IconLogoTrinityTrans,
+  IconLogoTrinityWhiteTrans,
+  IconTrinityDailyActivity,
+  IconTrinityFactory,
+  IconTrinityTruck,
+} from './assets';
 import SplashScreen from './components/splash-screen';
 import {Carousel} from '@material-tailwind/react';
 
@@ -119,25 +125,25 @@ export default function App() {
                     right UPVC roofing products for your project.
                   </h6>
                 </div>
-                <div className="rounded pb-5 text-center">
+                <div className="flex flex-col items-center rounded pb-5 text-center">
                   <h2 className=" pb-5 text-2xl font-semibold">
                     Our Activites
                   </h2>
                   <Carousel
                     transition={{duration: 2}}
-                    className="flex h-full items-center rounded-xl">
+                    className="h-52 w-full items-center rounded-xl sm:w-1/2">
                     <img
-                      src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+                      src={IconTrinityFactory}
                       alt="image 1"
-                      className="h-full w-full object-cover"
+                      className="h-full w-full bg-center object-cover"
                     />
                     <img
-                      src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+                      src={IconTrinityTruck}
                       alt="image 2"
                       className="h-full w-full object-cover"
                     />
                     <img
-                      src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+                      src={IconTrinityDailyActivity}
                       alt="image 3"
                       className="h-full w-full object-cover"
                     />
