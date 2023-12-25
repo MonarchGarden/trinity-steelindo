@@ -68,7 +68,7 @@ export default function App() {
               {/* Responsive text */}
             </div>
           </div>
-          {/*TestAgain */}
+          {/*Test Again */}
           {/* Desktop and Tablet Version bg-IconTrinityTruckSecond*/}
           <div className="bg-IconTrinityTruckSecond relative hidden h-screen w-full bg-cover bg-center bg-no-repeat sm:block">
             {/* Gradient Top */}
