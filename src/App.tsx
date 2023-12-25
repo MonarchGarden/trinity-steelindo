@@ -53,7 +53,7 @@ export default function App() {
       {loading ? (
         <SplashScreen />
       ) : (
-        <div className="relative flex h-full w-full flex-col overflow-hidden bg-colorPrimary">
+        <div className="relative flex h-full w-full flex-col overflow-auto bg-colorPrimary">
           {/* Mobile Version */}
           <div className="relative h-screen w-full overflow-hidden bg-IconTrinityTruckSecondFull bg-cover bg-center sm:hidden">
             {/* Gradient Top */}
@@ -106,11 +106,11 @@ export default function App() {
                   WHO WE ARE
                 </h1>
               </div>
-              <div
-                className={`${
-                  showsOnce ? 'description-animation' : 'hidden'
-                } block text-xl text-colorDescription sm:block`}>
-                <div className={`flex flex-col pb-5 sm:flex-row`}>
+              <div className={`block text-xl text-colorDescription sm:block`}>
+                <div
+                  className={`${
+                    showsOnce ? 'description-animation' : 'hidden'
+                  } flex flex-col pb-5 sm:flex-row`}>
                   <h6 className="mb-8 w-full scale-100 transform text-justify transition-transform sm:mb-0 sm:w-1/2">
                     Upgrade your roofing needs with UPVC roofing products from
                     us. These products provide durability and aesthetic appeal,
@@ -125,14 +125,17 @@ export default function App() {
                     right UPVC roofing products for your project.
                   </h6>
                 </div>
-                <div className="flex flex-col items-center rounded pb-5 text-center">
+                <div
+                  className={`flex flex-col ${
+                    showsOnce ? 'daily-activity-animation' : 'hidden'
+                  } items-center rounded pb-5 text-center`}>
                   <h2 className="relative pb-5 text-2xl font-semibold ">
                     Our Activites
                     <div className="-bottom-px h-1 bg-gradient-to-r from-colorDescription via-transparent to-transparent"></div>
                   </h2>
                   <Carousel
                     transition={{duration: 2}}
-                    className="h-52 w-full items-center rounded-xl sm:w-1/2">
+                    className="h-48 w-full items-center rounded-xl sm:w-1/2 xl:h-96">
                     <img
                       src={IconTrinityFactory}
                       alt="image 1"
@@ -141,12 +144,12 @@ export default function App() {
                     <img
                       src={IconTrinityTruck}
                       alt="image 2"
-                      className="h-full w-full object-cover"
+                      className="h-full w-full bg-center object-cover"
                     />
                     <img
                       src={IconTrinityDailyActivity}
                       alt="image 3"
-                      className="h-full w-full object-cover"
+                      className="h-full w-full bg-center object-cover"
                     />
                   </Carousel>
                 </div>
