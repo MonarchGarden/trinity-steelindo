@@ -110,7 +110,7 @@ export default function App() {
                 className={`${
                   showsOnce ? 'description-animation' : 'hidden'
                 } block text-xl text-colorDescription sm:block`}>
-                <div className="flex flex-col pb-5 sm:flex-row ">
+                <div className={`flex flex-col pb-5 sm:flex-row`}>
                   <h6 className="mb-8 w-full scale-100 transform text-justify transition-transform sm:mb-0 sm:w-1/2">
                     Upgrade your roofing needs with UPVC roofing products from
                     us. These products provide durability and aesthetic appeal,
@@ -126,8 +126,9 @@ export default function App() {
                   </h6>
                 </div>
                 <div className="flex flex-col items-center rounded pb-5 text-center">
-                  <h2 className=" pb-5 text-2xl font-semibold">
+                  <h2 className="relative pb-5 text-2xl font-semibold ">
                     Our Activites
+                    <div className="-bottom-px h-1 bg-gradient-to-r from-colorDescription via-transparent to-transparent"></div>
                   </h2>
                   <Carousel
                     transition={{duration: 2}}
@@ -149,7 +150,10 @@ export default function App() {
                     />
                   </Carousel>
                 </div>
-                <div className="flex items-center justify-center pb-5 text-center text-sm font-extralight">
+                <div
+                  className={`${
+                    showsOnce ? 'founder-text-title' : 'hidden'
+                  } flex items-center justify-center pb-5 text-center text-sm font-extralight`}>
                   Brian, Dio, Wandi. Founders. Trinity SteelIndo
                 </div>
               </div>

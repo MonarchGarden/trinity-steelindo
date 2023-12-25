@@ -58,6 +58,11 @@
   animation: descriptionAppear 1s forwards 5.5s;
 }
 
+.founder-text-title {
+  display: inline-block;
+  animation: founderTextTitle 3s linear forwards 10s;
+}
+
 @keyframes fillTextTitle {
   0% {
     width: 0%;
@@ -73,5 +78,14 @@
   }
   100% {
     opacity: 100;
+  }
+}
+
+@keyframes founderTextTitle {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
   }
 }
