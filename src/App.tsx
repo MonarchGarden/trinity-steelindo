@@ -7,7 +7,6 @@ import {image} from './components/data/image';
 import {
   IconLogoTrinityTrans,
   IconLogoTrinityWhiteTrans,
-  IconTrinityBajaRingan,
 } from '@trinity-steelindo/assets/index';
 import {products} from './components/data/product';
 
