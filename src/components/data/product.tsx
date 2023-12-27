@@ -7,7 +7,7 @@ export const products = [
   {
     productId: 0,
     name: 'baja-ringan-tct',
-    title: 'BAJA RINGAN TCT',
+    title: 'Baja Ringan TCT',
     image: IconTrinityBajaRingan,
     steelFormDescription: [
       {
@@ -30,7 +30,7 @@ export const products = [
   {
     productId: 1,
     name: 'baja-ringan-tct',
-    title: 'BAJA RINGAN TCT',
+    title: 'Hollow Plafon',
     image: IconTrinityHollowPlafon,
     steelFormDescription: [
       {
