@@ -1,6 +1,7 @@
 # Trinity SteelIndo's
 
-This project is using React + TypeScript + Vite + TailWind
+This project is using React + TypeScript + Vite + Tailwind css + Shadcn-ui/ui
+
 
 https://roadmap.sh/react
 
