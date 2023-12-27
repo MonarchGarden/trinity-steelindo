@@ -156,36 +156,52 @@ export default function App() {
               </div>
             </div>
           </Body>
-          <div className="h-screen w-full bg-white">
-            <div className="mx-10 my-5 flex flex-row rounded-md bg-white p-5 shadow-lg">
-              <table className="w-3/4 table-auto border-collapse items-center rounded-md border border-colorDescription">
-                <thead className="bg-colorBackground font-bold text-white">
-                  <tr className="text-center text-sm uppercase">
-                    <th className="border-r border-colorDescription">No</th>
-                    <th className="border-r border-colorDescription">
-                      Deskripsi
-                    </th>
-                    <th className="border-r border-colorDescription">Berat</th>
-                  </tr>
-                </thead>
-                <tbody className="rounded-md">
-                  <tr>
-                    <td className="border-r border-colorDescription text-center">
-                      1.
-                    </td>
-                    <td className="border-r border-colorDescription text-start">
-                      Malcolm Lockyer
-                    </td>
-                    <td className="border-r border-colorDescription text-center">
-                      1961
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <img
-                src={IconTrinityBajaRingan}
-                className="ml-5 h-1/2 w-1/4 rounded-md"
-              />
+          <div className="h-screen w-full bg-white px-5 py-5">
+            {/* Title Products Card*/}
+            <div className="m-5 w-full">
+              <h1 className="text-2xl font-bold">Baja Ringan TCT</h1>
+              <div className="-bottom-px h-1 w-1/4 bg-gradient-to-r from-black via-transparent to-transparent"></div>
+            </div>
+            {/* Parent Container Card */}
+            <div className="overflow-hidden rounded-md bg-white shadow-md">
+              <div className="flex">
+                {/* Table Content */}
+                <div className="mx-auto my-auto w-3/4 p-4">
+                  <table className="w-full border border-colorDescription">
+                    <thead className="bg-colorBackground font-bold text-white">
+                      <tr className="text-center text-sm uppercase">
+                        <th className="border-r border-colorDescription">No</th>
+                        <th className="border-r border-colorDescription">
+                          Deskripsi
+                        </th>
+                        <th className="border-r border-colorDescription">
+                          Berat
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="rounded-md">
+                      <tr>
+                        <td className="border-r border-colorDescription text-center">
+                          1.
+                        </td>
+                        <td className="border-r border-colorDescription text-start">
+                          Malcolm Lockyer
+                        </td>
+                        <td className="border-r border-colorDescription text-center">
+                          1961
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                {/* Image Card */}
+                <div className="flex w-1/4 items-center overflow-hidden rounded">
+                  <img
+                    src={IconTrinityBajaRingan}
+                    className="h-auto w-full overflow-hidden rounded px-5 py-5"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
