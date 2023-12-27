@@ -1,21 +1,23 @@
 import React, {useEffect, useState} from 'react';
 import './index.css';
 import {Body, Header} from '@trinity-steelindo/ui/organisms';
+import SplashScreen from './components/splash-screen';
+import {Carousel} from '@material-tailwind/react';
+import {image} from './components/data/image';
 import {
   IconLogoTrinityTrans,
   IconLogoTrinityWhiteTrans,
-  IconTrinityDailyActivity,
-  IconTrinityFactory,
-  IconTrinityTruck,
-} from './assets';
-import SplashScreen from './components/splash-screen';
-import {Carousel} from '@material-tailwind/react';
+  IconTrinityBajaRingan,
+} from '@trinity-steelindo/assets/index';
 
 export default function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [loading, setLoading] = useState(true);
   const [showsOnce, setShownOnce] = useState(false);
-
+  const data = useState([
+    ['John Doe', 'Developer', '10/10/2020'],
+    ['Jane Smith', 'Designer', '10/15/2020'],
+  ]);
   useEffect(() => {
     const fetchData = async () => {
       await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -47,6 +49,12 @@ export default function App() {
       setShownOnce(true);
     }
   }, [showsOnce, innerHeightScrollPosition]);
+
+  const listOfImageCarousel = image.map((value) => (
+    <img
+      src={value.image}
+      className="h-full w-full bg-center object-cover"></img>
+  ));
 
   return (
     <>
@@ -136,21 +144,7 @@ export default function App() {
                   <Carousel
                     transition={{duration: 2}}
                     className="h-48 w-full items-center rounded-xl sm:w-1/2 xl:h-96">
-                    <img
-                      src={IconTrinityFactory}
-                      alt="image 1"
-                      className="h-full w-full bg-center object-cover"
-                    />
-                    <img
-                      src={IconTrinityTruck}
-                      alt="image 2"
-                      className="h-full w-full bg-center object-cover"
-                    />
-                    <img
-                      src={IconTrinityDailyActivity}
-                      alt="image 3"
-                      className="h-full w-full bg-center object-cover"
-                    />
+                    {listOfImageCarousel}
                   </Carousel>
                 </div>
                 <div
@@ -162,6 +156,38 @@ export default function App() {
               </div>
             </div>
           </Body>
+          <div className="h-screen w-full bg-white">
+            <div className="mx-10 my-5 flex flex-row rounded-md bg-white p-5 shadow-lg">
+              <table className="w-3/4 table-auto border-collapse items-center rounded-md border border-colorDescription">
+                <thead className="bg-colorBackground font-bold text-white">
+                  <tr className="text-center text-sm uppercase">
+                    <th className="border-r border-colorDescription">No</th>
+                    <th className="border-r border-colorDescription">
+                      Deskripsi
+                    </th>
+                    <th className="border-r border-colorDescription">Berat</th>
+                  </tr>
+                </thead>
+                <tbody className="rounded-md">
+                  <tr>
+                    <td className="border-r border-colorDescription text-center">
+                      1.
+                    </td>
+                    <td className="border-r border-colorDescription text-start">
+                      Malcolm Lockyer
+                    </td>
+                    <td className="border-r border-colorDescription text-center">
+                      1961
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <img
+                src={IconTrinityBajaRingan}
+                className="ml-5 h-1/2 w-1/4 rounded-md"
+              />
+            </div>
+          </div>
         </div>
       )}
     </>
