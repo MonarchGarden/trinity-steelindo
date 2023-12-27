@@ -22,5 +22,13 @@ With the current project is running on using Vite, certain command need to run i
 
 2 npm run dev
 
+# Tailwind 
+
+The reason for tailwind css is being implemented in this project is to aim for manual css styling, more control tp each component we have and less css files we have.
+
+# Shadcn-ui/ui
+
+//To be done
+
 
 as Of now, next js is the supposed framework. But for beginner, this will be the stepping stone.
