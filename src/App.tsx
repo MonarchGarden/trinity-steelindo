@@ -73,7 +73,6 @@ export default function App() {
                     <th className="border-r border-colorDescription">Berat</th>
                   </tr>
                 </thead>
-                {/* TEst */}
                 <tbody>
                   {value.steelFormDescription.map((desc, descIndex) => (
                     <tr className="m-5" key={descIndex}>
@@ -123,7 +122,6 @@ export default function App() {
               {/* Responsive text */}
             </div>
           </div>
-          {/*Test Again */}
           {/* Desktop and Tablet Version bg-IconTrinityTruckSecond*/}
           <div className="bg-IconTrinityTruckSecond relative hidden h-screen w-full bg-cover bg-center bg-no-repeat sm:block">
             {/* Gradient Top */}
