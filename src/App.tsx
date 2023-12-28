@@ -75,14 +75,14 @@ export default function App() {
                 </thead>
                 <tbody>
                   {value.steelFormDescription.map((desc, descIndex) => (
-                    <tr className="m-5 p-5" key={descIndex}>
-                      <td className="border-b border-r border-colorDescription text-center font-bold">
+                    <tr className="m-5" key={descIndex}>
+                      <td className="border-b border-r border-colorDescription px-2 py-1 text-center font-bold">
                         {desc.id + 1}.
                       </td>
-                      <td className="border-b border-r border-colorDescription text-start font-bold">
+                      <td className="border-b border-r border-colorDescription px-2 py-1 text-start font-bold">
                         {desc.name}
                       </td>
-                      <td className="border-b border-r border-colorDescription text-center font-bold">
+                      <td className="border-b border-r border-colorDescription px-2 py-1 text-center font-bold">
                         {desc.weight}
                       </td>
                     </tr>
