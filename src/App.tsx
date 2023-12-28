@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './index.css';
 import {Body, Header} from '@trinity-steelindo/ui/organisms';
 import SplashScreen from './components/splash-screen';
