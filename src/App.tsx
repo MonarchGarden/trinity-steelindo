@@ -201,7 +201,7 @@ export default function App() {
               </div>
             </div>
           </Body>
-          <div className="h-screen w-full bg-colorPrimary px-5 py-5">
+          <div className="h-screen w-full overflow-hidden bg-colorPrimary px-5 py-5">
             {listOfMainProducts}
           </div>
         </div>

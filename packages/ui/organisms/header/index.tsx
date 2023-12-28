@@ -13,6 +13,7 @@ export const Header = ({logoWhite, logoBlack, headerOpacity}: Props) => {
   //Forced to use useState to change the navbuttonLink Text
   const [isHeaderHovered, setHeaderHovered] = useState(false);
   return (
+    // Desktop Version
     <header
       className={`${
         headerOpacity! > 0.2 ? 'opacity-0' : 'opacity-100'

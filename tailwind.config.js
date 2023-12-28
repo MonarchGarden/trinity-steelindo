@@ -50,4 +50,12 @@ module.exports = {
       opacity: ['responsive', 'hover', 'focus', 'active'],
     },
   },
+  purge: {
+    content: [
+      './index.html',
+      './src/**/*.{html,js,ts,tsx,css}',
+      './packages/**/*.{html,js,ts,tsx,css}',
+      './**/@material-tailwind/**/*.{html,js,ts,jsx,tsx,mdx}',
+    ],
+  },
 };
