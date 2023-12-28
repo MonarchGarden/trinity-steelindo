@@ -47,14 +47,6 @@ export default function App() {
     }
   }, [showsOnce, innerHeightScrollPosition]);
 
-  const listOfImageCarouselTest = useCallback(() => {
-    image.map((value) => (
-      <img
-        src={value.image}
-        className="h-full w-full bg-center object-cover"></img>
-    ));
-  }, []);
-
   const listOfImageCarousel = image.map((value) => (
     <img
       src={value.image}
