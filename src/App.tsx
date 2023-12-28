@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import './index.css';
 import {Body, Header} from '@trinity-steelindo/ui/organisms';
 import SplashScreen from './components/splash-screen';
@@ -47,6 +47,14 @@ export default function App() {
     }
   }, [showsOnce, innerHeightScrollPosition]);
 
+  const listOfImageCarouselTest = useCallback(() => {
+    image.map((value) => (
+      <img
+        src={value.image}
+        className="h-full w-full bg-center object-cover"></img>
+    ));
+  }, []);
+
   const listOfImageCarousel = image.map((value) => (
     <img
       src={value.image}
@@ -63,8 +71,8 @@ export default function App() {
         <div className="overflow-hidden rounded-md bg-white shadow-md">
           <div className="flex">
             <div className="mx-auto my-auto w-3/4 p-4">
-              <table className="w-full border border-colorDescription">
-                <thead className="bg-colorBackground font-bold text-white">
+              <table className="w-full table-auto border border-colorDescription">
+                <thead className="my-5 bg-colorBackground font-bold text-white">
                   <tr className="text-center text-sm uppercase">
                     <th className="border-r border-colorDescription">No</th>
                     <th className="border-r border-colorDescription">
@@ -73,18 +81,20 @@ export default function App() {
                     <th className="border-r border-colorDescription">Berat</th>
                   </tr>
                 </thead>
-                <tbody className="rounded-md">
-                  <tr>
-                    <td className="border-r border-colorDescription text-center">
-                      1.
-                    </td>
-                    <td className="border-r border-colorDescription text-start">
-                      Test Baja
-                    </td>
-                    <td className="border-r border-colorDescription text-center">
-                      1kg
-                    </td>
-                  </tr>
+                <tbody>
+                  {value.steelFormDescription.map((desc, descIndex) => (
+                    <tr className="m-5 p-5" key={descIndex}>
+                      <td className="border-b border-r border-colorDescription text-center font-bold">
+                        {desc.id + 1}.
+                      </td>
+                      <td className="border-b border-r border-colorDescription text-start font-bold">
+                        {desc.name}
+                      </td>
+                      <td className="border-b border-r border-colorDescription text-center font-bold">
+                        {desc.weight}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
