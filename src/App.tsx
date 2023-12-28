@@ -73,6 +73,7 @@ export default function App() {
                     <th className="border-r border-colorDescription">Berat</th>
                   </tr>
                 </thead>
+                {/* TEst */}
                 <tbody>
                   {value.steelFormDescription.map((desc, descIndex) => (
                     <tr className="m-5" key={descIndex}>
