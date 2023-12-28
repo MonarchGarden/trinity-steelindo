@@ -1,7 +1,6 @@
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
-import obfuscatorPlugin from 'vite-plugin-javascript-obfuscator';
 import {ViteMinifyPlugin} from 'vite-plugin-minify';
 import VitePluginJavascriptObfuscator from 'vite-plugin-javascript-obfuscator';
 
@@ -11,10 +10,12 @@ export default defineConfig({
   plugins: [
     react(),
     ViteMinifyPlugin(),
-    VitePluginJavascriptObfuscator(),
-    obfuscatorPlugin({
+    VitePluginJavascriptObfuscator({
+      exclude: [],
       options: {
-        debugProtection: true,
+        obfuscator: {
+          debugProtection: true,
+        },
       },
     }),
   ],
