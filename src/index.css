@@ -48,6 +48,11 @@
   }
 }
 
+.bg-resize-custom {
+  background-position: center;
+  background-size: cover;
+}
+
 .fill-text-title {
   display: inline-block;
   animation: fillTextTitle 3s linear forwards;

@@ -98,7 +98,7 @@ export default function App() {
                 style={{
                   backgroundImage: `url(${value.image})`,
                 }}
-                className="h-1/2 w-full rounded-xl bg-[5%] bg-no-repeat px-5 py-5"
+                className="bg-resize-custom h-1/2 w-full rounded-xl bg-no-repeat px-5 py-5"
               />
             </div>
           </div>
