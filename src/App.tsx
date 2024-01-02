@@ -109,7 +109,7 @@ export default function App() {
   const listOfMainProductsMobileViews = products.map((value) => {
     return (
       <div className="mx-auto flex h-full w-full flex-col overflow-hidden rounded-xl  bg-white">
-        <div className="aspect-w-2 aspect-h-1 md:aspect-w-2 md:aspect-h-1 h-52 overflow-hidden rounded-t-xl">
+        <div className="h-52 overflow-hidden rounded-t-xl">
           <div
             style={{backgroundImage: `url(${value.image})`}}
             className="h-full w-full bg-cover bg-center"
