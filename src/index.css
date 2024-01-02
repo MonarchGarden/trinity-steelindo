@@ -60,12 +60,12 @@
 
 .daily-activity-animation {
   opacity: 0;
-  animation: dailyActivityAnimation 1s forwards 8s;
+  animation: dailyActivityAnimation 1s forwards 6s;
 }
 
 .founder-text-title {
   opacity: 0;
-  animation: founderTextTitle 1s forwards 10s;
+  animation: founderTextTitle 1s forwards 7s;
 }
 
 @keyframes fillTextTitle {
@@ -104,13 +104,14 @@
   }
 }
 
-@layer utilities {
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
+@layer base {
+  html {
+    color-scheme: light !important;
   }
+}
 
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+@media only screen (max-width: 500px) {
+  .image-resize {
+    height: 50%;
   }
 }

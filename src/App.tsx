@@ -53,7 +53,7 @@ export default function App() {
       className="h-full w-full bg-center object-cover"></img>
   ));
 
-  const listOfMainProducts = products.map((value) => {
+  const listOfMainProductsDesktopViews = products.map((value) => {
     return (
       <>
         <div className="m-5 w-full">
@@ -66,11 +66,15 @@ export default function App() {
               <table className="w-full table-auto border border-colorDescription">
                 <thead className="my-5 bg-colorBackground font-bold text-white">
                   <tr className="text-center text-sm uppercase">
-                    <th className="border-r border-colorDescription">No</th>
-                    <th className="border-r border-colorDescription">
+                    <th className="border-r border-colorDescription px-2 py-1 ">
+                      No
+                    </th>
+                    <th className="border-r border-colorDescription px-2 py-1 ">
                       Deskripsi
                     </th>
-                    <th className="border-r border-colorDescription">Berat</th>
+                    <th className="border-r border-colorDescription px-2 py-1 ">
+                      Berat
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -102,6 +106,27 @@ export default function App() {
     );
   });
 
+  const listOfMainProductsMobileViews = products.map((value) => {
+    return (
+      <div className="mx-auto flex h-full w-full flex-col overflow-hidden rounded-xl  bg-white">
+        <div className="aspect-w-2 aspect-h-1 md:aspect-w-2 md:aspect-h-1 h-52 overflow-hidden rounded-t-xl">
+          <div
+            style={{backgroundImage: `url(${value.image})`}}
+            className="h-full w-full bg-cover bg-center"
+          />
+        </div>
+        <div className="h-auto p-5">
+          <div className="mb-2 text-xl font-bold">{value.title}</div>
+          <h3 className="overflow-hidden text-gray-700">
+            Ini baja ringan, material tidak tertandingi. Berkualitas tapi rapuh.
+            Makanya jangan beli banyak banyak. Nanti rugi.{'\n'}Mending ga usah
+            beli, mending mati aja.
+          </h3>
+        </div>
+      </div>
+    );
+  });
+
   return (
     <>
       {loading ? (
@@ -122,6 +147,7 @@ export default function App() {
               {/* Responsive text */}
             </div>
           </div>
+
           {/* Desktop and Tablet Version bg-IconTrinityTruckSecond*/}
           <div className="bg-IconTrinityTruckSecond relative hidden h-screen w-full bg-cover bg-center bg-no-repeat sm:block">
             {/* Gradient Top */}
@@ -150,8 +176,8 @@ export default function App() {
             logoWhite={IconLogoTrinityWhiteTrans}
           />
           <Body>
-            <div className={`block flex-col`}>
-              <div className="w-full overflow-hidden whitespace-nowrap  text-center">
+            <div className={`block`}>
+              <div className="w-full overflow-hidden whitespace-nowrap text-center">
                 <h1
                   className={`${
                     showsOnce ? 'fill-text-title' : 'hidden'
@@ -201,8 +227,11 @@ export default function App() {
               </div>
             </div>
           </Body>
-          <div className="h-screen w-full overflow-hidden bg-colorPrimary px-5 py-5">
-            {listOfMainProducts}
+          <div className="hidden h-full w-full flex-col bg-colorPrimary px-5 py-5 lg:flex xl:flex">
+            {listOfMainProductsDesktopViews}
+          </div>
+          <div className="grid h-full w-full grid-flow-row gap-5 gap-x-5 bg-colorPrimary p-8 lg:hidden xl:hidden">
+            {listOfMainProductsMobileViews}
           </div>
         </div>
       )}
