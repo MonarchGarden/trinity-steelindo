@@ -10,6 +10,7 @@ export default defineConfig({
   plugins: [
     react(),
     ViteMinifyPlugin(),
+
     vitePlugin({
       exclude: [],
       options: {
@@ -18,13 +19,12 @@ export default defineConfig({
         apply: 'build',
         debugger: true,
         options: {
-          // your javascript-obfuscator options
           debugProtection: true,
-          // ...  [See more options](https://github.com/javascript-obfuscator/javascript-obfuscator)
         },
       },
     }),
   ],
+
   resolve: {
     alias: {
       '@trinity-steelindo/ui': path.resolve(__dirname, 'packages/ui'),

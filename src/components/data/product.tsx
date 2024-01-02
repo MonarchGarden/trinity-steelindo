@@ -60,9 +60,8 @@ export const products = [
   },
   {
     productId: 1,
-    name: 'baja-ringan-tct',
+    name: 'hollow-plafon',
     title: 'Hollow Plafon',
-    // image: IconTrinityBajaRingan,
     image: IconTrinityHollowPlafon,
     steelFormDescription: [
       {

@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  mode: 'jit',
   content: [
     './index.html',
     './src/**/*.{html,js,ts,tsx,css}',
@@ -7,6 +8,15 @@ module.exports = {
     './**/@material-tailwind/**/*.{html,js,ts,jsx,tsx,mdx}',
   ],
   darkMode: 'class',
+  backgroundSize: {
+    auto: 'auto',
+    cover: 'cover',
+    contain: 'contain',
+    '5%': '5%',
+    '20%': '20%',
+    '50%': '50%',
+    '80%': '80%',
+  },
   theme: {
     // screens: {
     //   sm: {min: '640px', max: '767px'},

@@ -64,15 +64,15 @@ export default function App() {
             <div className="mx-auto my-auto w-3/4 p-4">
               <table className="w-full table-auto border border-colorDescription">
                 <thead className="my-5 bg-colorBackground font-bold text-white">
-                  <tr className="text-center text-sm uppercase">
-                    <th className="border-r border-colorDescription px-2 py-1 ">
+                  <tr className="m-5 text-center text-sm uppercase">
+                    <th className="m-5 border-r border-colorDescription px-2 py-1 ">
                       No
                     </th>
-                    <th className="border-r border-colorDescription px-2 py-1 ">
+                    <th className="m-5 border-r border-colorDescription px-2 py-1 ">
                       Deskripsi
                     </th>
-                    <th className="border-r border-colorDescription px-2 py-1 ">
-                      Berat
+                    <th className="m-5 border-r border-colorDescription px-2 py-1 ">
+                      {value.name === 'hollow-plafon' ? 'Panjang' : 'Berat'}
                     </th>
                   </tr>
                 </thead>
@@ -93,10 +93,12 @@ export default function App() {
                 </tbody>
               </table>
             </div>
-            <div className="flex w-1/4 items-center overflow-hidden rounded">
-              <img
-                src={value.image}
-                className="h-auto w-full overflow-hidden rounded px-5 py-5"
+            <div className="flex w-1/4 items-center overflow-hidden rounded-xl px-5">
+              <div
+                style={{
+                  backgroundImage: `url(${value.image})`,
+                }}
+                className="h-1/2 w-full rounded-xl bg-[5%] bg-no-repeat px-5 py-5"
               />
             </div>
           </div>
@@ -107,7 +109,7 @@ export default function App() {
 
   const listOfMainProductsMobileViews = products.map((value) => {
     return (
-      <div className="mx-auto flex h-full w-full flex-col overflow-hidden rounded-xl  bg-white">
+      <div className="mx-auto flex h-full w-full flex-col overflow-hidden rounded-xl bg-white">
         <div className="h-52 overflow-hidden rounded-t-xl">
           <div
             style={{backgroundImage: `url(${value.image})`}}
