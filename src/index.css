@@ -52,6 +52,20 @@
   background-position: center;
   background-size: cover;
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px); /* Optional: Add a slight upward translation */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn;
+}
 
 .fill-text-title {
   display: inline-block;

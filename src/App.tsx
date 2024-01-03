@@ -36,7 +36,7 @@ export default function App() {
   }, []);
 
   const innerHeightScrollPosition = Math.min(
-    scrollPosition / (0.25 * window.innerHeight),
+    scrollPosition / window.innerHeight,
     1,
   );
 
@@ -52,12 +52,15 @@ export default function App() {
       className="h-full w-full bg-center object-cover"></img>
   ));
 
-  const listOfMainProductsDesktopViews = products.map((value) => {
+  const listOfMainProductsDesktopViews = products.map((value, index) => {
     return (
-      <>
-        <div className="m-5 w-full">
+      <div className={`description-animation w-full`}>
+        <div className={`${index % 2 !== 0 ? 'text-end' : 'text-start'} p-5`}>
           <h1 className="text-2xl font-bold text-white">{value.title}</h1>
-          <div className="-bottom-px h-1 w-1/2 bg-gradient-to-r from-white via-transparent to-transparent"></div>
+          <div
+            className={`-bottom-px h-1 w-full bg-gradient-to-${
+              index % 2 === 0 ? 'r' : 'l'
+            } from-white via-transparent to-transparent`}></div>
         </div>
         <div className="overflow-hidden rounded-md bg-white shadow-md">
           <div className="flex">
@@ -103,7 +106,7 @@ export default function App() {
             </div>
           </div>
         </div>
-      </>
+      </div>
     );
   });
 

@@ -14,3 +14,4 @@ export {default as IconTrinityTruckHorizontal} from './ic-trinity-truck-3.jpeg';
 export {default as IconTrinityDailyActivity} from './icon-trinity-daily-acitivy.jpg';
 export {default as IconTrinityBajaRingan} from './icon_baja_ringan_tct.png';
 export {default as IconTrinityHollowPlafon} from './icon-hollow-plafon.png';
+export {default as IconTrinityRengBajaRingan} from './ic-reng-baja-ringan.jpg';

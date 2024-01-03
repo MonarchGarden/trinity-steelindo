@@ -2,6 +2,7 @@
 import {
   IconTrinityBajaRingan,
   IconTrinityHollowPlafon,
+  IconTrinityRengBajaRingan,
 } from '@trinity-steelindo/assets/index';
 
 export const products = [
@@ -123,6 +124,44 @@ export const products = [
         id: 11,
         name: '4x4 HOLO 0.50',
         weight: '4 M',
+      },
+    ],
+  },
+  {
+    productId: 2,
+    name: 'reng-baja-ringan',
+    title: 'Reng Baja Ringan',
+    image: IconTrinityRengBajaRingan,
+    steelFormDescription: [
+      {
+        id: 0,
+        name: '35K E (HITAM)',
+        weight: '+- 8 ons',
+      },
+      {
+        id: 1,
+        name: '35K (PINK)',
+        weight: '+- 1 kg',
+      },
+      {
+        id: 2,
+        name: '40K (MERAH)',
+        weight: '+- 1.2 kg - 1.1 kg',
+      },
+      {
+        id: 3,
+        name: '45K (ORANGE)',
+        weight: '+- 1.4 kg - 1.31 kg',
+      },
+      {
+        id: 4,
+        name: '45B (KUNING)',
+        weight: '+- 1.6 kg',
+      },
+      {
+        id: 5,
+        name: '50B (BIRU)',
+        weight: '+- 1.8 kg',
       },
     ],
   },
