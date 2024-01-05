@@ -63,6 +63,7 @@
     "purify-css": "^1.2.5",
     "rimraf": "^5.0.5",
     "storybook": "^7.5.3",
+    "tailwind-obfuscator": "^1.0.15",
     "tailwindcss": "^3.3.5",
     "typescript": "^5.0.2",
     "vite": "^4.5.0",

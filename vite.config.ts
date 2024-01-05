@@ -3,6 +3,7 @@ import path from 'path';
 import {defineConfig} from 'vite';
 import {ViteMinifyPlugin} from 'vite-plugin-minify';
 import vitePlugin from 'vite-plugin-javascript-obfuscator';
+import twObfuscator from 'tailwind-obfuscator';
 
 // https://vitejs.dev/config/
 export default defineConfig({

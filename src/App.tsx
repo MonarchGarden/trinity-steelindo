@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import './index.css';
+import './indexReal.css';
 import {Body, Header} from '@trinity-steelindo/ui/organisms';
 import SplashScreen from './components/splash-screen';
 import {Carousel} from '@material-tailwind/react';
