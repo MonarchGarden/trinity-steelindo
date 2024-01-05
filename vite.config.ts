@@ -3,7 +3,7 @@ import path from 'path';
 import {defineConfig} from 'vite';
 import {ViteMinifyPlugin} from 'vite-plugin-minify';
 import vitePlugin from 'vite-plugin-javascript-obfuscator';
-import twObfuscator from 'tailwind-obfuscator';
+import utwm from 'unplugin-tailwindcss-mangle/vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,7 +11,7 @@ export default defineConfig({
   plugins: [
     react(),
     ViteMinifyPlugin(),
-
+    utwm({}),
     vitePlugin({
       exclude: [],
       options: {

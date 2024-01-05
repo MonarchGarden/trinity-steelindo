@@ -29,9 +29,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.18.0",
-    "styled-component": "^2.8.0",
-    "tailwindcss-patch": "^2.2.2",
-    "unplugin-tailwindcss-mangle": "^2.2.2"
+    "styled-component": "^2.8.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.5.3",
@@ -55,7 +53,9 @@
     "eslint-plugin-react-refresh": "^0.4.3",
     "eslint-plugin-storybook": "^0.6.15",
     "gh-pages": "^6.0.0",
+    "i": "^0.3.7",
     "javascript-obfuscator": "^4.1.0",
+    "mangle-css-class-webpack-plugin": "^5.1.0",
     "postcss": "^8.4.31",
     "postcss-obfuscator": "^1.6.0",
     "prettier": "^3.0.3",
@@ -65,7 +65,9 @@
     "storybook": "^7.5.3",
     "tailwind-obfuscator": "^1.0.15",
     "tailwindcss": "^3.3.5",
+    "tailwindcss-patch": "^2.2.2",
     "typescript": "^5.0.2",
+    "unplugin-tailwindcss-mangle": "^2.0.6",
     "vite": "^4.5.0",
     "vite-plugin-javascript-obfuscator": "^3.1.0",
     "vite-plugin-minify": "^1.5.2",
