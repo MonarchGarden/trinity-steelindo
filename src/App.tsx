@@ -57,10 +57,14 @@ export default function App() {
       <div className={`description-animation w-full`}>
         <div className={`${index % 2 !== 0 ? 'text-end' : 'text-start'} p-5`}>
           <h1 className="text-2xl font-bold text-white">{value.title}</h1>
-          <div
+          {/* <div
             className={`-bottom-px h-1 w-full bg-gradient-to-${
               index % 2 === 0 ? 'r' : 'l'
-            } from-white via-transparent to-transparent`}></div>
+            } from-colorDescription via-transparent to-transparent`}></div> */}
+          <div
+            className={`-bottom-px h-1 ${
+              index % 2 === 0 ? 'bg-gradient-to-r' : 'bg-gradient-to-l'
+            } from-colorDescription via-transparent to-transparent`}></div>
         </div>
         <div className="overflow-hidden rounded-md bg-white shadow-md">
           <div className="flex">
@@ -218,7 +222,7 @@ export default function App() {
                   </h2>
                   <Carousel
                     transition={{duration: 2}}
-                    className="h-48 w-full items-center rounded-xl sm:w-1/2 xl:h-96">
+                    className="h-48 w-full items-center rounded-md border-2 border-purple-500 sm:w-1/2 xl:h-96">
                     {listOfImageCarousel}
                   </Carousel>
                 </div>
