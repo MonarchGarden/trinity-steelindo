@@ -39,6 +39,7 @@ module.exports = {
           "url('/src/assets/trinity-steelindo-truck-crop-1.jpg')",
         IconSteelFactory: "url('/src/assets/ic_steel_factory.png')",
         IconTrinityBajaRingan: "url('/src/assets/ic-baja-ringan-vertical.jpg')",
+        IconTrinityWiremesh: "url('/src/assets/ic-wiremesh.png')",
       }),
       backgroundColor: {
         colorPrimary: '#081923',

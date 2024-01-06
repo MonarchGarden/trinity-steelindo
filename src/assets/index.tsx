@@ -15,3 +15,4 @@ export {default as IconTrinityDailyActivity} from './icon-trinity-daily-acitivy.
 export {default as IconTrinityBajaRingan} from './icon_baja_ringan_tct.png';
 export {default as IconTrinityHollowPlafon} from './icon-hollow-plafon.png';
 export {default as IconTrinityRengBajaRingan} from './ic-reng-baja-ringan.jpg';
+export {default as IconTrinityWiremesh} from './ic-wiremesh.png';

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import './index.css';
 import {Body, Header} from '@trinity-steelindo/ui/organisms';
 import SplashScreen from './components/splash-screen';
@@ -14,6 +14,9 @@ export default function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [loading, setLoading] = useState(true);
   const [showsOnce, setShownOnce] = useState(false);
+  const [clickProductEvent, setProductClickEvent] = useState(
+    Array(products.length).fill(false),
+  );
 
   useEffect(() => {
     const fetchData = async () => {
@@ -52,18 +55,44 @@ export default function App() {
       className="h-full w-full bg-center object-cover"></img>
   ));
 
+  const clickEventFunction = useCallback(
+    (index: number) => {
+      console.log('clickEventFunction called for index:', index);
+      setProductClickEvent((value) => {
+        console.log('Current value:', value);
+        console.log(!value[index]);
+        const updatedValue = [
+          ...value.slice(0, index),
+          !value[index],
+          ...value.slice(index + 1),
+        ];
+        console.log('Updated value:', updatedValue);
+        return updatedValue;
+      });
+    },
+    [setProductClickEvent],
+  );
+
   const listOfMainProductsDesktopViews = products.map((value, index) => {
     return (
-      <div className={`description-animation w-full`}>
-        <div className={`${index % 2 !== 0 ? 'text-end' : 'text-start'} p-5`}>
-          <h1 className="text-2xl font-bold text-white">{value.title}</h1>
+      <div onClick={() => clickEventFunction(index)} className={`w-full`}>
+        <div className="p-5">
           <div
-            className={`-bottom-px h-1 ${
-              index % 2 === 0 ? 'bg-gradient-to-r' : 'bg-gradient-to-l'
-            } from-colorDescription via-transparent to-transparent`}></div>
+            className={`hidden ${index % 2 !== 0 ? 'text-end' : 'text-start'}`}>
+            <h1 className="text-2xl font-bold text-white">{value.title}</h1>
+            <div
+              className={`-bottom-px h-1 ${
+                index % 2 === 0 ? 'bg-gradient-to-r' : 'bg-gradient-to-l'
+              } from-colorDescription via-transparent to-transparent`}></div>
+          </div>
         </div>
-        <div className="overflow-hidden rounded-md bg-white shadow-md">
-          <div className="flex">
+        <div
+          className={`${
+            clickProductEvent[index]
+              ? `overflow-hidden rounded-md bg-white bg-cover bg-no-repeat shadow-md`
+              : `bg-IconTrinityWiremesh overflow-hidden rounded-md bg-cover bg-no-repeat shadow-md`
+          } `}>
+          <div className="invisible flex">
             <div className="mx-auto my-auto w-3/4 p-4">
               <table className="w-full table-auto border border-colorDescription">
                 <thead className="my-5 bg-colorBackground font-bold text-white">
@@ -83,7 +112,7 @@ export default function App() {
                   {value.steelFormDescription.map((desc, descIndex) => (
                     <tr className="m-5" key={descIndex}>
                       <td className="border-b border-r border-colorDescription px-2 py-1 text-center font-bold">
-                        {desc.id + 1}.
+                        {descIndex + 1}.
                       </td>
                       <td className="border-b border-r border-colorDescription px-2 py-1 text-start font-bold">
                         {desc.name}

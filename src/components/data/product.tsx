@@ -3,6 +3,7 @@ import {
   IconTrinityBajaRingan,
   IconTrinityHollowPlafon,
   IconTrinityRengBajaRingan,
+  IconTrinityWiremesh,
 } from '@trinity-steelindo/assets/index';
 
 export const products = [
@@ -162,6 +163,59 @@ export const products = [
         id: 5,
         name: '50B (BIRU)',
         weight: '+- 1.8 kg',
+      },
+    ],
+  },
+  {
+    productId: 2,
+    name: 'wiremesh',
+    title: 'Wiremesh',
+    image: IconTrinityWiremesh,
+    steelFormDescription: [
+      {
+        id: 0,
+        name: '6A (5,5 MM)',
+        weight: '2,1 M X 5,4 M',
+      },
+      {
+        id: 1,
+        name: '6B (5,0 MM)',
+        weight: '2,1 M X 5,4 M',
+      },
+      {
+        id: 2,
+        name: '8A (7,5 MM)',
+        weight: '2,1 M X 5,4 M',
+      },
+      {
+        id: 3,
+        name: '8B (7,2 MM)',
+        weight: '2,1 M X 5,4 M',
+      },
+      {
+        id: 4,
+        name: '8C (6,8 MM)',
+        weight: '2,1 M X 5,4 M',
+      },
+      {
+        id: 5,
+        name: '8D (6,5 MM)',
+        weight: '2,1 M X 5,4 M',
+      },
+      {
+        id: 6,
+        name: '10A (9,2 MM)',
+        weight: '2,1 M X 5,4 M',
+      },
+      {
+        id: 7,
+        name: '10B (8,5 MM)',
+        weight: '2,1 M X 5,4 M',
+      },
+      {
+        id: 8,
+        name: '10C (8,2 MM)',
+        weight: '2,1 M X 5,4 M',
       },
     ],
   },
