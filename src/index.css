@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (min-width: 475px) {
+  .group-textbox {
+    transform: scale(0.5);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+@media (min-width: 640px) {
+  .group-textbox {
+    transform: scale(0.9);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+@media (min-width: 1024px) {
+  .group-textbox {
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+@media (min-width: 1280px) {
+  .group-textbox {
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .bg-IconTrinityTruckSecondFull {
+    background-image: url('./assets/trinity-steelindo-truck.jpg');
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .bg-IconTrinityTruckSecond {
+    background-image: url('./assets/trinity-steelindo-truck.jpg');
+  }
+}
+
+@media only screen and (min-height: 1500px) {
+  .bg-IconTrinityTruckSecond {
+    background-image: url('./assets/ic-trinity-truck-3.jpeg');
+  }
+}
+
+.bg-resize-custom {
+  background-position: center;
+  background-size: cover;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px); /* Optional: Add a slight upward translation */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn;
+}
+
+.fill-text-title {
+  display: inline-block;
+  animation: fillTextTitle 3s linear forwards;
+}
+
+.description-animation {
+  opacity: 0;
+  animation: descriptionAppear 1s forwards 5.5s;
+}
+
+.daily-activity-animation {
+  opacity: 0;
+  animation: dailyActivityAnimation 1s forwards 6s;
+}
+
+.founder-text-title {
+  opacity: 0;
+  animation: founderTextTitle 1s forwards 7s;
+}
+
+@keyframes fillTextTitle {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes dailyActivityAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+@keyframes descriptionAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+@keyframes founderTextTitle {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@layer base {
+  html {
+    color-scheme: light !important;
+  }
+}
+
+@media only screen (max-width: 500px) {
+  .image-resize {
+    height: 50%;
+  }
+}

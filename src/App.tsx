@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import './indexReal.css';
+import './index.css';
 import {Body, Header} from '@trinity-steelindo/ui/organisms';
 import SplashScreen from './components/splash-screen';
 import {Carousel} from '@material-tailwind/react';
@@ -222,7 +222,7 @@ export default function App() {
                   </h2>
                   <Carousel
                     transition={{duration: 2}}
-                    className="h-48 w-full items-center rounded-md border-2 border-purple-500 sm:w-1/2 xl:h-96">
+                    className="h-48 w-full items-center rounded-md sm:w-1/2 xl:h-96">
                     {listOfImageCarousel}
                   </Carousel>
                 </div>
