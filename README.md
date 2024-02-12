@@ -1,4 +1,4 @@
-# Trinity SteelIndo's Company Profile
+# Trinity SteelIndo's Company Profile (On-Hold)
 
 This project is using React + TypeScript + Vite + Tailwind css + Shadcn-ui/ui
 
