@@ -30,21 +30,30 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .bg-IconTrinityTruckSecondFull {
-    background-image: url('./assets/trinity-steelindo-truck.jpg');
-  }
-}
-
 @media only screen and (min-width: 768px) {
   .bg-IconTrinityTruckSecond {
     background-image: url('./assets/trinity-steelindo-truck.jpg');
   }
 }
 
+@media only screen and (min-width: 0px) and (max-width: 768px) {
+  .bg-IconTrinityTruckSecond {
+    background-image: url('./assets/icon-trinity-truck-2-full-size.jpeg');
+  }
+}
+
 @media only screen and (min-height: 1500px) {
   .bg-IconTrinityTruckSecond {
     background-image: url('./assets/ic-trinity-truck-3.jpeg');
+  }
+}
+
+@media (min-width: 768px) {
+  .display-background-mobile {
+    display: none !important;
+  }
+  .display-background-desktop {
+    display: block !important;
   }
 }
 
@@ -55,7 +64,7 @@
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px); /* Optional: Add a slight upward translation */
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -126,11 +135,5 @@
 @layer base {
   html {
     color-scheme: light !important;
-  }
-}
-
-@media only screen (max-width: 500px) {
-  .image-resize {
-    height: 50%;
   }
 }

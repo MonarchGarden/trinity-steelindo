@@ -66,7 +66,7 @@ export default function App() {
           !value[index],
           ...value.slice(index + 1),
         ];
-        console.log('Updated value:', updatedValue);
+
         return updatedValue;
       });
     },
@@ -90,7 +90,7 @@ export default function App() {
           className={`${
             clickProductEvent[index]
               ? `overflow-hidden rounded-md bg-white bg-cover bg-no-repeat shadow-md`
-              : `bg-IconTrinityWiremesh overflow-hidden rounded-md bg-cover bg-no-repeat shadow-md`
+              : `overflow-hidden rounded-md bg-IconTrinityWiremesh bg-cover bg-no-repeat shadow-md`
           } `}>
           <div className="invisible flex">
             <div className="mx-auto my-auto w-3/4 p-4">
@@ -167,14 +167,14 @@ export default function App() {
       ) : (
         <div className="relative flex h-full w-full flex-col overflow-auto bg-colorPrimary">
           {/* Mobile Version */}
-          <div className="relative h-screen w-full overflow-hidden bg-IconTrinityTruckSecondFull bg-cover bg-center sm:hidden">
+          <div className="display-background-mobile relative h-screen w-full overflow-hidden bg-IconTrinityTruckSecondFull bg-cover bg-center bg-no-repeat">
             {/* Gradient Top */}
             <div className="absolute inset-0 bg-gradient-to-t from-transparent to-colorPrimary" />
             {/* Curtain Shadows */}
             <div className="absolute inset-0 bg-colorPrimary bg-opacity-40" />
-            <div className="group-textbox absolute bottom-0 left-0 right-0 flex flex-col justify-center pb-5">
+            <div className="group-textbox absolute bottom-0 left-0 right-0 flex flex-col items-center justify-center pb-5">
               {/* Responsive font size */}
-              <h1 className="trinity-title-text whitespace-pre-line text-center text-4xl font-bold text-white sm:text-lg">
+              <h1 className="whitespace-pre-line text-center text-4xl font-bold text-white">
                 We Are Ready{'\n'}To Satisfy Your Needs
               </h1>
               {/* Responsive text */}
@@ -182,14 +182,14 @@ export default function App() {
           </div>
 
           {/* Desktop and Tablet Version bg-IconTrinityTruckSecond*/}
-          <div className="bg-IconTrinityTruckSecond relative hidden h-screen w-full bg-cover bg-center bg-no-repeat sm:block">
+          <div className="bg-IconTrinityTruckSecond display-background-desktop relative hidden h-screen w-full bg-cover bg-center bg-no-repeat sm:block">
             {/* Gradient Top */}
             <div className="absolute inset-0 bg-gradient-to-t from-transparent to-colorPrimary" />
             {/* Curtain Shadows */}
             <div className="absolute inset-0 bg-colorPrimary bg-opacity-30" />
             <div className="group-textbox bottom-0 left-0 flex flex-col items-center px-10 sm:hidden md:absolute md:bottom-0 md:right-0 md:flex md:items-start md:px-10">
               {/* Responsive font size */}
-              <h1 className="hidden whitespace-pre-line pb-5 text-2xl font-bold text-white sm:block md:pb-5 md:text-left md:text-3xl lg:text-5xl xl:text-6xl">
+              <h1 className="whitespace-pre-line pb-5 text-2xl font-bold text-white">
                 We Are Ready{'\n'}To Satisfy Your Needs
               </h1>
               {/* Responsive text */}
