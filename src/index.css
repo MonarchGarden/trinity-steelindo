@@ -48,12 +48,21 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .display-background-mobile {
-    display: none !important;
+    display: block !important;
   }
   .display-background-desktop {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .display-background-desktop {
     display: block !important;
+  }
+  .display-background-mobile {
+    display: none !important;
   }
 }
 
