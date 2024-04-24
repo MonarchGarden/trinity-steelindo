@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useMemo, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import './index.css';
 import {Body, Header} from '@trinity-steelindo/ui/organisms';
 import SplashScreen from './components/splash-screen';
@@ -247,7 +247,10 @@ export default function App() {
                   </h2>
                   <Carousel
                     transition={{duration: 2}}
-                    className="h-48 w-full items-center rounded-md sm:w-1/2 xl:h-96">
+                    className="h-48 w-full items-center rounded-md sm:w-1/2 xl:h-96"
+                    placeholder={undefined}
+                    onPointerEnterCapture={undefined}
+                    onPointerLeaveCapture={undefined}>
                     {listOfImageCarousel}
                   </Carousel>
                 </div>
