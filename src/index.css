@@ -2,30 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-@media (min-width: 475px) {
+@media (max-width: 400px) {
   .group-textbox {
-    transform: scale(0.5);
+    transform: scale(0.6);
     transition: transform 0.3s ease-in-out;
   }
 }
 
-@media (min-width: 640px) {
-  .group-textbox {
-    transform: scale(0.9);
-    transition: transform 0.3s ease-in-out;
-  }
-}
-
-@media (min-width: 1024px) {
+@media (min-width: 769px) {
   .group-textbox {
     transform: scale(1);
     transition: transform 0.3s ease-in-out;
   }
 }
 
-@media (min-width: 1280px) {
+@media (max-width: 768px) {
   .group-textbox {
-    transform: scale(1);
+    transform: scale(1.5);
     transition: transform 0.3s ease-in-out;
   }
 }

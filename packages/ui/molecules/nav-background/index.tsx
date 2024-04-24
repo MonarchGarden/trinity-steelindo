@@ -13,7 +13,7 @@ export const Navbar = ({companyLogoImg}: Props) => {
         src={companyLogoImg}
         className="header-logo w-30 h-20 transform-gpu rounded-full  transition-transform duration-300 ease-in-out"
       />
-      <div className="ms-2 mt-2 hidden w-24 transform font-serif font-bold text-white transition-transform duration-300 ease-in-out sm:block">
+      <div className="group-textbox-company-name ms-2 mt-2 hidden w-24 transform font-serif font-bold text-white transition-transform duration-300 ease-in-out sm:block">
         <h1>Trinity SteelIndo</h1>
       </div>
     </div>

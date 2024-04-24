@@ -16,39 +16,32 @@
   }
 }
 
-/* @media (max-width: 280px) {
+@media only screen and (min-width: 0px) and (max-width: 400px) {
   .trinity-title-text {
-    font-size: 0.95rem !important;
+    font-size: 0.7rem !important;
     line-height: normal !important;
   }
 }
 
-@media (max-width: 320px) and (min-width: 281px) {
+@media only screen and (min-width: 401px) and (max-width: 767px) {
   .trinity-title-text {
-    font-size: 1.2rem !important;
+    font-size: 1.3rem !important;
     line-height: normal !important;
   }
 }
 
-@media only screen and (max-width: 790px) and (min-width: 600px) {
+@media (min-width: 768px) {
   .trinity-title-text {
-    display: block !important;
-  }
-}
-
-@media (max-width: 360px) and (min-width: 321px) {
-  .trinity-title-text {
-    font-size: 1.4rem !important;
+    font-size: 2rem !important;
     line-height: normal !important;
   }
 }
 
-@media (max-width: 412px) and (min-width: 361px) {
-  .trinity-title-text {
-    font-size: 1.6rem !important;
-    line-height: normal !important;
+@media only screen and (min-height: 1500px) {
+  .bg-IconTrinityTruckSecond {
+    background-image: url('./assets/ic-trinity-truck-3.jpeg');
   }
-} */
+}
 
 @media (min-width: 1280px) {
   .header-logo {

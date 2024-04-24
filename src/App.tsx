@@ -174,7 +174,7 @@ export default function App() {
             <div className="absolute inset-0 bg-colorPrimary bg-opacity-40" />
             <div className="group-textbox absolute bottom-0 left-0 right-0 flex flex-col items-center justify-center pb-5">
               {/* Responsive font size */}
-              <h1 className="whitespace-pre-line text-center text-4xl font-bold text-white">
+              <h1 className="trinity-title-text whitespace-pre-line text-center font-bold text-white">
                 We Are Ready{'\n'}To Satisfy Your Needs
               </h1>
               {/* Responsive text */}
@@ -189,7 +189,7 @@ export default function App() {
             <div className="absolute inset-0 bg-colorPrimary bg-opacity-30" />
             <div className="group-textbox bottom-0 left-0 flex flex-col items-center px-10 sm:hidden md:absolute md:bottom-0 md:right-0 md:flex md:items-start md:px-10">
               {/* Responsive font size */}
-              <h1 className="whitespace-pre-line pb-5 text-2xl font-bold text-white">
+              <h1 className="trinity-title-text whitespace-pre-line pb-5 font-bold text-white">
                 We Are Ready{'\n'}To Satisfy Your Needs
               </h1>
               {/* Responsive text */}
