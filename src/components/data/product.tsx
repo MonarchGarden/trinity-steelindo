@@ -1,5 +1,6 @@
 // JSON Placeholder
 import {
+  IconRengBajaRingan,
   IconTrinityBajaRingan,
   IconTrinityHollowPlafon,
   IconTrinityRengBajaRingan,
@@ -12,6 +13,8 @@ export const products = [
     name: 'baja-ringan-tct',
     title: 'Baja Ringan TCT',
     image: IconTrinityBajaRingan,
+    description:
+      'Baja ringan TCT (Truss Cold Formed Technology) adalah jenis baja ringan yang diproses menggunakan teknologi dingin (cold formed) dengan metode pembentukan truss. Baja ringan TCT memiliki profil yang dirancang khusus untuk memenuhi kebutuhan struktur bangunan dengan efisiensi tinggi, baik dalam hal kekuatan maupun keberlangsungan konstruksi. Teknologi cold formed memungkinkan pembentukan baja dengan presisi tinggi, sehingga menghasilkan produk yang berkualitas dan konsisten.',
     steelFormDescription: [
       {
         id: 0,
@@ -65,6 +68,8 @@ export const products = [
     name: 'hollow-plafon',
     title: 'Hollow Plafon',
     image: IconTrinityHollowPlafon,
+    description:
+      'Hollow plafon adalah jenis plafon yang terbuat dari material berongga, seperti gypsum, kayu, atau bahan komposit lainnya. Plafon ini memiliki struktur dalam yang berongga, seringkali disebut sebagai "hollow" atau "hollow core", yang memberikan ringan pada plafon dan memudahkan instalasi. Hollow plafon sering digunakan dalam pembangunan interior untuk menutupi bagian atas ruangan dan memberikan tampilan yang rapi dan estetis.',
     steelFormDescription: [
       {
         id: 0,
@@ -132,7 +137,9 @@ export const products = [
     productId: 2,
     name: 'reng-baja-ringan',
     title: 'Reng Baja Ringan',
-    image: IconTrinityRengBajaRingan,
+    image: IconRengBajaRingan,
+    description:
+      'Reng baja ringan adalah elemen struktural yang digunakan dalam konstruksi atap untuk membentuk kerangka atau rangkaian penyangga atap. Elemen ini terbuat dari baja yang dirancang khusus untuk memberikan dukungan dan kekuatan pada atap bangunan. Reng baja ringan sering kali memiliki profil yang ringan namun kuat, dengan bentuk yang dirancang untuk mendistribusikan beban atap secara merata ke struktur bangunan di bawahnya.',
     steelFormDescription: [
       {
         id: 0,
@@ -171,6 +178,8 @@ export const products = [
     name: 'wiremesh',
     title: 'Wiremesh',
     image: IconTrinityWiremesh,
+    description:
+      'Wiremesh adalah material konstruksi yang terdiri dari jaringan kawat baja yang saling terhubung membentuk grid atau matriks. Material ini sering digunakan dalam berbagai proyek konstruksi, seperti pembangunan dinding, lantai, jalan, dan struktur beton lainnya. Wiremesh tersedia dalam berbagai ukuran, bentuk, dan ketebalan kawat, yang dapat disesuaikan dengan kebutuhan spesifik proyek.',
     steelFormDescription: [
       {
         id: 0,

@@ -75,66 +75,61 @@ export default function App() {
 
   const listOfMainProductsDesktopViews = products.map((value, index) => {
     return (
-      <div onClick={() => clickEventFunction(index)} className={`w-full`}>
-        <div className="p-5">
-          <div
-            className={`hidden ${index % 2 !== 0 ? 'text-end' : 'text-start'}`}>
-            <h1 className="text-2xl font-bold text-white">{value.title}</h1>
-            <div
-              className={`-bottom-px h-1 ${
-                index % 2 === 0 ? 'bg-gradient-to-r' : 'bg-gradient-to-l'
-              } from-colorDescription via-transparent to-transparent`}></div>
-          </div>
-        </div>
+      <div className="relative" key={index}>
         <div
-          className={`${
-            clickProductEvent[index]
-              ? `overflow-hidden rounded-md bg-white bg-cover bg-no-repeat shadow-md`
-              : `overflow-hidden rounded-md bg-IconTrinityWiremesh bg-cover bg-no-repeat shadow-md`
-          } `}>
-          <div className="invisible flex">
-            <div className="mx-auto my-auto w-3/4 p-4">
-              <table className="w-full table-auto border border-colorDescription">
-                <thead className="my-5 bg-colorBackground font-bold text-white">
-                  <tr className="m-5 text-center text-sm uppercase">
-                    <th className="m-5 border-r border-colorDescription px-2 py-1 ">
-                      No
-                    </th>
-                    <th className="m-5 border-r border-colorDescription px-2 py-1 ">
-                      Deskripsi
-                    </th>
-                    <th className="m-5 border-r border-colorDescription px-2 py-1 ">
-                      {value.name === 'hollow-plafon' ? 'Panjang' : 'Berat'}
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {value.steelFormDescription.map((desc, descIndex) => (
-                    <tr className="m-5" key={descIndex}>
-                      <td className="border-b border-r border-colorDescription px-2 py-1 text-center font-bold">
-                        {descIndex + 1}.
-                      </td>
-                      <td className="border-b border-r border-colorDescription px-2 py-1 text-start font-bold">
-                        {desc.name}
-                      </td>
-                      <td className="border-b border-r border-colorDescription px-2 py-1 text-center font-bold">
-                        {desc.weight}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+          onClick={() => clickEventFunction(index)}
+          className="relative w-full border-2 border-white">
+          <div className="p-5">
+            <div
+              className={`p-15 absolute top-0 border-2 border-white ${index % 2 !== 0 ? 'right-0' : 'left-0'}`}>
+              {clickProductEvent[index] ? null : (
+                <h1
+                  className={`text-shadow ${index % 2 !== 0 ? 'text-right' : 'text-left'} text-white`}>
+                  {value.title}
+                </h1>
+              )}
             </div>
-            <div className="flex w-1/4 items-center overflow-hidden rounded-xl px-5">
+            <div
+              className={`absolute ${index % 2 !== 0 ? 'right-0' : 'left-0'} ${index % 2 !== 0 ? 'pr-5' : 'pl-5'} pb-5`}>
+              {clickProductEvent[index] ? null : (
+                <p className="text-shadow text-white">{value.description}</p>
+              )}
               <div
-                style={{
-                  backgroundImage: `url(${value.image})`,
-                }}
-                className="bg-resize-custom h-1/2 w-full rounded-xl bg-no-repeat px-5 py-5"
-              />
+                className={`-bottom-px h-2 ${index % 2 === 0 ? 'bg-gradient-to-r' : 'bg-gradient-to-l'} from-colorWhite via-transparent to-transparent`}></div>
+            </div>
+          </div>
+          <div
+            className={`${`overflow-hidden rounded-md  bg-cover bg-no-repeat shadow-md`} `}>
+            <div className={'flex h-80'}>
+              {index % 2 === 0 ? (
+                <>
+                  <div className={`mx-auto my-auto h-full w-full p-4`}></div>
+                  <div className="flex h-full w-full items-center overflow-hidden rounded-xl">
+                    <div
+                      style={{
+                        backgroundImage: `url(${value.image})`,
+                      }}
+                      className="bg-resize-custom h-full w-full rounded-xl bg-no-repeat px-5 "
+                    />
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="flex h-full w-full items-center overflow-hidden rounded-xl">
+                    <div
+                      style={{
+                        backgroundImage: `url(${value.image})`,
+                      }}
+                      className="bg-resize-custom h-full w-full rounded-xl bg-no-repeat px-5 "
+                    />
+                  </div>
+                  <div className={`mx-auto my-auto w-full p-4`}></div>
+                </>
+              )}
             </div>
           </div>
         </div>
+        <div className="absolute bottom-0 left-0 h-2 w-full shadow-white"></div>
       </div>
     );
   });

@@ -35,6 +35,8 @@ module.exports = {
           "url('/src/assets/icon-trinity-truck-2-full-size.jpeg')",
         IconTrinityTruckSecondCropped:
           "url('/src/assets/icon-trinity-truck-2.jpeg')",
+        IconRengBajaRingan:
+          "url('/src/assets/icon-reng-baja-ringan-clean.jpeg')",
         TruckTrinityPng:
           "url('/src/assets/trinity-steelindo-truck-crop-1.jpg')",
         IconSteelFactory: "url('/src/assets/ic_steel_factory.png')",
@@ -55,6 +57,7 @@ module.exports = {
         colorSecondary: '#0c2b3f',
         colorTitle: '#318DE9',
         colorDescription: '#BCBDBD',
+        colorWhite: '#FFFFFF',
       },
     },
   },

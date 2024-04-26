@@ -16,23 +16,8 @@
   }
 }
 
-/* @media (max-width: 768px) {
-    .trinity-title-text {
-      font-size: 1.3rem !important;
-      line-height: normal !important;
-    }
+@layer utilities {
+  .white-shadow {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
   }
-  
-  @media (min-width: 769px) {
-    .trinity-title-text {
-      font-size: 1.5rem !important;
-      line-height: normal !important;
-    }
-  }
-  
-  @media (min-width: 1440px) {
-    .trinity-title-text {
-      font-size: 2rem !important;
-      line-height: normal !important;
-    }
-  } */
+}
