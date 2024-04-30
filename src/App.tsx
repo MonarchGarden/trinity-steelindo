@@ -81,20 +81,16 @@ export default function App() {
 
   const listOfMainProductsMobileViews = products.map((value) => {
     return (
-      <div className="mx-auto flex h-full w-full flex-col overflow-hidden rounded-xl bg-white">
+      <div className="bg-colorCard mx-auto flex w-full flex-col overflow-hidden rounded-xl">
         <div className="h-52 overflow-hidden rounded-t-xl">
           <div
             style={{backgroundImage: `url(${value.image})`}}
             className="h-full w-full bg-cover bg-center"
           />
         </div>
-        <div className="h-auto p-5">
-          <div className="mb-2 text-xl font-bold">{value.title}</div>
-          <h3 className="overflow-hidden text-gray-700">
-            Ini baja ringan, material tidak tertandingi. Berkualitas tapi rapuh.
-            Makanya jangan beli banyak banyak. Nanti rugi.{'\n'}Mending ga usah
-            beli, mending mati aja.
-          </h3>
+        <div className="h-auto p-5 text-white">
+          <div className="mb-2 text-xl font-bold ">{value.title}</div>
+          <h3 className="overflow-hidden">{value.description}</h3>
         </div>
       </div>
     );
