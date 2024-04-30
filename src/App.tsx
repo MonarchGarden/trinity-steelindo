@@ -81,7 +81,7 @@ export default function App() {
 
   const listOfMainProductsMobileViews = products.map((value) => {
     return (
-      <div className="bg-colorCard mx-auto flex w-full flex-col overflow-hidden rounded-xl">
+      <div className="bg-colorCard mx-auto flex h-full w-full flex-col overflow-hidden rounded-xl">
         <div className="h-52 overflow-hidden rounded-t-xl">
           <div
             style={{backgroundImage: `url(${value.image})`}}
@@ -89,7 +89,7 @@ export default function App() {
           />
         </div>
         <div className="h-auto p-5 text-white">
-          <div className="mb-2 text-xl font-bold ">{value.title}</div>
+          <div className="mb-2 text-2xl  font-bold ">{value.title}</div>
           <h3 className="overflow-hidden">{value.description}</h3>
         </div>
       </div>
@@ -199,7 +199,7 @@ export default function App() {
               </div>
             </div>
           </Body>
-          <div className="hidden h-full w-full flex-col bg-colorPrimary px-5 py-5 lg:flex xl:flex">
+          <div className="hidden h-full w-full flex-col overflow-y-auto bg-colorPrimary px-5 py-5 lg:flex xl:flex">
             {listOfMainProductsDesktopViews}
           </div>
           <div className="grid h-full w-full grid-flow-row gap-5 gap-x-5 bg-colorPrimary p-8 lg:hidden xl:hidden">
