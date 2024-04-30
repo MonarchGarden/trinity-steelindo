@@ -14,9 +14,6 @@ export default function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [loading, setLoading] = useState(true);
   const [showsOnce, setShownOnce] = useState(false);
-  const [clickProductEvent, setProductClickEvent] = useState(
-    Array(products.length).fill(false),
-  );
 
   useEffect(() => {
     const fetchData = async () => {
@@ -55,81 +52,29 @@ export default function App() {
       className="h-full w-full bg-center object-cover"></img>
   ));
 
-  const clickEventFunction = useCallback(
-    (index: number) => {
-      console.log('clickEventFunction called for index:', index);
-      setProductClickEvent((value) => {
-        console.log('Current value:', value);
-        console.log(!value[index]);
-        const updatedValue = [
-          ...value.slice(0, index),
-          !value[index],
-          ...value.slice(index + 1),
-        ];
-
-        return updatedValue;
-      });
-    },
-    [setProductClickEvent],
-  );
-
   const listOfMainProductsDesktopViews = products.map((value, index) => {
     return (
-      <div className="relative" key={index}>
-        <div
-          onClick={() => clickEventFunction(index)}
-          className="relative w-full border-2 border-white">
-          <div className="p-5">
-            <div
-              className={`p-15 absolute top-0 border-2 border-white ${index % 2 !== 0 ? 'right-0' : 'left-0'}`}>
-              {clickProductEvent[index] ? null : (
-                <h1
-                  className={`text-shadow ${index % 2 !== 0 ? 'text-right' : 'text-left'} text-white`}>
-                  {value.title}
-                </h1>
-              )}
-            </div>
-            <div
-              className={`absolute ${index % 2 !== 0 ? 'right-0' : 'left-0'} ${index % 2 !== 0 ? 'pr-5' : 'pl-5'} pb-5`}>
-              {clickProductEvent[index] ? null : (
-                <p className="text-shadow text-white">{value.description}</p>
-              )}
-              <div
-                className={`-bottom-px h-2 ${index % 2 === 0 ? 'bg-gradient-to-r' : 'bg-gradient-to-l'} from-colorWhite via-transparent to-transparent`}></div>
-            </div>
-          </div>
+      <div className="relative w-full p-5" key={index}>
+        <div className="bg-colorCard flex h-3/4 overflow-hidden rounded-md bg-cover bg-no-repeat shadow-md">
           <div
-            className={`${`overflow-hidden rounded-md  bg-cover bg-no-repeat shadow-md`} `}>
-            <div className={'flex h-80'}>
-              {index % 2 === 0 ? (
-                <>
-                  <div className={`mx-auto my-auto h-full w-full p-4`}></div>
-                  <div className="flex h-full w-full items-center overflow-hidden rounded-xl">
-                    <div
-                      style={{
-                        backgroundImage: `url(${value.image})`,
-                      }}
-                      className="bg-resize-custom h-full w-full rounded-xl bg-no-repeat px-5 "
-                    />
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="flex h-full w-full items-center overflow-hidden rounded-xl">
-                    <div
-                      style={{
-                        backgroundImage: `url(${value.image})`,
-                      }}
-                      className="bg-resize-custom h-full w-full rounded-xl bg-no-repeat px-5 "
-                    />
-                  </div>
-                  <div className={`mx-auto my-auto w-full p-4`}></div>
-                </>
-              )}
-            </div>
+            className={`${index % 2 === 0 ? 'order-2 text-left' : 'order-1 text-right'} w-1/2 p-5 align-middle`}>
+            <h1
+              className={`text-shadow text-4xl font-bold uppercase text-white`}>
+              {value.title}
+            </h1>
+            <p className={`text-shadow mt-3 text-white`}>{value.description}</p>
+            <div
+              className={`-bottom-px h-2 ${index % 2 === 0 ? 'bg-gradient-to-r' : 'bg-gradient-to-l'} mt-5 from-colorWhite via-transparent to-transparent`}></div>
+          </div>
+          <div className={`${index % 2 === 0 ? 'order-1' : 'order-2'} w-1/2`}>
+            <div
+              style={{
+                backgroundImage: `url(${value.image})`,
+              }}
+              className="bg-resize-custom h-full w-full rounded-xl bg-no-repeat"
+            />
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 h-2 w-full shadow-white"></div>
       </div>
     );
   });

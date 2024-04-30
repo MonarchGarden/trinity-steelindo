@@ -58,6 +58,7 @@ module.exports = {
         colorTitle: '#318DE9',
         colorDescription: '#BCBDBD',
         colorWhite: '#FFFFFF',
+        colorCard: '#11374d',
       },
     },
   },
