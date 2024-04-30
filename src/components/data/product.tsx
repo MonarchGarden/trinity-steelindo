@@ -3,7 +3,6 @@ import {
   IconRengBajaRingan,
   IconTrinityBajaRingan,
   IconTrinityHollowPlafon,
-  IconTrinityRengBajaRingan,
   IconTrinityWiremesh,
 } from '@trinity-steelindo/assets/index';
 
