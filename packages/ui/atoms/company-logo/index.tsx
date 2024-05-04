@@ -3,9 +3,10 @@ import './style.css';
 
 type Props = {
   imgSrc: string;
+  title: string;
 };
 
-export const CompanyLogo = ({imgSrc}: Props) => {
+export const CompanyLogo = ({imgSrc, title}: Props) => {
   return (
     <div className="flex flex-col items-center border border-white p-2 sm:flex-row xl:items-center">
       <img
@@ -13,7 +14,7 @@ export const CompanyLogo = ({imgSrc}: Props) => {
         className="h-25 w-10 transform-gpu rounded-full border border-white transition-transform duration-300 ease-in-out"
       />
       <div className="hidden w-24 border border-white p-5 font-serif font-bold text-white transition-transform duration-300 ease-in-out sm:block">
-        <h1>Trinity SteelIndo</h1>
+        <h1>{title}</h1>
       </div>
     </div>
   );

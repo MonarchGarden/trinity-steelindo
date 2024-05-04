@@ -30,14 +30,14 @@ export const Header = ({logoWhite, logoBlack, headerOpacity}: Props) => {
           <span
             className={`self-center whitespace-nowrap text-2xl font-bold sm:text-lg md:whitespace-nowrap md:text-xl ${
               isHeaderHovered ? 'text-colorPrimary' : 'text-white'
-            } trinity-title-text whitespace-pre-line`}>
+            } trinity-title-text whitespace-pre-line font-helios-condensed`}>
             TRINITY{'\n'}STEELINDO
           </span>
         </div>
         <div className="ml-auto flex items-center">
           {' '}
           {/* Use ml-auto to push the content to the right */}
-          <nav className="hidden items-center space-x-4 md:flex">
+          <nav className="hidden items-center space-x-4 font-helios-condensed md:flex">
             <NavButtonLink
               navBarTitle="Beranda"
               isHeaderHovered={isHeaderHovered}

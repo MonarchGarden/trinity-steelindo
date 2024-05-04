@@ -47,7 +47,9 @@ module.exports = {
         colorPrimary: '#081923',
         colorBackground: '#0c2b3f',
       },
-
+      fontFamily: {
+        'helios-condensed': ['Helios Condensed', 'sans-serif'],
+      },
       borderColor: {
         colorPrimary: '#081923',
         colorBackground: '#0c2b3f',

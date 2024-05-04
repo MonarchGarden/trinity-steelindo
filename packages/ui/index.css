@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Helios Condensed';
+  src: url('/src/assets/font/Helios Condensed.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

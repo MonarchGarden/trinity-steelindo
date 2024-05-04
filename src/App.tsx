@@ -55,9 +55,9 @@ export default function App() {
   const listOfMainProductsDesktopViews = products.map((value, index) => {
     return (
       <div className="relative w-full p-5" key={index}>
-        <div className="bg-colorCard flex h-3/4 overflow-hidden rounded-md bg-cover bg-no-repeat shadow-md">
+        <div className="flex h-3/4 overflow-hidden rounded-md bg-colorCard bg-cover bg-no-repeat shadow-md">
           <div
-            className={`${index % 2 === 0 ? 'order-2 text-left' : 'order-1 text-right'} w-1/2 p-5 align-middle`}>
+            className={`${index % 2 === 0 ? 'order-2 text-left' : 'order-1 text-right'} w-1/2 p-5 align-middle font-helios-condensed`}>
             <h1
               className={`text-shadow text-4xl font-bold uppercase text-white`}>
               {value.title}
@@ -81,14 +81,14 @@ export default function App() {
 
   const listOfMainProductsMobileViews = products.map((value) => {
     return (
-      <div className="bg-colorCard mx-auto flex h-full w-full flex-col overflow-hidden rounded-xl">
+      <div className="mx-auto flex h-full w-full flex-col overflow-hidden rounded-xl bg-colorCard">
         <div className="h-52 overflow-hidden rounded-t-xl">
           <div
             style={{backgroundImage: `url(${value.image})`}}
             className="h-full w-full bg-cover bg-center"
           />
         </div>
-        <div className="h-auto p-5 text-white">
+        <div className="h-auto p-5 font-helios-condensed text-white">
           <div className="mb-2 text-2xl  font-bold ">{value.title}</div>
           <h3 className="overflow-hidden">{value.description}</h3>
         </div>
@@ -110,7 +110,7 @@ export default function App() {
             <div className="absolute inset-0 bg-colorPrimary bg-opacity-40" />
             <div className="group-textbox absolute bottom-0 left-0 right-0 flex flex-col items-center justify-center pb-5">
               {/* Responsive font size */}
-              <h1 className="trinity-title-text whitespace-pre-line text-center font-bold text-white">
+              <h1 className="trinity-title-text whitespace-pre-line text-center font-helios-condensed font-bold text-white">
                 We Are Ready{'\n'}To Satisfy Your Needs
               </h1>
               {/* Responsive text */}
@@ -125,11 +125,11 @@ export default function App() {
             <div className="absolute inset-0 bg-colorPrimary bg-opacity-30" />
             <div className="group-textbox bottom-0 left-0 flex flex-col items-center px-10 sm:hidden md:absolute md:bottom-0 md:right-0 md:flex md:items-start md:px-10">
               {/* Responsive font size */}
-              <h1 className="trinity-title-text whitespace-pre-line pb-5 font-bold text-white">
+              <h1 className="trinity-title-text whitespace-pre-line pb-5 font-helios-condensed font-bold text-white">
                 We Are Ready{'\n'}To Satisfy Your Needs
               </h1>
               {/* Responsive text */}
-              <h3 className="mb-10 hidden whitespace-pre-line text-justify text-xl text-white md:mb-5 md:flex md:text-xl lg:pb-10 lg:text-xl xl:pb-10 xl:text-2xl">
+              <h3 className="mb-10 hidden whitespace-pre-line text-justify font-helios-condensed text-xl text-white md:mb-5 md:flex md:text-xl lg:pb-10 lg:text-xl xl:pb-10 xl:text-2xl">
                 Trinity Steelindo is a trusted destination for high-quality
                 steel and UPVC roofing products.
                 {'\n'}We are committed to excellence and offer a wide range of
@@ -145,40 +145,36 @@ export default function App() {
             logoWhite={IconLogoTrinityWhiteTrans}
           />
           <Body>
-            <div className={`block`}>
-              <div className="w-full overflow-hidden whitespace-nowrap text-center">
+            <div
+              className={`text-xltext-colorDescription flex flex-col items-center justify-center sm:block`}>
+              <div className="w-full overflow-hidden whitespace-nowrap  text-center">
                 <h1
                   className={`${
                     showsOnce ? 'fill-text-title' : 'hidden'
-                  } overflow-hidden pb-5 font-serif text-4xl text-colorTitle`}>
+                  } overflow-hidden pb-5 font-helios-condensed text-4xl text-colorTitle`}>
                   WHO WE ARE
                 </h1>
               </div>
-              <div className={`block text-xl text-colorDescription sm:block`}>
-                <div
-                  className={`${
-                    showsOnce ? 'description-animation' : 'hidden'
-                  } flex flex-col pb-5 sm:flex-row`}>
-                  <h6 className="mb-8 w-full scale-100 transform text-justify transition-transform sm:mb-0 sm:w-1/2">
-                    Upgrade your roofing needs with UPVC roofing products from
-                    us. These products provide durability and aesthetic appeal,
-                    ensuring that your projects are built to last. Join us as we
-                    offer innovation, reliability, and top-notch customer
-                    satisfaction in every product we provide.
-                  </h6>
-                  <div className="w-full sm:w-10"></div>
-                  <h6 className="w-full scale-100 transform text-justify transition-transform sm:w-1/2">
-                    Feel free to get in touch with us if you have any further
-                    questions. We look forward to assisting you in choosing the
-                    right UPVC roofing products for your project.
-                  </h6>
-                </div>
+              <div
+                className={`${
+                  showsOnce ? 'description-animation' : 'hidden'
+                } w-full items-center justify-center  pb-5`}>
+                <h6 className="mb-8 w-full scale-100 transform text-center font-helios-condensed text-white transition-transform sm:mb-0">
+                  Upgrade your roofing needs with UPVC roofing products from us.
+                  These products provide durability and aesthetic appeal,
+                  ensuring that your projects are built to last. Join us as we
+                  offer innovation, reliability, and top-notch customer
+                  satisfaction in every product we provide.
+                </h6>
+              </div>
+              <div
+                className={`flex flex-col items-center justify-center  text-xl text-colorDescription`}>
                 <div
                   className={`flex flex-col ${
                     showsOnce ? 'daily-activity-animation' : 'hidden'
                   } items-center rounded pb-5 text-center`}>
-                  <h2 className="relative pb-5 text-2xl font-semibold ">
-                    Our Activites
+                  <h2 className="relative pb-5 font-helios-condensed text-2xl font-semibold">
+                    Our Activities
                     <div className="-bottom-px h-1 bg-gradient-to-r from-colorDescription via-transparent to-transparent"></div>
                   </h2>
                   <Carousel
@@ -194,7 +190,7 @@ export default function App() {
                   className={`${
                     showsOnce ? 'founder-text-title' : 'hidden'
                   } flex items-center justify-center pb-5 text-center text-sm font-extralight`}>
-                  Brian, Dio, Wandi. Founders. Trinity SteelIndo
+                  Trinity SteelIndo
                 </div>
               </div>
             </div>
