@@ -81,16 +81,16 @@ export default function App() {
 
   const listOfMainProductsMobileViews = products.map((value) => {
     return (
-      <div className="mx-auto flex h-full w-full flex-col overflow-hidden rounded-xl bg-colorCard">
+      <div
+        className="group relative m-2 transform overflow-hidden rounded-xl  bg-center transition-transform duration-300 hover:scale-110"
+        style={{backgroundImage: `url(${value.image})`}}>
         <div className="h-52 overflow-hidden rounded-t-xl">
-          <div
-            style={{backgroundImage: `url(${value.image})`}}
-            className="h-full w-full bg-cover bg-center"
-          />
-        </div>
-        <div className="h-auto p-5 font-helios-condensed text-white">
-          <div className="mb-2 text-2xl  font-bold ">{value.title}</div>
-          <h3 className="overflow-hidden">{value.description}</h3>
+          {' '}
+          <div className="absolute inset-x-0 bottom-0 flex items-start justify-start p-5 align-bottom opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            <div className="font-helios-condensed text-xl font-bold text-white">
+              {value.title}
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -146,7 +146,7 @@ export default function App() {
           />
           <Body>
             <div
-              className={`text-xltext-colorDescription flex flex-col items-center justify-center sm:block`}>
+              className={`flex flex-col items-center justify-center text-xl sm:block`}>
               <div className="w-full overflow-hidden whitespace-nowrap  text-center">
                 <h1
                   className={`${
@@ -198,7 +198,7 @@ export default function App() {
           <div className="hidden h-full w-full flex-col overflow-y-auto bg-colorPrimary px-5 py-5 lg:flex xl:flex">
             {listOfMainProductsDesktopViews}
           </div>
-          <div className="grid h-full w-full grid-flow-row gap-5 gap-x-5 bg-colorPrimary p-8 lg:hidden xl:hidden">
+          <div className="grid grid-cols-2 gap-5 bg-colorPrimary p-8 lg:hidden xl:hidden">
             {listOfMainProductsMobileViews}
           </div>
         </div>
