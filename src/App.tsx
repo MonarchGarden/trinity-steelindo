@@ -85,7 +85,6 @@ export default function App() {
         className="group relative m-2 transform overflow-hidden rounded-xl  bg-center transition-transform duration-300 hover:scale-110"
         style={{backgroundImage: `url(${value.image})`}}>
         <div className="h-52 overflow-hidden rounded-t-xl">
-          {' '}
           <div className="absolute inset-x-0 bottom-0 flex items-start justify-start p-5 align-bottom opacity-0 transition-opacity duration-300 group-hover:opacity-100">
             <div className="font-helios-condensed text-xl font-bold text-white">
               {value.title}
@@ -198,7 +197,7 @@ export default function App() {
           <div className="hidden h-full w-full flex-col overflow-y-auto bg-colorPrimary px-5 py-5 lg:flex xl:flex">
             {listOfMainProductsDesktopViews}
           </div>
-          <div className="grid grid-cols-2 gap-5 bg-colorPrimary p-8 lg:hidden xl:hidden">
+          <div className="mobile-tablet-views gap-5 bg-colorPrimary p-8 lg:hidden xl:hidden">
             {listOfMainProductsMobileViews}
           </div>
         </div>
