@@ -1,4 +1,9 @@
-import React, {PropsWithChildren, useCallback, useState} from 'react';
+import React, {
+  PropsWithChildren,
+  useCallback,
+  useState,
+  useEffect,
+} from 'react';
 import './style.css';
 import {NavButtonLink} from '@trinity-steelindo/ui/atoms';
 
@@ -14,6 +19,17 @@ export const Header = ({logoWhite, logoBlack, headerOpacity}: Props) => {
 
   const toggleMenu = useCallback(() => {
     setIsMenuOpen((prevState) => !prevState);
+    if (!isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
   }, []);
 
   return (
