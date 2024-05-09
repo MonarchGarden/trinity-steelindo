@@ -8,12 +8,9 @@ type Props = PropsWithChildren & {
   headerOpacity: number;
 };
 
-//TODO as of now everything is hardcoded
 export const Header = ({logoWhite, logoBlack, headerOpacity}: Props) => {
-  //Forced to use useState to change the navbuttonLink Text
   const [isHeaderHovered, setHeaderHovered] = useState(false);
   return (
-    // Desktop Version
     <header
       className={`${
         headerOpacity! > 0.2 ? 'opacity-0' : 'opacity-100'
@@ -36,7 +33,6 @@ export const Header = ({logoWhite, logoBlack, headerOpacity}: Props) => {
         </div>
         <div className="ml-auto flex items-center">
           {' '}
-          {/* Use ml-auto to push the content to the right */}
           <nav className="hidden items-center space-x-4 font-helios-condensed md:flex">
             <NavButtonLink
               navBarTitle="Beranda"
@@ -47,11 +43,10 @@ export const Header = ({logoWhite, logoBlack, headerOpacity}: Props) => {
               isHeaderHovered={isHeaderHovered}
             />
           </nav>
-          {/* Button for mobile view */}
           <button
             data-collapse-toggle="navbar-default"
             type="button"
-            className="h-10 w-10 items-center justify-center rounded-lg p-2 text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-lg p-2 text-gray-500 hover:bg-colorSecondary focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
             aria-controls="navbar-default"
             aria-expanded="false">
             <span className="sr-only">Open main menu</span>
