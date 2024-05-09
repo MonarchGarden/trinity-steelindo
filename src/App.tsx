@@ -14,6 +14,8 @@ export default function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [loading, setLoading] = useState(true);
   const [showsOnce, setShownOnce] = useState(false);
+  const [isMenuOpen, setMenuOpen] = useState(false);
+  const [lastPosition, setLastPosition] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,16 +37,25 @@ export default function App() {
     };
   }, []);
 
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
+
   const innerHeightScrollPosition = Math.min(
     scrollPosition / window.innerHeight,
     1,
   );
 
+  const totalScrollableHeight = Math.min(
+    document.documentElement.scrollHeight - window.innerHeight,
+  );
+
   useEffect(() => {
     if (innerHeightScrollPosition > 0) {
+      console.log(`Inner Height Position: ${innerHeightScrollPosition}`);
       setShownOnce(true);
     }
-  }, [showsOnce, innerHeightScrollPosition]);
+  }, [showsOnce, innerHeightScrollPosition, totalScrollableHeight]);
 
   const listOfImageCarousel = image.map((value) => (
     <img
@@ -82,7 +93,7 @@ export default function App() {
   const listOfMainProductsMobileViews = products.map((value) => {
     return (
       <div
-        className="group relative m-2 transform overflow-hidden rounded-xl  bg-center transition-transform duration-300 hover:scale-110"
+        className="group relative m-2 transform overflow-hidden rounded-xl bg-center transition-transform duration-300 hover:scale-110"
         style={{backgroundImage: `url(${value.image})`}}>
         <div className="h-52 overflow-hidden rounded-t-xl">
           <div className="absolute inset-x-0 bottom-0 flex items-start justify-start p-5 align-bottom opacity-0 transition-opacity duration-300 group-hover:opacity-100">
@@ -94,6 +105,24 @@ export default function App() {
       </div>
     );
   });
+
+  const MenuComponentMobile = () =>
+    isMenuOpen ? (
+      <div className="fixed right-0 top-16 z-50 bg-white p-4 shadow-lg">
+        <ul className="space-y-4">
+          <li>
+            <a href="#" className="text-gray-800 hover:text-gray-900">
+              Beranda
+            </a>
+          </li>
+          <li>
+            <a href="#" className="text-gray-800 hover:text-gray-900">
+              Katalog Produk
+            </a>
+          </li>
+        </ul>
+      </div>
+    ) : null;
 
   return (
     <>
@@ -137,12 +166,6 @@ export default function App() {
               </h3>
             </div>
           </div>
-          {/* Header and Body components */}
-          <Header
-            headerOpacity={innerHeightScrollPosition}
-            logoBlack={IconLogoTrinityTrans}
-            logoWhite={IconLogoTrinityWhiteTrans}
-          />
           <Body>
             <div
               className={`flex flex-col items-center justify-center text-xl sm:block`}>
@@ -151,7 +174,7 @@ export default function App() {
                   className={`${
                     showsOnce ? 'fill-text-title' : 'hidden'
                   } overflow-hidden pb-5 font-helios-condensed text-4xl text-colorTitle`}>
-                  WHO WE ARE
+                  Siapa Kami?
                 </h1>
               </div>
               <div
@@ -200,6 +223,13 @@ export default function App() {
           <div className="mobile-tablet-views gap-5 bg-colorPrimary p-8 lg:hidden xl:hidden">
             {listOfMainProductsMobileViews}
           </div>
+          <Header
+            headerOpacity={innerHeightScrollPosition}
+            logoBlack={IconLogoTrinityTrans}
+            logoWhite={IconLogoTrinityWhiteTrans}
+            toggleMenu={toggleMenu}
+          />
+          <MenuComponentMobile />
         </div>
       )}
     </>
