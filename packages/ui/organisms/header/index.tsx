@@ -6,21 +6,20 @@ type Props = PropsWithChildren & {
   logoWhite: string;
   logoBlack: string;
   headerOpacity: number;
-  toggleMenu: () => void;
 };
 
-export const Header = ({
-  logoWhite,
-  logoBlack,
-  headerOpacity,
-  toggleMenu,
-}: Props) => {
+export const Header = ({logoWhite, logoBlack, headerOpacity}: Props) => {
   const [isHeaderHovered, setHeaderHovered] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = useCallback(() => {
+    setIsMenuOpen((prevState) => !prevState);
+  }, []);
 
   return (
     <header
       className={`${headerOpacity < 0.7 ? 'opacity-100' : 'opacity-0'} ${headerOpacity > 0.9 ? 'bg-white text-black opacity-100' : 'opacity-0'} 
-      group fixed top-0 w-full overflow-hidden p-3 transition-all hover:bg-white group-hover:text-black md:flex`}
+      group fixed top-0 w-full overflow-hidden p-3 transition-all hover:bg-white group-hover:text-black md:flex ${isMenuOpen ? 'h-screen' : ''}`}
       onMouseEnter={() => setHeaderHovered(true)}
       onMouseLeave={() => setHeaderHovered(false)}>
       <div className="container mx-auto flex items-center justify-between">
@@ -39,7 +38,7 @@ export const Header = ({
           </span>
         </div>
         <div className="ml-auto flex items-center">
-          <nav className="hidden items-center space-x-4 font-helios-condensed md:flex">
+          <nav className="hidden items-center space-x-4 font-helios-condensed lg:flex xl:flex">
             <NavButtonLink
               navBarTitle="Beranda"
               isHeaderHovered={isHeaderHovered}
@@ -54,16 +53,22 @@ export const Header = ({
           <button
             data-collapse-toggle="navbar-default"
             type="button"
-            className="flex h-10 w-10 items-center justify-center rounded-lg p-2 text-gray-500 hover:bg-colorSecondary focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
+            className="hidden h-10 w-10 rounded-lg p-2 text-gray-500 hover:bg-colorSecondary focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 sm:flex md:flex"
             aria-controls="navbar-default"
-            aria-expanded={'false'}
-            onClick={toggleMenu}>
-            {/* {isMenuOpen ? (
+            aria-expanded={isMenuOpen ? 'true' : 'false'}
+            onClick={toggleMenu}
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            {isMenuOpen ? (
+              // X icon
               <svg
-                className="h-5 w-5"
+                className="h-7 w-7"
                 aria-hidden="true"
                 fill="none"
-                viewBox="0 0 20 20">
+                viewBox="0 0 24 24">
                 <path
                   stroke="currentColor"
                   strokeLinecap="round"
@@ -71,22 +76,23 @@ export const Header = ({
                   strokeWidth="2"
                   d="M6 18L18 6M6 6l12 12"
                 />
-              </svg> */}
-            {/* // ) : ( */}
-            <svg
-              className="h-5 w-5"
-              aria-hidden="true"
-              fill="none"
-              viewBox="0 0 17 14">
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M1 1h15M1 7h15M1 13h15"
-              />
-            </svg>
-            {/* )} */}
+              </svg>
+            ) : (
+              // Elypsis button
+              <svg
+                className="h-5 w-5"
+                aria-hidden="true"
+                fill="none"
+                viewBox="0 0 17 14">
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M1 1h15M1 7h15M1 13h15"
+                />
+              </svg>
+            )}
           </button>
         </div>
       </div>

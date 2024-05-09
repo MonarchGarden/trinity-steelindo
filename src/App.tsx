@@ -37,25 +37,16 @@ export default function App() {
     };
   }, []);
 
-  const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
-  };
-
   const innerHeightScrollPosition = Math.min(
     scrollPosition / window.innerHeight,
     1,
   );
 
-  const totalScrollableHeight = Math.min(
-    document.documentElement.scrollHeight - window.innerHeight,
-  );
-
   useEffect(() => {
     if (innerHeightScrollPosition > 0) {
-      console.log(`Inner Height Position: ${innerHeightScrollPosition}`);
       setShownOnce(true);
     }
-  }, [showsOnce, innerHeightScrollPosition, totalScrollableHeight]);
+  }, [showsOnce, innerHeightScrollPosition]);
 
   const listOfImageCarousel = image.map((value) => (
     <img
@@ -105,24 +96,6 @@ export default function App() {
       </div>
     );
   });
-
-  const MenuComponentMobile = () =>
-    isMenuOpen ? (
-      <div className="fixed right-0 top-16 z-50 bg-white p-4 shadow-lg">
-        <ul className="space-y-4">
-          <li>
-            <a href="#" className="text-gray-800 hover:text-gray-900">
-              Beranda
-            </a>
-          </li>
-          <li>
-            <a href="#" className="text-gray-800 hover:text-gray-900">
-              Katalog Produk
-            </a>
-          </li>
-        </ul>
-      </div>
-    ) : null;
 
   return (
     <>
@@ -227,9 +200,7 @@ export default function App() {
             headerOpacity={innerHeightScrollPosition}
             logoBlack={IconLogoTrinityTrans}
             logoWhite={IconLogoTrinityWhiteTrans}
-            toggleMenu={toggleMenu}
           />
-          <MenuComponentMobile />
         </div>
       )}
     </>
