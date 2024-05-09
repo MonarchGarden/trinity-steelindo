@@ -38,7 +38,7 @@ export const Header = ({logoWhite, logoBlack, headerOpacity}: Props) => {
           </span>
         </div>
         <div className="ml-auto flex items-center">
-          <nav className="hidden items-center space-x-4 font-helios-condensed lg:flex xl:flex">
+          <nav className="desktop-views-nav-menu space-x-4 font-helios-condensed">
             <NavButtonLink
               navBarTitle="Beranda"
               isHeaderHovered={isHeaderHovered}
@@ -53,15 +53,10 @@ export const Header = ({logoWhite, logoBlack, headerOpacity}: Props) => {
           <button
             data-collapse-toggle="navbar-default"
             type="button"
-            className="hidden h-10 w-10 rounded-lg p-2 text-gray-500 hover:bg-colorSecondary focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 sm:flex md:flex"
+            className="mobile-views-nav-menu h-10 w-10 items-center justify-center rounded-lg p-2 align-middle text-gray-500 hover:bg-colorSecondary focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
             aria-controls="navbar-default"
             aria-expanded={isMenuOpen ? 'true' : 'false'}
-            onClick={toggleMenu}
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
+            onClick={toggleMenu}>
             {isMenuOpen ? (
               // X icon
               <svg

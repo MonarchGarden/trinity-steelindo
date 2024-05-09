@@ -14,8 +14,6 @@ export default function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [loading, setLoading] = useState(true);
   const [showsOnce, setShownOnce] = useState(false);
-  const [isMenuOpen, setMenuOpen] = useState(false);
-  const [lastPosition, setLastPosition] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {

@@ -50,6 +50,24 @@
   }
 }
 
+@media only screen and (max-width: 767px) {
+  .mobile-views-nav-menu {
+    display: flex;
+  }
+  .desktop-views-nav-menu {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .desktop-views-nav-menu {
+    display: flex;
+  }
+  .mobile-views-nav-menu {
+    display: none;
+  }
+}
+
 @font-face {
   font-family: 'Helios Condensed';
   src: url('/src/assets/font/Helios Condensed.ttf') format('truetype');
