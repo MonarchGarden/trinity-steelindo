@@ -82,7 +82,7 @@ export default function App() {
   const listOfMainProductsMobileViews = products.map((value) => {
     return (
       <div
-        className="group relative m-2 w-full transform overflow-hidden rounded-xl bg-cover bg-center bg-no-repeat transition-transform duration-300 hover:scale-110"
+        className="group relative m-2 w-full transform overflow-hidden rounded-xl bg-cover bg-center bg-no-repeat transition-transform duration-300 hover:scale-105"
         style={{backgroundImage: `url(${value.image})`}}>
         <div className="h-52 overflow-hidden rounded-t-xl">
           <div className="absolute inset-x-0 bottom-0 flex items-start justify-start p-5 align-bottom opacity-0 transition-opacity duration-300 group-hover:opacity-100">

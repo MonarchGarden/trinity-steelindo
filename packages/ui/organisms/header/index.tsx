@@ -34,19 +34,19 @@ export const Header = ({logoWhite, logoBlack, headerOpacity}: Props) => {
 
   return (
     <header
-      className={`${headerOpacity < 0.3 ? 'opacity-100' : 'opacity-0'} ${headerOpacity > 0.9 ? 'bg-white text-black opacity-100' : 'opacity-0'} 
+      className={`${headerOpacity < 0.3 ? 'opacity-100' : 'opacity-0'} ${headerOpacity > 0.4 ? 'bg-white text-black opacity-100' : 'opacity-0'} 
       group fixed top-0 w-full overflow-hidden p-3 transition-all hover:bg-white group-hover:text-black md:flex ${isMenuOpen ? 'h-screen' : ''}`}
       onMouseEnter={() => setHeaderHovered(true)}
       onMouseLeave={() => setHeaderHovered(false)}>
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center">
           <img
-            src={isHeaderHovered || headerOpacity > 0.9 ? logoWhite : logoBlack}
+            src={isHeaderHovered || headerOpacity > 0.4 ? logoWhite : logoBlack}
             className="h-20 w-20"
           />
           <span
             className={`self-center whitespace-nowrap text-2xl font-bold sm:text-lg md:whitespace-nowrap md:text-xl ${
-              isHeaderHovered || headerOpacity > 0.9
+              isHeaderHovered || headerOpacity > 0.4
                 ? 'text-colorPrimary'
                 : 'text-white'
             } trinity-title-text whitespace-pre-line font-helios-condensed`}>

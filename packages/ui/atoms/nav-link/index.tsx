@@ -17,7 +17,7 @@ export const NavButtonLink = ({
     <a
       href="/"
       className={`relative border-b-2 border-transparent px-3 py-2 font-bold ${
-        isHeaderHovered || headerOpacity > 0.9
+        isHeaderHovered || headerOpacity > 0.4
           ? 'text-colorPrimary'
           : 'text-white'
       } hover:text-colorPrimary`}
