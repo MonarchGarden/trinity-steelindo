@@ -34,7 +34,7 @@ export const Header = ({logoWhite, logoBlack, headerOpacity}: Props) => {
 
   return (
     <header
-      className={`${headerOpacity < 0.7 ? 'opacity-100' : 'opacity-0'} ${headerOpacity > 0.9 ? 'bg-white text-black opacity-100' : 'opacity-0'} 
+      className={`${headerOpacity < 0.3 ? 'opacity-100' : 'opacity-0'} ${headerOpacity > 0.9 ? 'bg-white text-black opacity-100' : 'opacity-0'} 
       group fixed top-0 w-full overflow-hidden p-3 transition-all hover:bg-white group-hover:text-black md:flex ${isMenuOpen ? 'h-screen' : ''}`}
       onMouseEnter={() => setHeaderHovered(true)}
       onMouseLeave={() => setHeaderHovered(false)}>
