@@ -19,11 +19,7 @@ export const Header = ({logoWhite, logoBlack, headerOpacity}: Props) => {
 
   const toggleMenu = useCallback(() => {
     setIsMenuOpen((prevState) => !prevState);
-    if (!isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
+    document.body.style.overflow = !isMenuOpen ? 'hidden' : 'auto';
   }, [isMenuOpen]);
 
   useEffect(() => {
@@ -117,15 +113,29 @@ export const Header = ({logoWhite, logoBlack, headerOpacity}: Props) => {
         </div>
       </header>
       <div
-        className={`fixed inset-0 z-50 bg-white transition-transform ${
-          isMenuOpen
-            ? 'translate-y-full transform duration-300'
-            : '-translate-y-full transform duration-300'
+        className={`fixed left-0 right-0 top-80 z-50 bg-white transition-transform duration-300 ${
+          isMenuOpen ? 'translate-y-full' : 'translate-y-0'
         }`}>
-        <ul>
-          <li>Menu Item 1</li>
-          <li>Menu Item 2</li>
-          <li>Menu Item 3</li>
+        <div className="flex justify-end p-4">
+          <button
+            type="button"
+            className="h-7 w-7 rounded text-gray-500 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            onClick={toggleMenu}>
+            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <ul className="p-5">
+          <li className="mb-2">Menu Item 1</li>
+          <li className="mb-2">Menu Item 2</li>
+          <li className="mb-2">Menu Item 3</li>
         </ul>
       </div>
     </div>

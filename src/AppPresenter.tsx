@@ -100,7 +100,7 @@ export default function App() {
       {loading ? (
         <SplashScreen />
       ) : (
-        <div className="relative flex h-full w-full flex-col overflow-auto bg-colorPrimary">
+        <div className="no-scrollbar relative flex h-full w-full flex-col overflow-auto bg-colorPrimary">
           {/* Mobile Version */}
           <div className="display-background-mobile relative h-screen w-full overflow-hidden bg-IconTrinityTruckSecondFull bg-cover bg-center bg-no-repeat">
             {/* Gradient Top */}
@@ -117,7 +117,7 @@ export default function App() {
           </div>
 
           {/* Desktop and Tablet Version bg-IconTrinityTruckSecond*/}
-          <div className="bg-IconTrinityTruckSecond display-background-desktop relative hidden h-screen w-full bg-cover bg-center bg-no-repeat sm:block">
+          <div className="bg-IconTrinityTruckSecond display-background-desktop relative hidden h-screen w-full overflow-auto overflow-y-auto bg-cover bg-center bg-no-repeat sm:block">
             {/* Gradient Top */}
             <div className="absolute inset-0 bg-gradient-to-t from-transparent to-colorPrimary" />
             {/* Curtain Shadows */}
