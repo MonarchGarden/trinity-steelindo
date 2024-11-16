@@ -17,6 +17,7 @@ module.exports = {
     '50%': '50%',
     '80%': '80%',
   },
+  plugins: [],
   theme: {
     // screens: {
     //   sm: {min: '640px', max: '767px'},
@@ -61,11 +62,15 @@ module.exports = {
         colorDescription: '#BCBDBD',
         colorWhite: '#FFFFFF',
         colorCard: '#11374d',
+        colorScrollTrack: '#464646',
+        'scrollbar-thumb': '#333',
+        'scrollbar-track': '#464646',
       },
     },
   },
   variants: {
     extend: {
+      scrollbar: ['dark'],
       opacity: ['responsive', 'hover', 'focus', 'active'],
     },
   },

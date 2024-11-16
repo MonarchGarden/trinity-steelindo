@@ -100,13 +100,10 @@ export default function App() {
       {loading ? (
         <SplashScreen />
       ) : (
-        <div className="no-scrollbar relative flex h-full w-full flex-col overflow-auto bg-colorPrimary">
-          {/* <Header
-          headerOpacity={innerHeightScrollPosition}
-          logoBlack={IconLogoTrinityTrans}
-          logoWhite={IconLogoTrinityWhiteTrans}
-        /> */}
-
+        <div
+          className="relative
+            flex
+            h-full w-full flex-col overflow-auto bg-colorPrimary [&::-webkit-scrollbar-thumb]:bg-red-500 [&::-webkit-scrollbar]:[width:30px]">
           {/* Mobile Version */}
           <div className="display-background-mobile relative h-screen w-full overflow-hidden bg-IconTrinityTruckSecondFull bg-cover bg-center bg-no-repeat">
             {/* Gradient Top */}

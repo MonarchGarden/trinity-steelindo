@@ -171,3 +171,13 @@
     -ms-overflow-style: none;
   }
 }
+
+@layer base {
+  ::-webkit-scrollbar {
+    @apply hidden;
+  }
+
+  ::-webkit-scrollbar-track-piece {
+    @apply hidden;
+  }
+}
