@@ -5,7 +5,7 @@ import SplashScreen from './components/splash-screen';
 import {Carousel} from '@material-tailwind/react';
 import {image} from './components/data/image';
 import {
-  IconLogoTrinityTrans,
+  IconLogoTrinityBlack,
   IconLogoTrinityWhiteTrans,
 } from '@trinity-steelindo/assets/index';
 import {products} from './components/data/product';
@@ -200,8 +200,7 @@ export default function App() {
             {listOfMainProductsMobileViews}
           </div>
           <Header
-            headerOpacity={innerHeightScrollPosition}
-            logoBlack={IconLogoTrinityTrans}
+            logoBlack={IconLogoTrinityBlack}
             logoWhite={IconLogoTrinityWhiteTrans}
           />
         </div>
