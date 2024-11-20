@@ -9,7 +9,6 @@ import {
   IconLogoTrinityWhiteTrans,
 } from '@trinity-steelindo/assets/index';
 import {products} from './components/data/product';
-import Wavify from 'react-wavify';
 
 export default function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
