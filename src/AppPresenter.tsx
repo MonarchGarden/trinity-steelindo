@@ -132,11 +132,11 @@ export default function App() {
             <div className="absolute inset-0 bg-colorPrimary bg-opacity-30" />
             <div className="group-textbox bottom-0 left-0 flex flex-col items-center px-10 sm:hidden md:absolute md:bottom-0 md:right-0 md:flex md:items-start md:px-10">
               {/* Responsive font size */}
-              <h1 className="trinity-title-text whitespace-pre-line pb-5 font-helios-condensed font-bold text-white">
+              <h1 className="trinity-title-text animate-fade-in-down whitespace-pre-line pb-5 font-helios-condensed font-bold text-white">
                 Welcome to <span className="underline">TRINITY STEELINDO</span>
               </h1>
               {/* Responsive text */}
-              <h3 className="mb-10 hidden whitespace-pre-line text-justify font-helios-condensed text-xl text-white md:mb-5 md:flex md:text-xl lg:pb-10 lg:text-xl xl:pb-10 xl:text-2xl">
+              <h3 className="animate-fade-in-up mb-10 hidden whitespace-pre-line text-justify font-helios-condensed text-xl text-white md:mb-5 md:flex md:text-xl lg:pb-10 lg:text-xl xl:pb-10 xl:text-2xl">
                 Trinity Steelindo is a trusted destination for high-quality
                 steel and UPVC roofing products.
                 {'\n'}We are committed to excellence and offer a wide range of
