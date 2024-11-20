@@ -9,6 +9,7 @@ import {
   IconLogoTrinityWhiteTrans,
 } from '@trinity-steelindo/assets/index';
 import {products} from './components/data/product';
+import Wavify from 'react-wavify';
 
 export default function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -49,7 +50,8 @@ export default function App() {
   const listOfImageCarousel = image.map((value) => (
     <img
       src={value.image}
-      className="h-full w-full bg-center object-cover"></img>
+      className="h-full w-full bg-center object-cover"
+      alt=""></img>
   ));
 
   const listOfMainProductsDesktopViews = products.map((value, index) => {
@@ -105,17 +107,13 @@ export default function App() {
       {loading ? (
         <SplashScreen />
       ) : (
-        <div
-          className="relative
-            flex
-            h-full w-full flex-col overflow-auto bg-colorPrimary [&::-webkit-scrollbar-thumb]:bg-red-500 [&::-webkit-scrollbar]:[width:30px]">
+        <div className="relative flex h-full w-full flex-col overflow-auto bg-colorPrimary">
           {/* Mobile Version */}
-          <div className="display-background-mobile relative h-screen w-full overflow-hidden bg-IconTrinityTruckSecondFull bg-cover bg-center bg-no-repeat">
+          <section className="display-background-mobile relative h-screen w-full overflow-hidden bg-IconTrinityTruckSecondFull bg-cover bg-center bg-no-repeat">
             {/* Gradient Top */}
             <div className="absolute inset-0 bg-gradient-to-t from-transparent to-colorPrimary" />
             {/* Curtain Shadows */}
             <div className="absolute inset-0 bg-colorPrimary bg-opacity-40" />
-
             {/* Center Title */}
             <div className="absolute inset-0 flex flex-col items-center justify-center px-8 py-10">
               <h1 className="trinity-title-text animate-fade-in-down whitespace-pre-line text-center font-helios-condensed text-4xl font-bold text-white sm:text-5xl md:text-6xl">
@@ -128,33 +126,30 @@ export default function App() {
                 needs of the industrial and construction sectors.
               </h3>
             </div>
-          </div>
-          {/* Desktop and Tablet Version bg-IconTrinityTruckSecond*/}
-          <div className="bg-IconTrinityTruckSecond display-background-desktop relative hidden h-screen w-full overflow-auto overflow-y-auto bg-cover bg-center bg-no-repeat sm:block">
+          </section>
+
+          {/* Desktop and Tablet Version */}
+          <section className="bg-IconTrinityTruckSecond display-background-desktop relative hidden h-screen w-full overflow-auto bg-cover bg-center bg-no-repeat sm:block">
             {/* Gradient Top */}
             <div className="absolute inset-0 bg-gradient-to-t from-transparent to-colorPrimary" />
             {/* Curtain Shadows */}
             <div className="absolute inset-0 bg-colorPrimary bg-opacity-30" />
             <div className="group-textbox bottom-0 left-0 flex flex-col items-center px-10 sm:hidden md:absolute md:bottom-0 md:right-0 md:flex md:items-start md:px-10">
-              {/* Responsive font size */}
               <h1 className="trinity-title-text animate-fade-in-down whitespace-pre-line pb-5 font-helios-condensed font-bold text-white">
                 Welcome to <span className="underline">TRINITY STEELINDO</span>
               </h1>
-              {/* Responsive text */}
-              <h3 className="animate-fade-in-up mb-10 hidden whitespace-pre-line text-justify font-helios-condensed text-xl text-white md:mb-5 md:flex md:text-xl lg:pb-10 lg:text-xl xl:pb-10 xl:text-2xl">
+              <h3 className="animate-fade-in-up mb-10 hidden whitespace-pre-line text-justify font-helios-condensed text-xl text-white md:mb-5 md:flex lg:pb-10 lg:text-xl xl:pb-10 xl:text-2xl">
                 Trinity Steelindo is a trusted destination for high-quality
-                steel and UPVC roofing products.
-                {'\n'}We are committed to excellence and offer a wide range of
-                steel products {'\n'}to meet the diverse needs of the industrial
-                and construction sectors.
+                steel and UPVC roofing products. We are committed to excellence
+                and offer a wide range of steel products to meet the diverse
+                needs of the industrial and construction sectors.
               </h3>
             </div>
-          </div>
+          </section>
 
           <Body>
-            <div
-              className={`flex flex-col items-center justify-center text-xl sm:block`}>
-              <div className="w-full overflow-hidden whitespace-nowrap  text-center">
+            <div className="flex flex-col items-center justify-center text-xl sm:block">
+              <div className="w-full overflow-hidden whitespace-nowrap text-center">
                 <h1
                   className={`${
                     showsOnce ? 'fill-text-title' : 'hidden'
@@ -165,7 +160,7 @@ export default function App() {
               <div
                 className={`${
                   showsOnce ? 'description-animation' : 'hidden'
-                } w-full items-center justify-center  pb-5`}>
+                } w-full items-center justify-center pb-5`}>
                 <h6 className="mb-8 w-full scale-100 transform text-center font-helios-condensed text-white transition-transform sm:mb-0">
                   Upgrade your roofing needs with UPVC roofing products from us.
                   These products provide durability and aesthetic appeal,
@@ -174,8 +169,7 @@ export default function App() {
                   satisfaction in every product we provide.
                 </h6>
               </div>
-              <div
-                className={`flex flex-col items-center justify-center  text-xl text-colorDescription`}>
+              <div className="flex flex-col items-center justify-center text-xl text-colorDescription">
                 <div
                   className={`flex flex-col ${
                     showsOnce ? 'daily-activity-animation' : 'hidden'
@@ -203,12 +197,14 @@ export default function App() {
             </div>
           </Body>
 
-          <div className="hidden h-full w-full flex-col overflow-y-auto bg-colorPrimary px-5 py-5 lg:flex xl:flex">
+          <section className="hidden h-full w-full flex-col overflow-y-auto bg-colorPrimary px-5 py-5 lg:flex xl:flex">
             {listOfMainProductsDesktopViews}
-          </div>
-          <div className="mobile-tablet-views w-full gap-5 bg-colorPrimary p-8 lg:hidden xl:hidden">
+          </section>
+
+          <section className="mobile-tablet-views w-full gap-5 bg-colorPrimary p-8 lg:hidden xl:hidden">
             {listOfMainProductsMobileViews}
-          </div>
+          </section>
+
           <Header
             logoBlack={IconLogoTrinityBlack}
             logoWhite={IconLogoTrinityWhiteTrans}

@@ -19,23 +19,17 @@ module.exports = {
   },
   plugins: [],
   theme: {
-    // screens: {
-    //   sm: {min: '640px', max: '767px'},
-
-    //   md: {min: '768px', max: '1023px'},
-
-    //   lg: {min: '1024px', max: '1279px'},
-
-    //   xl: {min: '1280px', max: '1535px'},
-
-    //   '2xl': {min: '1536px'},
-    // },
     extend: {
       animation: {
         'fade-in-up': 'fade-in-up 1s ease-out forwards',
         'fade-in-down': 'fade-in-down 1s ease-out forwards',
+        wave: 'wave 8s linear infinite',
       },
       keyframes: {
+        wave: {
+          '0%': {transform: 'translateX(0)'},
+          '100%': {transform: 'translateX(-50%)'},
+        },
         'fade-in-up': {
           '0%': {opacity: 0, transform: 'translateY(20px)'},
           '100%': {opacity: 1, transform: 'translateY(0)'},
