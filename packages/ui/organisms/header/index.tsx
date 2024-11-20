@@ -28,7 +28,7 @@ export const Header = ({logoWhite, logoBlack}: Props) => {
 
   return (
     <header
-      className={`fixed top-0 w-full p-3 transition-all duration-700 ease-linear ${
+      className={`fixed top-0 z-50 w-full p-3 transition-all duration-700 ease-linear ${
         isMobileMenuOpen || isHovered
           ? 'bg-white bg-opacity-65 shadow-md'
           : isScrolled
@@ -82,26 +82,27 @@ export const Header = ({logoWhite, logoBlack}: Props) => {
       </div>
 
       {/* Mobile Navigation */}
-      {isMobileMenuOpen && (
-        <div>
-          <ul className="space-y-4 p-4">
-            <li>
-              <NavButtonLink
-                navBarTitle="Beranda"
-                isHeaderHovered={true}
-                headerOpacity={headerOpacity}
-              />
-            </li>
-            <li>
-              <NavButtonLink
-                navBarTitle="Katalog Produk"
-                isHeaderHovered={true}
-                headerOpacity={headerOpacity}
-              />
-            </li>
-          </ul>
-        </div>
-      )}
+      <div
+        className={`absolute left-0 right-0 top-full transform bg-white bg-opacity-65 shadow-md transition-all duration-500 ease-in-out ${
+          isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+        } overflow-hidden`}>
+        <ul className="space-y-4 p-4">
+          <li>
+            <NavButtonLink
+              navBarTitle="Beranda"
+              isHeaderHovered={true}
+              headerOpacity={headerOpacity}
+            />
+          </li>
+          <li>
+            <NavButtonLink
+              navBarTitle="Katalog Produk"
+              isHeaderHovered={true}
+              headerOpacity={headerOpacity}
+            />
+          </li>
+        </ul>
+      </div>
     </header>
   );
 };
