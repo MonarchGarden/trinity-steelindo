@@ -140,7 +140,27 @@ export default function App() {
               </h3>
             </div>
           </div>
-
+          <div className="absolute bottom-0 w-full overflow-hidden leading-none">
+            <svg
+              className="animate-wave relative block h-16 w-full"
+              xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="none">
+              <path
+                d="M0,0V50c48.29,22.26,130.91,29.15,213.33,15C367.41,45.78,473.89,2.43,579.08,5,690.68,7.87,789.91,62.91,900,70c93.65,6.39,183.15-15.85,300-55V0Z"
+                fill="#4a90e2"
+              />
+            </svg>
+            <svg
+              className="animate-wave absolute block h-16 w-full opacity-50"
+              xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="none"
+              style={{top: '10px'}}>
+              <path
+                d="M0,0V50c48.29,22.26,130.91,29.15,213.33,15C367.41,45.78,473.89,2.43,579.08,5,690.68,7.87,789.91,62.91,900,70c93.65,6.39,183.15-15.85,300-55V0Z"
+                fill="#3a80d2"
+              />
+            </svg>
+          </div>
           <Body>
             <div
               className={`flex flex-col items-center justify-center text-xl sm:block`}>
