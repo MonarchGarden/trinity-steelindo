@@ -110,15 +110,20 @@ export default function App() {
             <div className="absolute inset-0 bg-gradient-to-t from-transparent to-colorPrimary" />
             {/* Curtain Shadows */}
             <div className="absolute inset-0 bg-colorPrimary bg-opacity-40" />
-            <div className="group-textbox absolute bottom-0 left-0 right-0 flex flex-col items-center justify-center pb-5">
-              {/* Responsive font size */}
-              <h1 className="trinity-title-text whitespace-pre-line text-center font-helios-condensed font-bold text-white">
-                We Are Ready{'\n'}To Satisfy Your Needs
+
+            {/* Center Title */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center px-8 py-10">
+              <h1 className="trinity-title-text animate-fade-in-down whitespace-pre-line text-center font-helios-condensed text-4xl font-bold text-white sm:text-5xl md:text-6xl">
+                Welcome to <span className="underline">TRINITY STEELINDO</span>
               </h1>
-              {/* Responsive text */}
+              <h3 className="animate-fade-in-up mt-6 text-center font-helios-condensed text-lg leading-relaxed text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl">
+                Trinity Steelindo is a trusted destination for high-quality
+                steel and UPVC roofing products. We are committed to excellence
+                and offer a wide range of steel products to meet the diverse
+                needs of the industrial and construction sectors.
+              </h3>
             </div>
           </div>
-
           {/* Desktop and Tablet Version bg-IconTrinityTruckSecond*/}
           <div className="bg-IconTrinityTruckSecond display-background-desktop relative hidden h-screen w-full overflow-auto overflow-y-auto bg-cover bg-center bg-no-repeat sm:block">
             {/* Gradient Top */}
@@ -128,7 +133,7 @@ export default function App() {
             <div className="group-textbox bottom-0 left-0 flex flex-col items-center px-10 sm:hidden md:absolute md:bottom-0 md:right-0 md:flex md:items-start md:px-10">
               {/* Responsive font size */}
               <h1 className="trinity-title-text whitespace-pre-line pb-5 font-helios-condensed font-bold text-white">
-                We Are Ready{'\n'}To Satisfy Your Needs
+                Welcome to <span className="underline">TRINITY STEELINDO</span>
               </h1>
               {/* Responsive text */}
               <h3 className="mb-10 hidden whitespace-pre-line text-justify font-helios-condensed text-xl text-white md:mb-5 md:flex md:text-xl lg:pb-10 lg:text-xl xl:pb-10 xl:text-2xl">
@@ -140,27 +145,7 @@ export default function App() {
               </h3>
             </div>
           </div>
-          <div className="absolute bottom-0 w-full overflow-hidden leading-none">
-            <svg
-              className="animate-wave relative block h-16 w-full"
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="none">
-              <path
-                d="M0,0V50c48.29,22.26,130.91,29.15,213.33,15C367.41,45.78,473.89,2.43,579.08,5,690.68,7.87,789.91,62.91,900,70c93.65,6.39,183.15-15.85,300-55V0Z"
-                fill="#4a90e2"
-              />
-            </svg>
-            <svg
-              className="animate-wave absolute block h-16 w-full opacity-50"
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="none"
-              style={{top: '10px'}}>
-              <path
-                d="M0,0V50c48.29,22.26,130.91,29.15,213.33,15C367.41,45.78,473.89,2.43,579.08,5,690.68,7.87,789.91,62.91,900,70c93.65,6.39,183.15-15.85,300-55V0Z"
-                fill="#3a80d2"
-              />
-            </svg>
-          </div>
+
           <Body>
             <div
               className={`flex flex-col items-center justify-center text-xl sm:block`}>

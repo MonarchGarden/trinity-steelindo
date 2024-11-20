@@ -31,6 +31,20 @@ module.exports = {
     //   '2xl': {min: '1536px'},
     // },
     extend: {
+      animation: {
+        'fade-in-up': 'fade-in-up 1s ease-out forwards',
+        'fade-in-down': 'fade-in-down 1s ease-out forwards',
+      },
+      keyframes: {
+        'fade-in-up': {
+          '0%': {opacity: 0, transform: 'translateY(20px)'},
+          '100%': {opacity: 1, transform: 'translateY(0)'},
+        },
+        'fade-in-down': {
+          '0%': {opacity: 0, transform: 'translateY(-20px)'},
+          '100%': {opacity: 1, transform: 'translateY(0)'},
+        },
+      },
       backgroundImage: (theme) => ({
         IconTrinityTruckSecondFull:
           "url('/src/assets/icon-trinity-truck-2-full-size.jpeg')",
