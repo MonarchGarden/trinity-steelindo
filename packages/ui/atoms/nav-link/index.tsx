@@ -1,21 +1,24 @@
 import React, {PropsWithChildren, useState} from 'react';
+import {Link} from 'react-router-dom';
 
 type Props = PropsWithChildren & {
-  navBarTitle?: string;
-  isHeaderHovered: boolean;
-  headerOpacity: number;
+  navBarTitle?: string; // The label for the navigation button
+  path: string; // The route path for the navigation
+  isHeaderHovered: boolean; // Whether the header is hovered
+  headerOpacity: number; // The scroll-based opacity of the header
 };
 
 export const NavButtonLink = ({
   navBarTitle,
+  path,
   isHeaderHovered,
   headerOpacity,
 }: Props) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <a
-      href="/"
+    <Link
+      to={path} // Use React Router's Link component for navigation
       className={`relative px-3 py-2 text-lg font-bold transition-all duration-300 ${
         isHeaderHovered || headerOpacity > 0.4
           ? 'text-colorPrimary'
@@ -31,6 +34,6 @@ export const NavButtonLink = ({
         style={{
           opacity: headerOpacity > 0.4 ? 1 : 0.5,
         }}></span>
-    </a>
+    </Link>
   );
 };

@@ -1,13 +1,19 @@
-import React, {PropsWithChildren, useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import './style.css';
 import {NavButtonLink} from '@trinity-steelindo/ui/atoms';
 
-type Props = PropsWithChildren & {
-  logoWhite: string;
-  logoBlack: string;
+type NavLink = {
+  path: string;
+  label: string;
 };
 
-export const Header = ({logoWhite, logoBlack}: Props) => {
+type Props = {
+  logoWhite: string;
+  logoBlack: string;
+  navLinks: NavLink[];
+};
+
+export const Header = ({logoWhite, logoBlack, navLinks}: Props) => {
   const [scrollPosition, setScrollPosition] = useState<number>(0);
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
@@ -70,16 +76,15 @@ export const Header = ({logoWhite, logoBlack}: Props) => {
 
         {/* Desktop Navigation */}
         <nav className="hidden space-x-4 md:flex">
-          <NavButtonLink
-            navBarTitle="Beranda"
-            isHeaderHovered={isHovered || isMobileMenuOpen}
-            headerOpacity={headerOpacity}
-          />
-          <NavButtonLink
-            navBarTitle="Katalog Produk"
-            isHeaderHovered={isHovered || isMobileMenuOpen}
-            headerOpacity={headerOpacity}
-          />
+          {navLinks.map((link, index) => (
+            <NavButtonLink
+              key={index}
+              navBarTitle={link.label}
+              path={link.path}
+              isHeaderHovered={isHovered || isMobileMenuOpen}
+              headerOpacity={headerOpacity}
+            />
+          ))}
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -127,20 +132,16 @@ export const Header = ({logoWhite, logoBlack}: Props) => {
           isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         } overflow-hidden`}>
         <ul className="space-y-4 p-4">
-          <li>
-            <NavButtonLink
-              navBarTitle="Beranda"
-              isHeaderHovered={true}
-              headerOpacity={headerOpacity}
-            />
-          </li>
-          <li>
-            <NavButtonLink
-              navBarTitle="Katalog Produk"
-              isHeaderHovered={true}
-              headerOpacity={headerOpacity}
-            />
-          </li>
+          {navLinks.map((link, index) => (
+            <li key={index}>
+              <NavButtonLink
+                navBarTitle={link.label}
+                path={link.path}
+                isHeaderHovered={true}
+                headerOpacity={headerOpacity}
+              />
+            </li>
+          ))}
         </ul>
       </div>
     </header>

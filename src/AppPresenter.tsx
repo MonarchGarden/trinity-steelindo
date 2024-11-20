@@ -95,6 +95,11 @@ export default function App() {
     );
   });
 
+  const navLinks = [
+    {path: '/trinity-steelindo', label: 'Beranda'},
+    {path: '/katalog-produk', label: 'Katalog Produk'},
+  ];
+
   return (
     <>
       {loading ? (
@@ -207,6 +212,7 @@ export default function App() {
           <Header
             logoBlack={IconLogoTrinityBlack}
             logoWhite={IconLogoTrinityWhiteTrans}
+            navLinks={navLinks}
           />
         </div>
       )}
