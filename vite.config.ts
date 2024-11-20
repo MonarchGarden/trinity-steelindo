@@ -5,7 +5,7 @@ import {ViteMinifyPlugin} from 'vite-plugin-minify';
 import vitePlugin from 'vite-plugin-javascript-obfuscator';
 
 export default defineConfig({
-  base: '/trinity-steelindo/',
+  base: '/trinity-steelindo',
   plugins: [
     react(),
     ViteMinifyPlugin(),
