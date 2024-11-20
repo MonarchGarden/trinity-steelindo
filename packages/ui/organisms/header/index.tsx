@@ -24,7 +24,6 @@ export const Header = ({logoWhite, logoBlack, navLinks}: Props) => {
     };
 
     const handleResize = () => {
-      // Close mobile menu if screen width exceeds 768px (md breakpoint)
       if (window.innerWidth >= 768 && isMobileMenuOpen) {
         setIsMobileMenuOpen(false);
       }
