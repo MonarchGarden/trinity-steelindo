@@ -98,7 +98,7 @@ export default function App() {
 
   const navLinks = [
     {path: '/trinity-steelindo', label: 'Beranda'},
-    {path: '/katalog-produk', label: 'Katalog Produk'},
+    {path: '/trinity-steelindo/katalog-produk', label: 'Katalog Produk'},
   ];
 
   return (
@@ -118,7 +118,7 @@ export default function App() {
               <h1 className="trinity-title-text animate-fade-in-down whitespace-pre-line text-center font-helios-condensed text-4xl font-bold text-white sm:text-5xl md:text-6xl">
                 Welcome to <span className="underline">TRINITY STEELINDO</span>
               </h1>
-              <h3 className="animate-fade-in-up mt-6 text-center font-helios-condensed text-lg leading-relaxed text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl">
+              <h3 className="mt-6 animate-fade-in-up text-center font-helios-condensed text-lg leading-relaxed text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl">
                 Trinity Steelindo is a trusted destination for high-quality
                 steel and UPVC roofing products. We are committed to excellence
                 and offer a wide range of steel products to meet the diverse
@@ -137,7 +137,7 @@ export default function App() {
               <h1 className="trinity-title-text animate-fade-in-down whitespace-pre-line pb-5 font-helios-condensed font-bold text-white">
                 Welcome to <span className="underline">TRINITY STEELINDO</span>
               </h1>
-              <h3 className="animate-fade-in-up mb-10 hidden whitespace-pre-line text-justify font-helios-condensed text-xl text-white md:mb-5 md:flex lg:pb-10 lg:text-xl xl:pb-10 xl:text-2xl">
+              <h3 className="mb-10 hidden animate-fade-in-up whitespace-pre-line text-justify font-helios-condensed text-xl text-white md:mb-5 md:flex lg:pb-10 lg:text-xl xl:pb-10 xl:text-2xl">
                 Trinity Steelindo is a trusted destination for high-quality
                 steel and UPVC roofing products. We are committed to excellence
                 and offer a wide range of steel products to meet the diverse

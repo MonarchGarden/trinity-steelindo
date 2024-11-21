@@ -1,5 +1,4 @@
 import React, {PropsWithChildren} from 'react';
-import Wavify from 'react-wavify';
 
 type Props = PropsWithChildren;
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Route, Routes} from 'react-router-dom';
-import App from './AppPresenter';
+import App from './app_presenter';
+import ProductCatalog from './katalog_produk';
 
 const AppRoutes = () => {
   return (
@@ -9,8 +10,11 @@ const AppRoutes = () => {
       {/* <Route path="/about" element={<AboutUs />} />
       <Route path="/products" element={<Products />} />
 
-      Fallback for undefined routes *
-      <Route path="*" element={<PageNotFound />} /> */}
+      Fallback for undefined routes */}
+      <Route
+        path="/trinity-steelindo/katalog-produk"
+        element={<ProductCatalog />}
+      />
     </Routes>
   );
 };

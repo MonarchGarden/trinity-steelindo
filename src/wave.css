@@ -1,0 +1,38 @@
+@keyframes animateWave {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+section .wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 100px;
+  background: url('wave.png') repeat-x;
+  background-size: contain;
+}
+
+section .wave.wave1 {
+  animation: animateWave 10s linear infinite;
+  opacity: 0.7;
+  z-index: 3;
+}
+
+section .wave.wave2 {
+  animation: animateWave 15s linear infinite;
+  opacity: 0.5;
+  z-index: 2;
+  bottom: -5px;
+}
+
+section .wave.wave3 {
+  animation: animateWave 20s linear infinite;
+  opacity: 0.3;
+  z-index: 1;
+  bottom: -10px;
+}
