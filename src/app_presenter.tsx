@@ -197,6 +197,14 @@ export default function App() {
           </Body>
 
           <section className="hidden h-full w-full flex-col overflow-y-auto bg-colorPrimary px-5 py-5 lg:flex xl:flex">
+            <div className="w-full overflow-hidden whitespace-nowrap text-center">
+              <h1
+                className={`${
+                  showsOnce ? 'fill-text-title' : 'hidden'
+                } overflow-hidden font-helios-condensed text-4xl text-colorTitle`}>
+                Product Showcase
+              </h1>
+            </div>
             {listOfMainProductsDesktopViews}
           </section>
 

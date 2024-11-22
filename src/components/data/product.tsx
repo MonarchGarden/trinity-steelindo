@@ -13,7 +13,7 @@ export const products = [
     title: 'Baja Ringan TCT',
     image: IconTrinityBajaRingan,
     description:
-      'Baja ringan TCT (Truss Cold Formed Technology) adalah jenis baja ringan yang diproses menggunakan teknologi dingin (cold formed) dengan metode pembentukan truss. Baja ringan TCT memiliki profil yang dirancang khusus untuk memenuhi kebutuhan struktur bangunan dengan efisiensi tinggi, baik dalam hal kekuatan maupun keberlangsungan konstruksi. Teknologi cold formed memungkinkan pembentukan baja dengan presisi tinggi, sehingga menghasilkan produk yang berkualitas dan konsisten.',
+      'Baja ringan TCT (Truss Cold Formed Technology) adalah jenis baja ringan yang diproses menggunakan teknologi dingin (cold formed) dengan metode pembentukan truss. Baja ringan TCT memiliki profil yang dirancang khusus untuk memenuhi kebutuhan struktur bangunan dengan efisiensi tinggi.',
     steelFormDescription: [
       {
         id: 0,
@@ -68,7 +68,7 @@ export const products = [
     title: 'Hollow Plafon',
     image: IconTrinityHollowPlafon,
     description:
-      'Hollow plafon adalah jenis plafon yang terbuat dari material berongga, seperti gypsum, kayu, atau bahan komposit lainnya. Plafon ini memiliki struktur dalam yang berongga, seringkali disebut sebagai "hollow" atau "hollow core", yang memberikan ringan pada plafon dan memudahkan instalasi. Hollow plafon sering digunakan dalam pembangunan interior untuk menutupi bagian atas ruangan dan memberikan tampilan yang rapi dan estetis.',
+      'Hollow plafon adalah jenis plafon yang terbuat dari material berongga, seperti gypsum, kayu, atau bahan komposit lainnya. Plafon ini memiliki struktur dalam yang berongga, seringkali disebut sebagai "hollow" atau "hollow core", yang memberikan ringan pada plafon dan memudahkan instalasi.',
     steelFormDescription: [
       {
         id: 0,
@@ -138,7 +138,7 @@ export const products = [
     title: 'Reng Baja Ringan',
     image: IconRengBajaRingan,
     description:
-      'Reng baja ringan adalah elemen struktural yang digunakan dalam konstruksi atap untuk membentuk kerangka atau rangkaian penyangga atap. Elemen ini terbuat dari baja yang dirancang khusus untuk memberikan dukungan dan kekuatan pada atap bangunan. Reng baja ringan sering kali memiliki profil yang ringan namun kuat, dengan bentuk yang dirancang untuk mendistribusikan beban atap secara merata ke struktur bangunan di bawahnya.',
+      'Reng baja ringan adalah elemen struktural yang digunakan dalam konstruksi atap untuk membentuk kerangka atau rangkaian penyangga atap. Elemen ini terbuat dari baja yang dirancang khusus untuk memberikan dukungan dan kekuatan pada atap bangunan. Reng baja ringan sering kali memiliki profil yang ringan namun kuat.',
     steelFormDescription: [
       {
         id: 0,

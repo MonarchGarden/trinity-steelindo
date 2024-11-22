@@ -182,30 +182,108 @@
   }
 }
 
-.wave-container {
-  position: relative;
-  width: 100%;
+body {
+  margin: 0;
   overflow: hidden;
-  line-height: 0;
+  background-color: #87ceeb;
 }
 
-.wave-svg {
+section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1,
+p {
+  z-index: 1;
+  color: #ffffff;
+  text-align: center;
+}
+
+.wave-container {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 200%;
-  height: auto;
-  animation: wave 10s linear infinite;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
 }
 
-@keyframes wave {
+.wave {
+  position: absolute;
+  bottom: 0;
+  width: 200%;
+  height: 100%;
+  fill: #ffffff;
+  opacity: 0.6;
+}
+
+.wave2 {
+  opacity: 0.4;
+  fill: #ffffff;
+}
+
+.wave3 {
+  opacity: 0.2;
+  fill: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #3586ff;
+  overflow: hidden;
+}
+
+section .wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #081923;
+  background: url('wave.png');
+  background-size: 1000px 100px;
+}
+
+section .wave.wave1 {
+  animation: animate 30s linear infinite;
+  z-index: 1000;
+  opacity: 1;
+  animation-delay: 0s;
+  bottom: 0;
+}
+
+section .wave.wave2 {
+  animation: animate 15s linear infinite;
+  z-index: 999;
+  opacity: 0.5;
+  animation-delay: -5s;
+  bottom: 10px;
+}
+
+section .wave.wave3 {
+  animation: animate 15s linear infinite;
+  z-index: 998;
+  opacity: 0.2;
+  animation-delay: -2s;
+  bottom: 15;
+}
+
+@keyframes animate {
   0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-25%);
+    background-position-x: 0;
   }
   100% {
-    transform: translateX(0);
+    background-position: 1000px;
   }
 }

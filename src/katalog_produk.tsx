@@ -3,6 +3,7 @@ import WaveBackground from './wave_background';
 import {Header} from '@trinity-steelindo/ui/organisms';
 import {IconLogoTrinityBlack, IconLogoTrinityWhiteTrans} from './assets';
 import LoadingScreen from './components/splash-screen';
+import './index.css';
 
 export default function ProductCatalog() {
   const [loading, setLoading] = useState(true);
@@ -32,12 +33,6 @@ export default function ProductCatalog() {
             logoWhite={IconLogoTrinityWhiteTrans}
             navLinks={navLinks}
           />
-          <div className="py-20 text-center text-white">
-            <h1 className="text-4xl font-bold">Welcome to My React App</h1>
-            <p className="mt-4">
-              This is a smooth wave animation using Framer Motion and SVG.
-            </p>
-          </div>
           <WaveBackground />
         </div>
       )}
