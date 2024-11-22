@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './index.css';
 import {Body, Header} from '@trinity-steelindo/ui/organisms';
-import SplashScreen from './components/splash-screen';
 import {Carousel} from '@material-tailwind/react';
 import {image} from './components/data/image';
 import {
@@ -9,6 +8,7 @@ import {
   IconLogoTrinityWhiteTrans,
 } from '@trinity-steelindo/assets/index';
 import {products} from './components/data/product';
+import LoadingScreen from './components/splash-screen';
 
 export default function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -104,7 +104,7 @@ export default function App() {
   return (
     <>
       {loading ? (
-        <SplashScreen />
+        <LoadingScreen />
       ) : (
         <div className="relative flex h-full w-full flex-col overflow-auto bg-colorPrimary">
           {/* Mobile Version */}
@@ -114,15 +114,15 @@ export default function App() {
             {/* Curtain Shadows */}
             <div className="absolute inset-0 bg-colorPrimary bg-opacity-40" />
             {/* Center Title */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center px-8 py-10">
-              <h1 className="trinity-title-text animate-fade-in-down whitespace-pre-line text-center font-helios-condensed text-4xl font-bold text-white sm:text-5xl md:text-6xl">
-                Welcome to <span className="underline">TRINITY STEELINDO</span>
+            <div className="absolute inset-0 flex flex-col items-center justify-center px-8 pt-10 text-center">
+              <h1 className="trinity-title-text animate-fade-in-down whitespace-pre-line font-helios-condensed text-4xl font-bold text-white sm:text-5xl md:text-6xl">
+                Welcome to
+                <br />
+                <span className="underline">TRINITY STEELINDO</span>
               </h1>
-              <h3 className="mt-6 animate-fade-in-up text-center font-helios-condensed text-lg leading-relaxed text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl">
+              <h3 className="mt-6 animate-fade-in-up font-helios-condensed text-lg leading-relaxed text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl">
                 Trinity Steelindo is a trusted destination for high-quality
-                steel and UPVC roofing products. We are committed to excellence
-                and offer a wide range of steel products to meet the diverse
-                needs of the industrial and construction sectors.
+                steel and UPVC roofing products.
               </h3>
             </div>
           </section>

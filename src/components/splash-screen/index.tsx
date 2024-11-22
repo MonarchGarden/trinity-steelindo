@@ -1,7 +1,7 @@
 import React from 'react';
 import {IconLogoTrinityTrans} from '../../assets';
 
-const SplashScreen = () => {
+const LoadingScreen = () => {
   return (
     <div className="flex h-screen items-center justify-center  bg-colorPrimary">
       <div className="relative h-32 w-32 ">
@@ -16,4 +16,4 @@ const SplashScreen = () => {
   );
 };
 
-export default SplashScreen;
+export default LoadingScreen;

@@ -178,7 +178,7 @@ export const products = [
     title: 'Wiremesh',
     image: IconTrinityWiremesh,
     description:
-      'Wiremesh adalah material konstruksi yang terdiri dari jaringan kawat baja yang saling terhubung membentuk grid atau matriks. Material ini sering digunakan dalam berbagai proyek konstruksi, seperti pembangunan dinding, lantai, jalan, dan struktur beton lainnya. Wiremesh tersedia dalam berbagai ukuran, bentuk, dan ketebalan kawat, yang dapat disesuaikan dengan kebutuhan spesifik proyek.',
+      'Wiremesh adalah material konstruksi yang terdiri dari jaringan kawat baja yang saling terhubung membentuk grid atau matriks. Wiremesh tersedia dalam berbagai ukuran, bentuk, dan ketebalan kawat, yang dapat disesuaikan dengan kebutuhan spesifik proyek.',
     steelFormDescription: [
       {
         id: 0,
