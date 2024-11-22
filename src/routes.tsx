@@ -7,10 +7,6 @@ const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/trinity-steelindo" element={<App />} />
-      {/* <Route path="/about" element={<AboutUs />} />
-      <Route path="/products" element={<Products />} />
-
-      Fallback for undefined routes */}
       <Route
         path="/trinity-steelindo/katalog-produk"
         element={<ProductCatalog />}

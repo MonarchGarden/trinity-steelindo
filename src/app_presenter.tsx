@@ -9,6 +9,7 @@ import {
 } from '@trinity-steelindo/assets/index';
 import {products} from './components/data/product';
 import LoadingScreen from './components/splash-screen';
+import WaveBackground from './wave_background';
 
 export default function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -125,24 +126,33 @@ export default function App() {
                 steel and UPVC roofing products.
               </h3>
             </div>
+            <WaveBackground />
           </section>
 
           {/* Desktop and Tablet Version */}
-          <section className="bg-IconTrinityTruckSecond display-background-desktop relative hidden h-screen w-full overflow-auto bg-cover bg-center bg-no-repeat sm:block">
+          <section className="bg-IconTrinityTruckSecond display-background-desktop relative hidden h-screen w-full overflow-hidden bg-cover bg-center bg-no-repeat sm:block">
             {/* Gradient Top */}
             <div className="absolute inset-0 bg-gradient-to-t from-transparent to-colorPrimary" />
+
             {/* Curtain Shadows */}
             <div className="absolute inset-0 bg-colorPrimary bg-opacity-30" />
-            <div className="group-textbox bottom-0 left-0 flex flex-col items-center px-10 sm:hidden md:absolute md:bottom-0 md:right-0 md:flex md:items-start md:px-10">
+
+            {/* Content Section */}
+            <div className="relative z-20 flex flex-col items-center px-10 md:absolute md:bottom-32 md:right-10 md:items-start">
               <h1 className="trinity-title-text animate-fade-in-down whitespace-pre-line pb-5 font-helios-condensed font-bold text-white">
                 Welcome to <span className="underline">TRINITY STEELINDO</span>
               </h1>
-              <h3 className="mb-10 hidden animate-fade-in-up whitespace-pre-line text-justify font-helios-condensed text-xl text-white md:mb-5 md:flex lg:pb-10 lg:text-xl xl:pb-10 xl:text-2xl">
+              <h3 className="animate-fade-in-up whitespace-pre-line text-justify font-helios-condensed text-xl text-white md:pb-5 lg:text-xl xl:text-2xl">
                 Trinity Steelindo is a trusted destination for high-quality
                 steel and UPVC roofing products. We are committed to excellence
                 and offer a wide range of steel products to meet the diverse
                 needs of the industrial and construction sectors.
               </h3>
+            </div>
+
+            {/* Wave Background */}
+            <div className="absolute bottom-0 left-0 z-10 w-full">
+              <WaveBackground />
             </div>
           </section>
 

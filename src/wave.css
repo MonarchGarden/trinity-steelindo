@@ -1,63 +1,20 @@
-body {
-  margin: 0;
-  overflow: hidden;
-  background-color: #87ceeb; /* Light blue background */
-}
-
-section {
-  position: relative;
-  height: 100vh; /* Full viewport height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-h1,
-p {
-  z-index: 1;
-  color: #ffffff;
-  text-align: center;
-}
-
-.wave-container {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 150px;
-  overflow: hidden;
-}
-
 .wave {
   position: absolute;
   bottom: 0;
   width: 200%;
   height: 100%;
-  fill: #ffffff;
+  fill: #081923;
   opacity: 0.6;
 }
 
 .wave2 {
   opacity: 0.4;
-  fill: #ffffff;
+  fill: #081923;
 }
 
 .wave3 {
   opacity: 0.2;
-  fill: #ffffff;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-section {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background: #3586ff;
-  overflow: hidden;
+  fill: #081923;
 }
 
 section .wave {
@@ -66,7 +23,6 @@ section .wave {
   left: 0;
   width: 100%;
   height: 100px;
-  background-color: #081923;
   background: url('wave.png');
   background-size: 1000px 100px;
 }
