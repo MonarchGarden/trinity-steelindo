@@ -109,7 +109,7 @@ export default function App() {
       ) : (
         <div className="relative flex h-full w-full flex-col overflow-auto bg-colorPrimary">
           {/* Mobile Version */}
-          <section className="display-background-mobile relative h-screen w-full overflow-hidden bg-IconTrinityTruckSecondFull bg-cover bg-center bg-no-repeat">
+          <section className="display-background-mobile relative h-screen w-full overflow-hidden bg-IconTrinityTruckSecondFull bg-cover bg-center bg-no-repeat pt-16">
             {/* Gradient Top */}
             <div className="absolute inset-0 bg-gradient-to-t from-transparent to-colorPrimary" />
             {/* Curtain Shadows */}
@@ -126,7 +126,9 @@ export default function App() {
                 steel and UPVC roofing products.
               </h3>
             </div>
-            <WaveBackground />
+            <div className="absolute bottom-0 left-0 z-10 w-full">
+              <WaveBackground />
+            </div>
           </section>
 
           {/* Desktop and Tablet Version */}
