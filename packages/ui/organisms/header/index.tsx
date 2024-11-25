@@ -108,7 +108,7 @@ export const Header = ({logoWhite, logoBlack, navLinks}: Props) => {
                 ? 'text-black'
                 : 'text-white'
             }`}>
-            TRINITY STEELINDO
+            PT. TRINITY STEELINDO
           </span>
         </div>
 
