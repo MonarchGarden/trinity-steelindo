@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './style.css';
 import {NavButtonLink} from '@trinity-steelindo/ui/atoms';
+import {motion} from 'framer-motion';
 
 type NavLink = {
   path: string;
@@ -36,6 +37,44 @@ export const Header = ({logoWhite, logoBlack, navLinks}: Props) => {
       window.removeEventListener('resize', handleResize);
     };
   }, [isMobileMenuOpen]);
+
+  const menuVariants = {
+    open: {
+      opacity: 1,
+      height: 'auto',
+      transition: {
+        duration: 0.5,
+        ease: 'easeInOut',
+      },
+    },
+    closed: {
+      opacity: 0,
+      height: 0,
+      transition: {
+        duration: 0.3,
+        ease: 'easeInOut',
+      },
+    },
+  };
+
+  const linkVariants = {
+    open: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.3,
+        ease: 'easeOut',
+      },
+    },
+    closed: {
+      opacity: 0,
+      x: -20,
+      transition: {
+        duration: 0.3,
+        ease: 'easeIn',
+      },
+    },
+  };
 
   const headerOpacity = scrollPosition / 200;
   const isScrolled = headerOpacity > 0.2;
@@ -126,7 +165,25 @@ export const Header = ({logoWhite, logoBlack, navLinks}: Props) => {
       </div>
 
       {/* Mobile Navigation */}
-      <div
+      <motion.div
+        className="absolute left-0 right-0 top-full transform bg-white bg-opacity-65 shadow-md"
+        initial="closed"
+        animate={isMobileMenuOpen ? 'open' : 'closed'}
+        variants={menuVariants}>
+        <ul className="space-y-4 p-4">
+          {navLinks.map((link, index) => (
+            <motion.li key={index} variants={linkVariants}>
+              <NavButtonLink
+                navBarTitle={link.label}
+                path={link.path}
+                isHeaderHovered={true}
+                headerOpacity={1}
+              />
+            </motion.li>
+          ))}
+        </ul>
+      </motion.div>
+      {/* <div
         className={`absolute left-0 right-0 top-full transform bg-white bg-opacity-65 shadow-md transition-all duration-500 ease-in-out ${
           isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         } overflow-hidden`}>
@@ -142,7 +199,7 @@ export const Header = ({logoWhite, logoBlack, navLinks}: Props) => {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
     </header>
   );
 };
