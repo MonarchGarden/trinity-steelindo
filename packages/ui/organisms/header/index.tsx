@@ -50,6 +50,8 @@ export const Header = ({logoWhite, logoBlack, navLinks}: Props) => {
         type: 'spring',
         stiffness: 100,
         damping: 15,
+        when: 'beforeChildren', // Ensures children animate after the container
+        staggerChildren: 0.1, // Staggers the animation of children
       },
       display: 'flex',
       flexDirection: 'column',
@@ -68,6 +70,20 @@ export const Header = ({logoWhite, logoBlack, navLinks}: Props) => {
     },
   };
 
+  const linkVariants: Variants = {
+    open: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.3,
+        ease: 'easeOut',
+      },
+    },
+    closed: {
+      opacity: 0,
+      x: -20,
+    },
+  };
   const headerOpacity = scrollPosition / 200;
   const isScrolled = headerOpacity > 0.2;
 
@@ -123,43 +139,25 @@ export const Header = ({logoWhite, logoBlack, navLinks}: Props) => {
           className={`block p-2 ${isScrolled || isHovered || isMobileMenuOpen ? 'text-black' : 'text-white'}  md:hidden`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle Menu">
-          {isMobileMenuOpen ? (
-            // Close Icon SVG
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}>
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          ) : (
-            // Hamburger Menu SVG
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}>
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          )}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
         </button>
       </div>
 
       {/* Mobile Navigation */}
       <motion.div
-        className="fixed inset-0 z-40 flex flex-col items-center justify-center bg-white bg-opacity-65 shadow-md"
+        className="fixed inset-0 z-40 flex flex-col items-center justify-center bg-white"
         initial="closed"
         animate={isMobileMenuOpen ? 'open' : 'closed'}
         variants={menuVariants}>
