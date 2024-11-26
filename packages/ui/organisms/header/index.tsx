@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './style.css';
 import {NavButtonLink} from '@trinity-steelindo/ui/atoms';
-import {motion} from 'framer-motion';
+import {motion, Variants} from 'framer-motion';
 
 type NavLink = {
   path: string;
@@ -38,40 +38,32 @@ export const Header = ({logoWhite, logoBlack, navLinks}: Props) => {
     };
   }, [isMobileMenuOpen]);
 
-  const menuVariants = {
-    open: {
-      opacity: 1,
-      height: 'auto',
-      transition: {
-        duration: 0.5,
-        ease: 'easeInOut',
-      },
-    },
-    closed: {
-      opacity: 0,
-      height: 0,
-      transition: {
-        duration: 0.3,
-        ease: 'easeInOut',
-      },
-    },
-  };
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'auto';
+  }, [isMobileMenuOpen]);
 
-  const linkVariants = {
+  const menuVariants: Variants = {
     open: {
       opacity: 1,
-      x: 0,
+      y: 0,
       transition: {
-        duration: 0.3,
-        ease: 'easeOut',
+        type: 'spring',
+        stiffness: 100,
+        damping: 15,
       },
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100vh',
+      width: '100vw',
+      backgroundColor: 'rgba(255, 255, 255)',
     },
     closed: {
       opacity: 0,
-      x: -20,
-      transition: {
-        duration: 0.3,
-        ease: 'easeIn',
+      y: '-100%',
+      transitionEnd: {
+        display: 'none',
       },
     },
   };
@@ -121,6 +113,7 @@ export const Header = ({logoWhite, logoBlack, navLinks}: Props) => {
               path={link.path}
               isHeaderHovered={isHovered || isMobileMenuOpen}
               headerOpacity={headerOpacity}
+              isMenuOpen={isMobileMenuOpen}
             />
           ))}
         </nav>
@@ -166,40 +159,42 @@ export const Header = ({logoWhite, logoBlack, navLinks}: Props) => {
 
       {/* Mobile Navigation */}
       <motion.div
-        className="absolute left-0 right-0 top-full transform bg-white bg-opacity-65 shadow-md"
+        className="fixed inset-0 z-40 flex flex-col items-center justify-center bg-white bg-opacity-65 shadow-md"
         initial="closed"
         animate={isMobileMenuOpen ? 'open' : 'closed'}
         variants={menuVariants}>
-        <ul className="space-y-4 p-4">
+        <button
+          onClick={() => setIsMobileMenuOpen(false)}
+          className="absolute right-5 top-5 p-2 text-black"
+          aria-label="Close Menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+        <ul className="space-y-4">
           {navLinks.map((link, index) => (
-            <motion.li key={index} variants={linkVariants}>
+            <motion.li key={index}>
               <NavButtonLink
                 navBarTitle={link.label}
                 path={link.path}
                 isHeaderHovered={true}
                 headerOpacity={1}
+                isMenuOpen={isMobileMenuOpen}
               />
             </motion.li>
           ))}
         </ul>
       </motion.div>
-      {/* <div
-        className={`absolute left-0 right-0 top-full transform bg-white bg-opacity-65 shadow-md transition-all duration-500 ease-in-out ${
-          isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
-        } overflow-hidden`}>
-        <ul className="space-y-4 p-4">
-          {navLinks.map((link, index) => (
-            <li key={index}>
-              <NavButtonLink
-                navBarTitle={link.label}
-                path={link.path}
-                isHeaderHovered={true}
-                headerOpacity={headerOpacity}
-              />
-            </li>
-          ))}
-        </ul>
-      </div> */}
     </header>
   );
 };
