@@ -10,6 +10,7 @@ import {
 import {products} from './components/data/product';
 import LoadingScreen from './components/splash-screen';
 import WaveBackground from './wave_background';
+import {motion} from 'framer-motion';
 
 export default function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -53,6 +54,31 @@ export default function App() {
       className="h-full w-full bg-center object-cover"
       alt=""></img>
   ));
+
+  const titleVariants = {
+    hidden: {opacity: 0, y: 50},
+    visible: {opacity: 1, y: 0, transition: {duration: 0.8}},
+  };
+
+  const descriptionVariants = {
+    hidden: {opacity: 0, y: 20},
+    visible: {opacity: 1, y: 0, transition: {duration: 1, delay: 0.3}},
+  };
+
+  const carouselVariants = {
+    hidden: {opacity: 0, scale: 0.9},
+    visible: {opacity: 1, scale: 1, transition: {duration: 1, delay: 0.6}},
+  };
+
+  const sectionVariants = {
+    hidden: {opacity: 0, y: 50},
+    visible: {opacity: 1, y: 0, transition: {duration: 1}},
+  };
+
+  const itemVariants = {
+    hidden: {opacity: 0, scale: 0.8},
+    visible: {opacity: 1, scale: 1, transition: {duration: 0.8, delay: 0.2}},
+  };
 
   const listOfMainProductsDesktopViews = products.map((value, index) => {
     return (
@@ -159,19 +185,21 @@ export default function App() {
           </section>
 
           <Body>
-            <div className="flex flex-col items-center justify-center text-xl sm:block">
-              <div className="w-full overflow-hidden whitespace-nowrap text-center">
-                <h1
-                  className={`${
-                    showsOnce ? 'fill-text-title' : 'hidden'
-                  } overflow-hidden pb-5 font-helios-condensed text-4xl text-colorTitle`}>
+            <motion.div
+              className="flex flex-col items-center justify-center text-xl sm:block"
+              initial="hidden"
+              animate={showsOnce ? 'visible' : 'hidden'}>
+              <motion.div
+                className="w-full overflow-hidden whitespace-nowrap text-center"
+                variants={titleVariants}>
+                <h1 className="overflow-hidden pb-5 font-helios-condensed text-4xl text-colorTitle">
                   Siapa Kami?
                 </h1>
-              </div>
-              <div
-                className={`${
-                  showsOnce ? 'description-animation' : 'hidden'
-                } w-full items-center justify-center pb-5`}>
+              </motion.div>
+
+              <motion.div
+                className="w-full items-center justify-center pb-5"
+                variants={descriptionVariants}>
                 <h6 className="mb-8 w-full scale-100 transform text-center font-helios-condensed text-white transition-transform sm:mb-0">
                   Upgrade your roofing needs with UPVC roofing products from us.
                   These products provide durability and aesthetic appeal,
@@ -179,12 +207,12 @@ export default function App() {
                   offer innovation, reliability, and top-notch customer
                   satisfaction in every product we provide.
                 </h6>
-              </div>
-              <div className="flex flex-col items-center justify-center text-xl text-colorDescription">
-                <div
-                  className={`flex flex-col ${
-                    showsOnce ? 'daily-activity-animation' : 'hidden'
-                  } items-center rounded pb-5 text-center`}>
+              </motion.div>
+
+              <motion.div
+                className="flex flex-col items-center justify-center text-xl text-colorDescription"
+                variants={carouselVariants}>
+                <div className="flex flex-col items-center rounded pb-5 text-center">
                   <h2 className="relative pb-5 font-helios-condensed text-2xl font-semibold">
                     Our Activities
                     <div className="-bottom-px h-1 bg-gradient-to-r from-colorDescription via-transparent to-transparent"></div>
@@ -198,17 +226,14 @@ export default function App() {
                     {listOfImageCarousel}
                   </Carousel>
                 </div>
-                <div
-                  className={`${
-                    showsOnce ? 'founder-text-title' : 'hidden'
-                  } flex items-center justify-center pb-5 text-center text-sm font-extralight`}>
+                <div className="flex items-center justify-center pb-5 text-center text-sm font-extralight">
                   Trinity SteelIndo
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </Body>
 
-          <section className="hidden h-full w-full flex-col overflow-y-auto bg-colorPrimary px-5 py-5 lg:flex xl:flex">
+          {/* <section className="hidden h-full w-full flex-col overflow-y-auto bg-colorPrimary px-5 py-5 lg:flex xl:flex">
             <div className="w-full overflow-hidden whitespace-nowrap text-center">
               <h1
                 className={`${
@@ -222,7 +247,92 @@ export default function App() {
 
           <section className="mobile-tablet-views w-full gap-5 bg-colorPrimary p-8 lg:hidden xl:hidden">
             {listOfMainProductsMobileViews}
-          </section>
+          </section> */}
+
+          <motion.section
+            className="hidden h-full w-full flex-col overflow-y-auto bg-colorPrimary px-5 py-5 lg:flex xl:flex"
+            initial="hidden"
+            animate={showsOnce ? 'visible' : 'hidden'}
+            variants={sectionVariants}>
+            {/* Title Section */}
+            <motion.div
+              className="w-full overflow-hidden whitespace-nowrap text-center"
+              variants={titleVariants}>
+              <h1 className="overflow-hidden pb-5 font-helios-condensed text-4xl text-colorTitle">
+                Product Showcase
+              </h1>
+            </motion.div>
+
+            {/* Product List for Desktop */}
+            <motion.div
+              className="flex flex-col space-y-6"
+              initial="hidden"
+              animate="visible"
+              variants={sectionVariants}>
+              {products.map((value, index) => (
+                <motion.div
+                  key={index}
+                  className="relative w-full p-5"
+                  variants={itemVariants}>
+                  <div className="flex h-auto flex-col overflow-hidden rounded-md bg-colorCard bg-cover bg-no-repeat shadow-md md:flex-row">
+                    <div
+                      className={`${
+                        index % 2 === 0
+                          ? 'order-2 text-left'
+                          : 'order-1 text-right'
+                      } w-full p-5 align-middle font-helios-condensed md:w-1/2`}>
+                      <h1 className="text-shadow text-4xl font-bold uppercase text-white">
+                        {value.title}
+                      </h1>
+                      <p className="text-shadow mt-3 text-white">
+                        {value.description}
+                      </p>
+                      <div
+                        className={`-bottom-px h-2 ${
+                          index % 2 === 0
+                            ? 'bg-gradient-to-r'
+                            : 'bg-gradient-to-l'
+                        } mt-5 from-colorWhite via-transparent to-transparent`}></div>
+                    </div>
+                    <div
+                      className={`${
+                        index % 2 === 0 ? 'order-1' : 'order-2'
+                      } w-full md:w-1/2`}>
+                      <div
+                        style={{
+                          backgroundImage: `url(${value.image})`,
+                        }}
+                        className="bg-resize-custom h-64 w-full rounded-xl bg-no-repeat md:h-full"
+                      />
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.section>
+
+          {/* Mobile and Tablet View */}
+          <motion.section
+            className="mobile-tablet-views w-full gap-5 bg-colorPrimary p-8 lg:hidden xl:hidden"
+            initial="hidden"
+            animate={showsOnce ? 'visible' : 'hidden'}
+            variants={sectionVariants}>
+            {products.map((value, index) => (
+              <motion.div
+                key={index}
+                className="group relative m-2 w-full transform overflow-hidden rounded-xl bg-cover bg-center bg-no-repeat transition-transform duration-300 hover:scale-105"
+                style={{backgroundImage: `url(${value.image})`}}
+                variants={itemVariants}>
+                <div className="h-52 overflow-hidden rounded-t-xl">
+                  <div className="absolute inset-x-0 bottom-0 flex items-start justify-start p-5 align-bottom opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <div className="font-helios-condensed text-xl font-bold text-white">
+                      {value.title}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.section>
 
           <Header
             logoBlack={IconLogoTrinityBlack}

@@ -2,10 +2,10 @@ import React, {PropsWithChildren, useState} from 'react';
 import {Link} from 'react-router-dom';
 
 type Props = PropsWithChildren & {
-  navBarTitle?: string; // The label for the navigation button
-  path: string; // The route path for the navigation
-  isHeaderHovered: boolean; // Whether the header is hovered
-  headerOpacity: number; // The scroll-based opacity of the header
+  navBarTitle?: string;
+  path: string;
+  isHeaderHovered: boolean;
+  headerOpacity: number;
   isMenuOpen: boolean;
 };
 
