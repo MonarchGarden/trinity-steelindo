@@ -10,6 +10,8 @@ import {
 import {products} from './components/data/product';
 import LoadingScreen from './components/splash-screen';
 import WaveBackground from './wave_background';
+import {motion} from 'framer-motion';
+import {InfiniteMovingCards} from './infinite_slider';
 
 export default function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -53,6 +55,21 @@ export default function App() {
       className="h-full w-full bg-center object-cover"
       alt=""></img>
   ));
+
+  const titleVariants = {
+    hidden: {opacity: 0, y: 50},
+    visible: {opacity: 1, y: 0, transition: {duration: 0.8}},
+  };
+
+  const descriptionVariants = {
+    hidden: {opacity: 0, y: 20},
+    visible: {opacity: 1, y: 0, transition: {duration: 1, delay: 0.3}},
+  };
+
+  const carouselVariants = {
+    hidden: {opacity: 0, scale: 0.9},
+    visible: {opacity: 1, scale: 1, transition: {duration: 1, delay: 0.6}},
+  };
 
   const listOfMainProductsDesktopViews = products.map((value, index) => {
     return (
@@ -107,9 +124,9 @@ export default function App() {
       {loading ? (
         <LoadingScreen />
       ) : (
-        <div className="relative flex h-full w-full flex-col overflow-auto bg-colorPrimary">
+        <div className="relative flex h-full w-full flex-col overflow-y-auto bg-colorPrimary">
           {/* Mobile Version */}
-          <section className="display-background-mobile relative h-screen w-full overflow-hidden bg-IconTrinityTruckSecondFull bg-cover bg-center bg-no-repeat pt-16">
+          <section className="display-background-mobile relative min-h-screen w-full overflow-hidden bg-IconTrinityTruckSecondFull bg-cover bg-center bg-no-repeat pt-16">
             {/* Gradient Top */}
             <div className="absolute inset-0 bg-gradient-to-t from-transparent to-colorPrimary" />
             {/* Curtain Shadows */}
@@ -159,19 +176,21 @@ export default function App() {
           </section>
 
           <Body>
-            <div className="flex flex-col items-center justify-center text-xl sm:block">
-              <div className="w-full overflow-hidden whitespace-nowrap text-center">
-                <h1
-                  className={`${
-                    showsOnce ? 'fill-text-title' : 'hidden'
-                  } overflow-hidden pb-5 font-helios-condensed text-4xl text-colorTitle`}>
+            <motion.div
+              className="flex flex-col items-center justify-center text-xl sm:block"
+              initial="hidden"
+              animate={showsOnce ? 'visible' : 'hidden'}>
+              <motion.div
+                className="w-full overflow-hidden whitespace-nowrap text-center"
+                variants={titleVariants}>
+                <h1 className="overflow-hidden pb-5 font-helios-condensed text-4xl text-colorTitle">
                   Siapa Kami?
                 </h1>
-              </div>
-              <div
-                className={`${
-                  showsOnce ? 'description-animation' : 'hidden'
-                } w-full items-center justify-center pb-5`}>
+              </motion.div>
+
+              <motion.div
+                className="w-full items-center justify-center pb-5"
+                variants={descriptionVariants}>
                 <h6 className="mb-8 w-full scale-100 transform text-center font-helios-condensed text-white transition-transform sm:mb-0">
                   Upgrade your roofing needs with UPVC roofing products from us.
                   These products provide durability and aesthetic appeal,
@@ -179,33 +198,23 @@ export default function App() {
                   offer innovation, reliability, and top-notch customer
                   satisfaction in every product we provide.
                 </h6>
-              </div>
-              <div className="flex flex-col items-center justify-center text-xl text-colorDescription">
-                <div
-                  className={`flex flex-col ${
-                    showsOnce ? 'daily-activity-animation' : 'hidden'
-                  } items-center rounded pb-5 text-center`}>
+              </motion.div>
+
+              <motion.div
+                className="flex flex-col items-center justify-center text-xl text-colorDescription"
+                variants={carouselVariants}>
+                <div className="flex flex-col items-center rounded pb-5 text-center">
                   <h2 className="relative pb-5 font-helios-condensed text-2xl font-semibold">
                     Our Activities
                     <div className="-bottom-px h-1 bg-gradient-to-r from-colorDescription via-transparent to-transparent"></div>
                   </h2>
-                  <Carousel
-                    transition={{duration: 2}}
-                    className="h-48 w-full items-center rounded-md sm:w-1/2 xl:h-96"
-                    placeholder={undefined}
-                    onPointerEnterCapture={undefined}
-                    onPointerLeaveCapture={undefined}>
-                    {listOfImageCarousel}
-                  </Carousel>
+                  <InfiniteMovingCards items={image} />
                 </div>
-                <div
-                  className={`${
-                    showsOnce ? 'founder-text-title' : 'hidden'
-                  } flex items-center justify-center pb-5 text-center text-sm font-extralight`}>
+                <div className="flex items-center justify-center pb-5 text-center text-sm font-extralight">
                   Trinity SteelIndo
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </Body>
 
           <section className="hidden h-full w-full flex-col overflow-y-auto bg-colorPrimary px-5 py-5 lg:flex xl:flex">
