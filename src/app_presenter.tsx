@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './index.css';
 import {Body, Header} from '@trinity-steelindo/ui/organisms';
-import {Carousel} from '@material-tailwind/react';
 import {image} from './components/data/image';
 import {
   IconLogoTrinityBlack,
@@ -48,13 +47,6 @@ export default function App() {
       setShownOnce(true);
     }
   }, [showsOnce, innerHeightScrollPosition]);
-
-  const listOfImageCarousel = image.map((value) => (
-    <img
-      src={value.image}
-      className="h-full w-full bg-center object-cover"
-      alt=""></img>
-  ));
 
   const titleVariants = {
     hidden: {opacity: 0, y: 50},
