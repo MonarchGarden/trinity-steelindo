@@ -17,13 +17,15 @@ module.exports = {
     '50%': '50%',
     '80%': '80%',
   },
-  plugins: [],
+  plugins: [addVariablesForColors],
   theme: {
     extend: {
       animation: {
         'fade-in-up': 'fade-in-up 1s ease-out forwards',
         'fade-in-down': 'fade-in-down 1s ease-out forwards',
         wave: 'wave 8s linear infinite',
+        scroll:
+          'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
       },
       keyframes: {
         wave: {
@@ -37,6 +39,11 @@ module.exports = {
         'fade-in-down': {
           '0%': {opacity: 0, transform: 'translateY(-20px)'},
           '100%': {opacity: 1, transform: 'translateY(0)'},
+        },
+        scroll: {
+          to: {
+            transform: 'translate(calc(-50% - 0.5rem))',
+          },
         },
       },
       backgroundImage: (theme) => ({
@@ -91,3 +98,17 @@ module.exports = {
   //   ],
   // },
 };
+
+function addVariablesForColors({addBase, theme}) {
+  const flattenColorPalette =
+    require('tailwindcss/lib/util/flattenColorPalette').default;
+
+  const allColors = flattenColorPalette(theme('colors'));
+  const newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val]),
+  );
+
+  addBase({
+    ':root': newVars,
+  });
+}

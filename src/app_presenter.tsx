@@ -11,6 +11,7 @@ import {products} from './components/data/product';
 import LoadingScreen from './components/splash-screen';
 import WaveBackground from './wave_background';
 import {motion} from 'framer-motion';
+import {InfiniteMovingCards} from './infinite_slider';
 
 export default function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -70,16 +71,6 @@ export default function App() {
     visible: {opacity: 1, scale: 1, transition: {duration: 1, delay: 0.6}},
   };
 
-  const sectionVariants = {
-    hidden: {opacity: 0, y: 50},
-    visible: {opacity: 1, y: 0, transition: {duration: 1}},
-  };
-
-  const itemVariants = {
-    hidden: {opacity: 0, scale: 0.8},
-    visible: {opacity: 1, scale: 1, transition: {duration: 0.8, delay: 0.2}},
-  };
-
   const listOfMainProductsDesktopViews = products.map((value, index) => {
     return (
       <div className="relative w-full p-5" key={index}>
@@ -133,9 +124,9 @@ export default function App() {
       {loading ? (
         <LoadingScreen />
       ) : (
-        <div className="relative flex h-full w-full flex-col overflow-auto bg-colorPrimary">
+        <div className="relative flex h-full w-full flex-col overflow-y-auto bg-colorPrimary">
           {/* Mobile Version */}
-          <section className="display-background-mobile relative h-screen w-full overflow-hidden bg-IconTrinityTruckSecondFull bg-cover bg-center bg-no-repeat pt-16">
+          <section className="display-background-mobile relative min-h-screen w-full overflow-hidden bg-IconTrinityTruckSecondFull bg-cover bg-center bg-no-repeat pt-16">
             {/* Gradient Top */}
             <div className="absolute inset-0 bg-gradient-to-t from-transparent to-colorPrimary" />
             {/* Curtain Shadows */}
@@ -217,14 +208,7 @@ export default function App() {
                     Our Activities
                     <div className="-bottom-px h-1 bg-gradient-to-r from-colorDescription via-transparent to-transparent"></div>
                   </h2>
-                  <Carousel
-                    transition={{duration: 2}}
-                    className="h-48 w-full items-center rounded-md sm:w-1/2 xl:h-96"
-                    placeholder={undefined}
-                    onPointerEnterCapture={undefined}
-                    onPointerLeaveCapture={undefined}>
-                    {listOfImageCarousel}
-                  </Carousel>
+                  <InfiniteMovingCards items={image} />
                 </div>
                 <div className="flex items-center justify-center pb-5 text-center text-sm font-extralight">
                   Trinity SteelIndo
@@ -233,7 +217,7 @@ export default function App() {
             </motion.div>
           </Body>
 
-          {/* <section className="hidden h-full w-full flex-col overflow-y-auto bg-colorPrimary px-5 py-5 lg:flex xl:flex">
+          <section className="hidden h-full w-full flex-col overflow-y-auto bg-colorPrimary px-5 py-5 lg:flex xl:flex">
             <div className="w-full overflow-hidden whitespace-nowrap text-center">
               <h1
                 className={`${
@@ -247,92 +231,7 @@ export default function App() {
 
           <section className="mobile-tablet-views w-full gap-5 bg-colorPrimary p-8 lg:hidden xl:hidden">
             {listOfMainProductsMobileViews}
-          </section> */}
-
-          <motion.section
-            className="hidden h-full w-full flex-col overflow-y-auto bg-colorPrimary px-5 py-5 lg:flex xl:flex"
-            initial="hidden"
-            animate={showsOnce ? 'visible' : 'hidden'}
-            variants={sectionVariants}>
-            {/* Title Section */}
-            <motion.div
-              className="w-full overflow-hidden whitespace-nowrap text-center"
-              variants={titleVariants}>
-              <h1 className="overflow-hidden pb-5 font-helios-condensed text-4xl text-colorTitle">
-                Product Showcase
-              </h1>
-            </motion.div>
-
-            {/* Product List for Desktop */}
-            <motion.div
-              className="flex flex-col space-y-6"
-              initial="hidden"
-              animate="visible"
-              variants={sectionVariants}>
-              {products.map((value, index) => (
-                <motion.div
-                  key={index}
-                  className="relative w-full p-5"
-                  variants={itemVariants}>
-                  <div className="flex h-auto flex-col overflow-hidden rounded-md bg-colorCard bg-cover bg-no-repeat shadow-md md:flex-row">
-                    <div
-                      className={`${
-                        index % 2 === 0
-                          ? 'order-2 text-left'
-                          : 'order-1 text-right'
-                      } w-full p-5 align-middle font-helios-condensed md:w-1/2`}>
-                      <h1 className="text-shadow text-4xl font-bold uppercase text-white">
-                        {value.title}
-                      </h1>
-                      <p className="text-shadow mt-3 text-white">
-                        {value.description}
-                      </p>
-                      <div
-                        className={`-bottom-px h-2 ${
-                          index % 2 === 0
-                            ? 'bg-gradient-to-r'
-                            : 'bg-gradient-to-l'
-                        } mt-5 from-colorWhite via-transparent to-transparent`}></div>
-                    </div>
-                    <div
-                      className={`${
-                        index % 2 === 0 ? 'order-1' : 'order-2'
-                      } w-full md:w-1/2`}>
-                      <div
-                        style={{
-                          backgroundImage: `url(${value.image})`,
-                        }}
-                        className="bg-resize-custom h-64 w-full rounded-xl bg-no-repeat md:h-full"
-                      />
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.section>
-
-          {/* Mobile and Tablet View */}
-          <motion.section
-            className="mobile-tablet-views w-full gap-5 bg-colorPrimary p-8 lg:hidden xl:hidden"
-            initial="hidden"
-            animate={showsOnce ? 'visible' : 'hidden'}
-            variants={sectionVariants}>
-            {products.map((value, index) => (
-              <motion.div
-                key={index}
-                className="group relative m-2 w-full transform overflow-hidden rounded-xl bg-cover bg-center bg-no-repeat transition-transform duration-300 hover:scale-105"
-                style={{backgroundImage: `url(${value.image})`}}
-                variants={itemVariants}>
-                <div className="h-52 overflow-hidden rounded-t-xl">
-                  <div className="absolute inset-x-0 bottom-0 flex items-start justify-start p-5 align-bottom opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <div className="font-helios-condensed text-xl font-bold text-white">
-                      {value.title}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.section>
+          </section>
 
           <Header
             logoBlack={IconLogoTrinityBlack}
