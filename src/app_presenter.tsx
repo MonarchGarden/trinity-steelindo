@@ -49,13 +49,6 @@ export default function App() {
     }
   }, [showsOnce, innerHeightScrollPosition]);
 
-  const listOfImageCarousel = image.map((value) => (
-    <img
-      src={value.image}
-      className="h-full w-full bg-center object-cover"
-      alt=""></img>
-  ));
-
   const titleVariants = {
     hidden: {opacity: 0, y: 50},
     visible: {opacity: 1, y: 0, transition: {duration: 0.8}},

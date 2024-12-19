@@ -1,5 +1,7 @@
 import React, {useEffect, useState, useRef} from 'react';
 
+//https://ui.aceternity.com/components/infinite-moving-cards
+
 type InfiniteMovingCardsProps = {
   items: {
     id: number;
@@ -16,7 +18,7 @@ export function InfiniteMovingCards({
   items,
   direction = 'left',
   speed = 'normal',
-  pauseOnHover = true,
+  pauseOnHover = false,
   className = '',
 }: InfiniteMovingCardsProps) {
   const containerRef = useRef<HTMLDivElement>(null);
