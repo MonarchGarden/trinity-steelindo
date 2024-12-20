@@ -1,11 +1,17 @@
 import React, {PropsWithChildren} from 'react';
+import {motion} from 'framer-motion';
 
-type Props = PropsWithChildren;
+type Props = PropsWithChildren & {
+  showsOnce: boolean;
+};
 
-export const Body = ({children}: Props) => {
+export const Body = ({children, showsOnce}: Props) => {
   return (
-    <section className="relative flex h-screen w-screen flex-col overflow-x-hidden bg-colorBackground px-10 py-10">
+    <motion.div
+      className="relative flex h-screen flex-col items-center justify-between overflow-hidden bg-colorBackground text-xl sm:block"
+      initial="hidden"
+      animate={showsOnce ? 'visible' : 'hidden'}>
       {children}
-    </section>
+    </motion.div>
   );
 };

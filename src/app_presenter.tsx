@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './index.css';
 import {Body, Header} from '@trinity-steelindo/ui/organisms';
-import {Carousel} from '@material-tailwind/react';
 import {image} from './components/data/image';
 import {
   IconLogoTrinityBlack,
@@ -168,45 +167,42 @@ export default function App() {
             </div>
           </section>
 
-          <Body>
+          <Body showsOnce={showsOnce}>
             <motion.div
-              className="flex flex-col items-center justify-center text-xl sm:block"
-              initial="hidden"
-              animate={showsOnce ? 'visible' : 'hidden'}>
-              <motion.div
-                className="w-full overflow-hidden whitespace-nowrap text-center"
-                variants={titleVariants}>
-                <h1 className="overflow-hidden pb-5 font-helios-condensed text-4xl text-colorTitle">
-                  Siapa Kami?
+              className="w-full overflow-hidden whitespace-nowrap text-center"
+              variants={titleVariants}>
+              <h1 className="overflow-hidden pb-5 font-helios-condensed text-4xl text-colorTitle">
+                Siapa Kami?
+              </h1>
+            </motion.div>
+
+            <motion.div
+              className="w-full items-center justify-center pb-5"
+              variants={descriptionVariants}>
+              <h6 className="mb-8 w-full text-center font-helios-condensed leading-relaxed text-white sm:mb-0 sm:text-lg lg:text-xl">
+                Upgrade your roofing needs with UPVC roofing products from us.
+                These products provide durability and aesthetic appeal, ensuring
+                that your projects are built to last. Join us as we offer
+                innovation, reliability, and top-notch customer satisfaction in
+                every product we provide.
+              </h6>
+            </motion.div>
+
+            <motion.div
+              className="flex h-full flex-col items-center justify-center overflow-hidden text-center text-xl text-colorDescription"
+              variants={carouselVariants}>
+              <div className="flex flex-col items-center justify-center rounded pb-5 text-center">
+                <h1 className="relative pb-5 font-helios-condensed text-3xl font-semibold">
+                  Our Activities
+                  <div className="-bottom-px h-1 bg-gradient-to-r from-colorDescription via-transparent to-transparent"></div>
                 </h1>
-              </motion.div>
-
-              <motion.div
-                className="w-full items-center justify-center pb-5"
-                variants={descriptionVariants}>
-                <h6 className="mb-8 w-full scale-100 transform text-center font-helios-condensed text-white transition-transform sm:mb-0">
-                  Upgrade your roofing needs with UPVC roofing products from us.
-                  These products provide durability and aesthetic appeal,
-                  ensuring that your projects are built to last. Join us as we
-                  offer innovation, reliability, and top-notch customer
-                  satisfaction in every product we provide.
-                </h6>
-              </motion.div>
-
-              <motion.div
-                className="flex flex-col items-center justify-center text-xl text-colorDescription"
-                variants={carouselVariants}>
-                <div className="flex flex-col items-center rounded pb-5 text-center">
-                  <h2 className="relative pb-5 font-helios-condensed text-2xl font-semibold">
-                    Our Activities
-                    <div className="-bottom-px h-1 bg-gradient-to-r from-colorDescription via-transparent to-transparent"></div>
-                  </h2>
+                <div className="mx-auto w-full max-w-4xl overflow-hidden">
                   <InfiniteMovingCards items={image} />
                 </div>
-                <div className="flex items-center justify-center pb-5 text-center text-sm font-extralight">
-                  Trinity SteelIndo
-                </div>
-              </motion.div>
+              </div>
+              <div className="flex items-center justify-center text-center text-sm font-extralight">
+                Trinity SteelIndo
+              </div>
             </motion.div>
           </Body>
 
