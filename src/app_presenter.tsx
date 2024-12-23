@@ -14,6 +14,9 @@ import {InfiniteMovingCards} from './infinite_slider';
 
 export default function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
   const [loading, setLoading] = useState(true);
   const [showsOnce, setShownOnce] = useState(false);
 
@@ -28,14 +31,18 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
+      setScrollProgress(scrollY / window.innerHeight);
       setScrollPosition(window.scrollY);
+      if (scrollProgress > 1.7 && showsOnce && !hasAnimated) {
+        setHasAnimated(true);
+      }
     };
     window.addEventListener('scroll', handleScroll);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [scrollProgress, showsOnce, hasAnimated]);
 
   const innerHeightScrollPosition = Math.min(
     scrollPosition / window.innerHeight,
@@ -111,12 +118,17 @@ export default function App() {
     {path: '/trinity-steelindo/katalog-produk', label: 'Katalog Produk'},
   ];
 
+  const sectionVariants = {
+    hidden: {opacity: 0, y: 50},
+    visible: {opacity: 1, y: 0, transition: {duration: 1}},
+  };
+
   return (
     <>
       {loading ? (
         <LoadingScreen />
       ) : (
-        <div className="relative flex h-full w-full flex-col overflow-y-auto bg-colorPrimary">
+        <div className="relative flex h-full w-full flex-col overflow-y-hidden bg-colorPrimary">
           {/* Mobile Version */}
           <section className="display-background-mobile relative min-h-screen w-full overflow-hidden bg-IconTrinityTruckSecondFull bg-cover bg-center bg-no-repeat pt-16">
             {/* Gradient Top */}
@@ -209,7 +221,11 @@ export default function App() {
             </motion.div>
           </Body>
 
-          <section className="hidden h-full w-full flex-col overflow-y-auto bg-colorPrimary px-5 py-5 lg:flex xl:flex">
+          <motion.section
+            className="hidden h-full w-full flex-col overflow-y-auto bg-colorPrimary px-5 py-5 lg:flex xl:flex"
+            initial="hidden"
+            animate={hasAnimated ? 'visible' : 'hidden'}
+            variants={sectionVariants}>
             <div className="w-full overflow-hidden whitespace-nowrap text-center">
               <h1
                 className={`${
@@ -219,11 +235,23 @@ export default function App() {
               </h1>
             </div>
             {listOfMainProductsDesktopViews}
-          </section>
+          </motion.section>
 
-          <section className="mobile-tablet-views w-full gap-5 bg-colorPrimary p-8 lg:hidden xl:hidden">
+          <motion.section
+            className="mobile-tablet-views w-full gap-5 bg-colorPrimary p-8 lg:hidden xl:hidden"
+            initial="hidden"
+            animate={hasAnimated ? 'visible' : 'hidden'}
+            variants={sectionVariants}>
+            <div className="w-full overflow-hidden whitespace-nowrap text-center">
+              <h1
+                className={`${
+                  showsOnce ? 'fill-text-title' : 'hidden'
+                } overflow-hidden font-helios-condensed text-4xl text-colorTitle`}>
+                Product Showcase
+              </h1>
+            </div>
             {listOfMainProductsMobileViews}
-          </section>
+          </motion.section>
 
           <Header
             logoBlack={IconLogoTrinityBlack}
