@@ -1,13 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: 'jit',
+  darkMode: 'false',
   content: [
     './index.html',
     './src/**/*.{html,js,ts,tsx,css}',
     './packages/**/*.{html,js,ts,tsx,css}',
     './**/@material-tailwind/**/*.{html,js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: 'class',
   backgroundSize: {
     auto: 'auto',
     cover: 'cover',
