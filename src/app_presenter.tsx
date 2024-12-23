@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './index.css';
-import {Body, Header} from '@trinity-steelindo/ui/organisms';
+import {Body, Header, Footer} from '@trinity-steelindo/ui/organisms';
 import {image} from './components/data/image';
 import {
   IconLogoTrinityBlack,
@@ -252,6 +252,8 @@ export default function App() {
             </div>
             {listOfMainProductsMobileViews}
           </motion.section>
+
+          <Footer />
 
           <Header
             logoBlack={IconLogoTrinityBlack}
