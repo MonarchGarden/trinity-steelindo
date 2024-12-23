@@ -168,35 +168,38 @@ export default function App() {
           </section>
 
           <Body showsOnce={showsOnce}>
+            {/* Top Section */}
             <motion.div
-              className="item-center w-full overflow-hidden whitespace-nowrap pt-8 text-center"
+              className="w-full bg-colorBackground pt-10 text-center"
               variants={titleVariants}>
-              <h1 className="items-center justify-center overflow-hidden align-middle font-helios-condensed text-4xl text-colorTitle">
+              <h1 className="font-helios-condensed text-5xl font-bold tracking-wide text-blue-500">
                 Siapa Kami?
               </h1>
             </motion.div>
 
+            {/* Description Section */}
             <motion.div
-              className="w-full items-center justify-center pt-8"
+              className="flex w-full flex-1 items-center justify-center px-6 text-center"
               variants={descriptionVariants}>
-              <h6 className="w-full text-center font-helios-condensed leading-relaxed text-white sm:mb-0 sm:text-lg lg:text-xl">
+              <p className="max-w-4xl font-helios-condensed text-lg leading-relaxed text-gray-300 sm:text-xl lg:text-2xl">
                 Upgrade your roofing needs with UPVC roofing products from us.
                 These products provide durability and aesthetic appeal, ensuring
                 that your projects are built to last. Join us as we offer
                 innovation, reliability, and top-notch customer satisfaction in
                 every product we provide.
-              </h6>
+              </p>
             </motion.div>
 
+            {/* Bottom Section */}
             <motion.div
-              className="bottom-0 mt-auto w-full flex-col items-center justify-center overflow-hidden pb-8 pt-8 text-center text-xl text-colorDescription"
+              className="bottom-0 mt-auto flex w-full flex-col items-center justify-center overflow-hidden bg-colorBackground pb-8 pt-8 text-center text-xl text-colorDescription"
               variants={carouselVariants}>
-              <div className="flex flex-col items-center justify-center rounded pb-5 text-center">
+              <div className="flex w-full flex-col items-center justify-center rounded pb-5 text-center">
                 <h1 className="relative pb-5 font-helios-condensed text-3xl font-semibold">
                   Our Activities
                   <div className="-bottom-px h-1 bg-gradient-to-r from-colorDescription via-transparent to-transparent"></div>
                 </h1>
-                <div className="mx-auto w-full max-w-4xl overflow-hidden">
+                <div className="mx-auto w-full overflow-hidden">
                   <InfiniteMovingCards items={image} />
                 </div>
               </div>
