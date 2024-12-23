@@ -8,7 +8,7 @@ type Props = PropsWithChildren & {
 export const Body = ({children, showsOnce}: Props) => {
   return (
     <motion.div
-      className="relative flex h-screen flex-col items-center justify-between overflow-hidden bg-colorBackground text-xl sm:block"
+      className="relative flex min-h-screen flex-col justify-between overflow-hidden bg-colorBackground text-xl"
       initial="hidden"
       animate={showsOnce ? 'visible' : 'hidden'}>
       {children}

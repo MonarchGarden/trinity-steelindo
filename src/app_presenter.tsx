@@ -169,17 +169,17 @@ export default function App() {
 
           <Body showsOnce={showsOnce}>
             <motion.div
-              className="w-full overflow-hidden whitespace-nowrap text-center"
+              className="item-center w-full overflow-hidden whitespace-nowrap pt-8 text-center"
               variants={titleVariants}>
-              <h1 className="overflow-hidden pb-5 font-helios-condensed text-4xl text-colorTitle">
+              <h1 className="items-center justify-center overflow-hidden align-middle font-helios-condensed text-4xl text-colorTitle">
                 Siapa Kami?
               </h1>
             </motion.div>
 
             <motion.div
-              className="w-full items-center justify-center pb-5"
+              className="w-full items-center justify-center pt-8"
               variants={descriptionVariants}>
-              <h6 className="mb-8 w-full text-center font-helios-condensed leading-relaxed text-white sm:mb-0 sm:text-lg lg:text-xl">
+              <h6 className="w-full text-center font-helios-condensed leading-relaxed text-white sm:mb-0 sm:text-lg lg:text-xl">
                 Upgrade your roofing needs with UPVC roofing products from us.
                 These products provide durability and aesthetic appeal, ensuring
                 that your projects are built to last. Join us as we offer
@@ -189,7 +189,7 @@ export default function App() {
             </motion.div>
 
             <motion.div
-              className="flex h-full flex-col items-center justify-center overflow-hidden text-center text-xl text-colorDescription"
+              className="bottom-0 mt-auto w-full flex-col items-center justify-center overflow-hidden pb-8 pt-8 text-center text-xl text-colorDescription"
               variants={carouselVariants}>
               <div className="flex flex-col items-center justify-center rounded pb-5 text-center">
                 <h1 className="relative pb-5 font-helios-condensed text-3xl font-semibold">
