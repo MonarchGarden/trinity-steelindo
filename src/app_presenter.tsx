@@ -181,7 +181,7 @@ export default function App() {
             <motion.div
               className="flex w-full flex-1 items-center justify-center px-6 text-center"
               variants={descriptionVariants}>
-              <p className="max-w-4xl font-helios-condensed text-lg leading-relaxed text-gray-300 sm:text-xl lg:text-2xl">
+              <p className="max-w-4xl pt-8 font-helios-condensed text-lg leading-relaxed text-gray-300 sm:text-xl lg:text-2xl">
                 Upgrade your roofing needs with UPVC roofing products from us.
                 These products provide durability and aesthetic appeal, ensuring
                 that your projects are built to last. Join us as we offer
