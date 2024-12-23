@@ -45,7 +45,7 @@ export const Footer = () => {
                 <p>Offers same-day delivery</p>
               </li>
               <li>
-                <strong>Working Hours:</strong> Mon - Fri: 7:00 AM - :00 PM
+                <strong>Working Hours:</strong> Mon - Fri: 7:00 AM - 17:00 PM
               </li>
             </ul>
           </div>
