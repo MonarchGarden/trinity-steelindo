@@ -70,20 +70,6 @@ export const Header = ({logoWhite, logoBlack, navLinks}: Props) => {
     },
   };
 
-  const linkVariants: Variants = {
-    open: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.3,
-        ease: 'easeOut',
-      },
-    },
-    closed: {
-      opacity: 0,
-      x: -20,
-    },
-  };
   const headerOpacity = scrollPosition / 200;
   const isScrolled = headerOpacity > 0.2;
 
