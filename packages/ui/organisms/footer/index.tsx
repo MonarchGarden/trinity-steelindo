@@ -6,7 +6,7 @@ export const Footer = () => {
     <footer className="border-t border-gray-700 bg-gray-900 py-12 text-white">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="text-center">
-          <h2 className="mb-4 text-3xl font-bold">Trinity SteelIndo</h2>
+          <h2 className="mb-4 text-3xl font-bold">PT. Trinity SteelIndo</h2>
           <p className="mb-8 text-sm">Thank you for your trust!</p>
         </div>
 
@@ -35,8 +35,10 @@ export const Footer = () => {
               <li>
                 <strong>Phone:</strong>{' '}
                 <a
-                  href="tel:+6281318000824"
-                  className="text-blue-400 hover:underline">
+                  href="https://api.whatsapp.com/send/?phone=6281318000824&text&type=phone_number&app_absent=0"
+                  className="text-blue-400 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer">
                   +62 813-1800-0824
                 </a>
               </li>
