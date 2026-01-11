@@ -228,3 +228,18 @@ export const products = [
     ],
   },
 ];
+
+export const simpleProducts = [
+  {
+    id: 'spandek',
+    title: 'Atap Spandek',
+    image: '/images/spandek.jpg',
+    description: 'Atap baja ringan berkualitas tinggi.',
+  },
+  {
+    id: 'upvc',
+    title: 'Atap UPVC',
+    image: '/images/upvc.jpg',
+    description: 'Tahan panas, ringan, dan tahan lama.',
+  },
+];

@@ -13,12 +13,11 @@ import {motion} from 'framer-motion';
 import {InfiniteMovingCards} from './infinite_slider';
 
 export default function App() {
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const [scrollPosition] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
+  const [showsOnce, setShownOnce] = useState(false);
 
   const [loading, setLoading] = useState(true);
-  const [showsOnce, setShownOnce] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,19 +29,26 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollProgress(scrollY / window.innerHeight);
-      setScrollPosition(window.scrollY);
-      if (scrollProgress > 1.7 && showsOnce && !hasAnimated) {
-        setHasAnimated(true);
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
+    let ticking = false;
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+
+      requestAnimationFrame(() => {
+        const progress = window.scrollY / window.innerHeight;
+
+        if (!showsOnce && progress > 0) setShownOnce(true);
+        if (!hasAnimated && progress > 1.7) setHasAnimated(true);
+
+        ticking = false;
+      });
     };
-  }, [scrollProgress, showsOnce, hasAnimated]);
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [showsOnce, hasAnimated]);
 
   const innerHeightScrollPosition = Math.min(
     scrollPosition / window.innerHeight,
@@ -50,7 +56,7 @@ export default function App() {
   );
 
   useEffect(() => {
-    if (innerHeightScrollPosition > 0) {
+    if (!showsOnce && innerHeightScrollPosition > 0) {
       setShownOnce(true);
     }
   }, [showsOnce, innerHeightScrollPosition]);
@@ -114,8 +120,8 @@ export default function App() {
   });
 
   const navLinks = [
-    {path: '/trinity-steelindo', label: 'Beranda'},
-    {path: '/trinity-steelindo/katalog-produk', label: 'Katalog Produk'},
+    {path: '/#', label: 'Beranda'},
+    {path: '/katalog-produk', label: 'Katalog Produk'},
   ];
 
   const sectionVariants = {
@@ -185,7 +191,7 @@ export default function App() {
               className="w-full bg-colorBackground pt-10 text-center"
               variants={titleVariants}>
               <h1 className="font-helios-condensed text-5xl font-bold tracking-wide text-blue-500">
-                Siapa Kami?
+                About Us
               </h1>
             </motion.div>
 
