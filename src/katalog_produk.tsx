@@ -14,10 +14,8 @@ export default function ProductCatalog() {
 
     (async () => {
       try {
-        const json = await fetchCatalogJson();
-        console.log('CATALOG:', json);
+        await fetchCatalogJson();
       } catch (e) {
-        console.error('Failed to load catalog:', e);
       } finally {
         if (mounted) setLoading(false);
       }
