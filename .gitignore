@@ -28,3 +28,6 @@ cors.json
 .env
 .env.local
 .env.*.local
+
+* 2.ts
+* 2.tsx
